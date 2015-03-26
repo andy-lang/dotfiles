@@ -1,0 +1,3 @@
+TODO
+- install Monokai-like syntax highlighting
+- snippets
