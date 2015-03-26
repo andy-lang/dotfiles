@@ -1,0 +1,20 @@
+2013-09-13 16:10:44
+Traceback (most recent call last):
+  File "./sublimesvn/threads.py", line 23, in run_with_except_hook
+  File "./sublimesvn/listeners.py", line 31, in run
+  File "./sublimesvn/proc.py", line 80, in get_wc_root
+  File "./sublimesvn/proc.py", line 181, in find_wc_root
+ProcessError: svn: E155021: This client is too old to work with the working copy at
+'C:\Users\Andrew\Documents\Uni\svnRepo' (format 31).
+You need to get a newer Subversion client. For more details, see
+  http://subversion.apache.org/faq.html#working-copy-format-change
+2013-09-13 16:10:48
+Traceback (most recent call last):
+  File "./sublimesvn/threads.py", line 23, in run_with_except_hook
+  File "./sublimesvn/listeners.py", line 31, in run
+  File "./sublimesvn/proc.py", line 80, in get_wc_root
+  File "./sublimesvn/proc.py", line 181, in find_wc_root
+ProcessError: svn: E155021: This client is too old to work with the working copy at
+'C:\Users\Andrew\Documents\Uni\svnRepo' (format 31).
+You need to get a newer Subversion client. For more details, see
+  http://subversion.apache.org/faq.html#working-copy-format-change

@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+#include ${1:<iostream>}
+
+int main(int argc, char const${TM_C_POINTER: *}argv[]) {
+	${0:/* code */}
+	return 0;
+}]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>start</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

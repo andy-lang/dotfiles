@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[/**
+ * Course: COMPSCI ${1:2201}
+ * Assignment ${2:0}, question ${3:1}
+ * Author: $TM_FULLNAME
+ * Student ID: a1648205
+ * Filename: $TM_FILENAME
+ * Design began: ${4:Design date}
+ * Coding began: ${5:Coding date}
+ * Description: ${6:Description}
+ */]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>headComment</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++,source.c,source.java</scope>
+</snippet>

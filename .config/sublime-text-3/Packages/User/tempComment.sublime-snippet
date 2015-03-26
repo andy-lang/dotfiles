@@ -1,0 +1,5 @@
+<snippet>
+	<content><![CDATA[//?? TEMP: ${1:this}]]></content>
+	<tabTrigger>temp</tabTrigger>
+	<scope>source.c++</scope>
+</snippet>
