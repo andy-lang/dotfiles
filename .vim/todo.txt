@@ -1,3 +1,8 @@
-TODO
-- install Monokai-like syntax highlighting
-- snippets
+" investigate variable autocomplete. There's some options on this already in Vim(complete, completeopt, etc), but it might be worth investigating some plugins if the inbuilt stuff doesn't quite do the job
+
+set showbreak = "> "
+set showtabline = 2 " always show tabs
+
+" investigate wildignore
+
+" syntax-specific settings

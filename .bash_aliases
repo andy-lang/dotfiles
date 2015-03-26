@@ -7,6 +7,7 @@
 vimtab() {
 	vi -p $*
 }
+alias vi="vimtab"
 alias vim="vimtab" # always open Vim files as tabs
 
 lscd() {
