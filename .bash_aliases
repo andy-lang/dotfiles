@@ -45,14 +45,14 @@ sthack() {
 }
 alias st='sthack' #runs a script called sthack that does fancy stuff that one line just can't handle
 
-bettermake() {
-	if [ -e ./build ]; then
-		./build
-	else
-		make
-	fi
-}
-alias m="bettermake" # I'm super lazy
+#bettermake() {
+#	if [ -e ./build ]; then
+#		./build
+#	else
+#		make
+#	fi
+#}
+#alias m="bettermake" # I'm super lazy
 
 lazysvn() {
 	if [ $# = 0 ]; then

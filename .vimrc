@@ -23,7 +23,7 @@ set backspace=1
 set wrap
 
 " tabs to spaces
-set expandtab
+" set expandtab
 
 " 4 physical spaces per tab
 set tabstop=4
@@ -40,6 +40,9 @@ set wildmenu
 " suffixes that will be given lower priority in autocomplete
 set suffixes=.o,.bin,.class
 
+" set underscores to not be part of a word
+"set iskeyword-=_
+
 " Sublime Text-style syntax highlighting
 syntax enable
 set t_Co=256
@@ -52,7 +55,13 @@ let g:cpp_experimental_template_highlight = 1
 "           KEYBINDINGS  
 
 " bracket matching for curly brackets (could do it with other stuff too)
-:inoremap { {}<Esc>i
+":inoremap { {}<Esc>i
 
 " gr for previous tab
 :map gr :tabprevious<CR>
+" gb for bottom of file
+:map gb :G<CR>
+
+
+" <Esc> to remove highlights of most recent search
+:nnoremap <esc> :noh<return><esc>
