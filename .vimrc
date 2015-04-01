@@ -1,3 +1,5 @@
+set t_RV= ttymouse=xterm2 " stops that annoying glitch when pressing j on startup
+
 " add line numbers
 set number
 
@@ -25,10 +27,14 @@ set wrap
 " tabs to spaces
 " set expandtab
 
-" 4 physical spaces per tab
-set tabstop=4
+" 4 physical spaces per indent 
+set tabstop=8
+set softtabstop=4
+set shiftwidth=4
 
 " C-like indentation
+set autoindent
+set smartindent
 set cindent
 
 " popup for complete options
@@ -42,6 +48,9 @@ set suffixes=.o,.bin,.class
 
 " set underscores to not be part of a word
 "set iskeyword-=_
+
+" always show tab line
+"set showtabline=2
 
 " Sublime Text-style syntax highlighting
 syntax enable
@@ -65,3 +74,4 @@ let g:cpp_experimental_template_highlight = 1
 
 " <Esc> to remove highlights of most recent search
 :nnoremap <esc> :noh<return><esc>
+

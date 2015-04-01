@@ -1,8 +1,14 @@
 " investigate variable autocomplete. There's some options on this already in Vim(complete, completeopt, etc), but it might be worth investigating some plugins if the inbuilt stuff doesn't quite do the job
 
+" better indenting
+" STOP FUCKING GOING TO INSERT MODE ON FIRST ENTRY -_-
+
+" add comments with Ctrl+/ and Ctrl+Shift+/
 set showbreak = "> "
 set showtabline = 2 " always show tabs
 
 " investigate wildignore
 
 " syntax-specific settings
+
+" investigate neovim
