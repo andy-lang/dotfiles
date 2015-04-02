@@ -1,7 +1,7 @@
 " investigate variable autocomplete. There's some options on this already in Vim(complete, completeopt, etc), but it might be worth investigating some plugins if the inbuilt stuff doesn't quite do the job
 
-" better indenting
-" STOP FUCKING GOING TO INSERT MODE ON FIRST ENTRY -_-
+" there was that github repo that had a bunch of automatic vimrc stuff. There was one there about always showing a line above/below the current one
+" snippets
 
 " add comments with Ctrl+/ and Ctrl+Shift+/
 set showbreak = "> "

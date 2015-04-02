@@ -1,3 +1,6 @@
+" pathogen plugin
+execute pathogen#infect()
+
 set t_RV= ttymouse=xterm2 " stops that annoying glitch when pressing j on startup
 
 " add line numbers
@@ -75,3 +78,5 @@ let g:cpp_experimental_template_highlight = 1
 " <Esc> to remove highlights of most recent search
 :nnoremap <esc> :noh<return><esc>
 
+" brace matching if you type {*Enter*
+:inoremap {<CR> {<CR>}<Esc>ko

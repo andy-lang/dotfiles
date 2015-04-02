@@ -4,12 +4,6 @@
 
 ### Generic things ###
 
-vimtab() {
-	vi -p $*
-}
-alias vi="vimtab"
-alias vim="vimtab" # always open Vim files as tabs
-
 lscd() {
     cd $*
     ls
@@ -40,27 +34,24 @@ sizeof() {
 alias size="sizeof" # get the size of a file/folder
 
 ### Programming ###
+vimtab() {
+	vi -p $*
+}
+alias vi="vimtab"
+alias vim="vimtab" # always open multiple files in Vim as tabs
+
 sthack() {
 	subl $* &
 }
 alias st='sthack' #runs a script called sthack that does fancy stuff that one line just can't handle
-
-#bettermake() {
-#	if [ -e ./build ]; then
-#		./build
-#	else
-#		make
-#	fi
-#}
-#alias m="bettermake" # I'm super lazy
 
 lazysvn() {
 	if [ $# = 0 ]; then
 		cd ~/svnRepo/2015/s1
 	fi
 }
-
 alias sv='lazysvn' #yep
+
 #alias ssh="ssh a1648205@uss.cs.adelaide.edu.au" #ssh into uni servers
 scphack() {
 	scp -rp $* a1648205@uss.cs.adelaide.edu.au:scp
