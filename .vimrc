@@ -1,5 +1,6 @@
 " pathogen plugin
 execute pathogen#infect()
+filetype plugin on
 
 set t_RV= ttymouse=xterm2 " stops that annoying glitch when pressing j on startup
 
