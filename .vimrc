@@ -56,7 +56,7 @@ set wildmenu
 set autoread
 
 " suffixes that will be given lower priority in autocomplete
-set suffixes=.o,.bin,.class
+set suffixes=.o,.bin,.class,.out
 
 " set underscores to not be part of a word
 "set iskeyword-=_
