@@ -14,6 +14,11 @@ set guifont=Monospace:h12
 
 " highlight matching search patterns
 set hlsearch
+" start searching before pressing enter
+set incsearch
+
+" always a certain number of lines above/below current cursor position
+set scrolloff=5
 
 " case insensitive searching, unless an upper case char was specified 
 set ignorecase
@@ -47,6 +52,9 @@ set cindent
 " visual autocomplete
 set wildmenu
 
+" automatically reloads files that have been detected as being changed
+set autoread
+
 " suffixes that will be given lower priority in autocomplete
 set suffixes=.o,.bin,.class
 
@@ -65,7 +73,9 @@ colorscheme Benokai
 let g:cpp_class_scope_highlight = 1
 let g:cpp_experimental_template_highlight = 1
 
-"           KEYBINDINGS  
+"""""""""""""""""""""""""""""""""
+"""""""""" KEYBINDINGS """"""""""
+"""""""""""""""""""""""""""""""""
 
 " bracket matching for curly brackets (could do it with other stuff too)
 ":inoremap { {}<Esc>i
