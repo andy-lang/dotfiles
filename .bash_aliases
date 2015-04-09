@@ -34,11 +34,20 @@ sizeof() {
 alias size="sizeof" # get the size of a file/folder
 
 ### Programming ###
-vimtab() {
-	vi -p $*
+vimextra() {
+    # if arguments given, then open these files as tabs
+    if [ $# -gt 0 ]; then
+	vim -p $*
+    # else if there's a file called Session.vim, open this file
+    elif [ -e Session.vim ]; then
+	vim -S Session.vim
+    # else open vanilla vim (vim-nilla?)
+    else
+	vim
+    fi
 }
-alias vi="vimtab"
-alias vim="vimtab" # always open multiple files in Vim as tabs
+alias vi="vimextra"
+alias vim="vimextra" # always open multiple files in Vim as tabs
 
 sthack() {
 	subl $* &

@@ -2,39 +2,27 @@
 execute pathogen#infect()
 filetype plugin on
 
-set t_RV= ttymouse=xterm2 " stops that annoying glitch when pressing j on startup
+set t_RV= ttymouse=xterm2	 "stops that annoying glitch when pressing j on startup
 
-" add line numbers
-set number
+set number			 "add line numbers
 
-" switch on syntax highlighting
-"syntax on
+"syntax on			 "switch on syntax highlighting
 
-set guifont=Monospace:h12
+set hlsearch			 "highlight matching search patterns
+set incsearch			 "start searching before pressing enter
 
-" highlight matching search patterns
-set hlsearch
-" start searching before pressing enter
-set incsearch
-
-" always a certain number of lines above/below current cursor position
-set scrolloff=5
+set scrolloff=5			 "always a certain number of lines above/below current cursor position
+set switchbuf=useopen,usetab,newtab
 
 " case insensitive searching, unless an upper case char was specified 
 set ignorecase
 set smartcase
 
-" set shell to bash
-set shell=bash
+set shell=bash			 "set shell to bash
+set backspace=2			 "backspace skips over indents, EOL, appends, etc
+set wrap			 "wrap long lines
 
-" backspace skips over indents, EOL, etc
-set backspace=1
-
-" wrap long lines
-set wrap
-
-" tabs to spaces
-" set expandtab
+" set expandtab		         "tabs to spaces
 
 " 4 physical spaces per indent 
 set tabstop=8
@@ -46,28 +34,23 @@ set autoindent
 set smartindent
 set cindent
 
-" popup for complete options
-" set completeopt=longest,menuone
+" set completeopt=longest,menuone " popup for complete options
 
-" visual autocomplete
-set wildmenu
+set wildmenu " visual autocomplete
 
-" automatically reloads files that have been detected as being changed
-set autoread
+set autoread			 "automatically reloads files that have been detected as being changed
+set autowriteall		 "automatically write on edit, etc
+"autocmd TabLeave * :write	 "write on tableave
 
-" suffixes that will be given lower priority in autocomplete
-set suffixes=.o,.bin,.class,.out
-
-" set underscores to not be part of a word
-"set iskeyword-=_
-
-" always show tab line
-"set showtabline=2
+set suffixes=.o,.bin,.class,.out "suffixes that will be given lower priority in autocomplete
+"set iskeyword-=_		 "set underscores to not be part of a word
+"set showtabline=2		 "always show tab line
 
 " Sublime Text-style syntax highlighting
 syntax enable
 set t_Co=256
 colorscheme Benokai
+set guifont=Monospace:h12
 
 " settings for extra c++ syntax highlighting
 let g:cpp_class_scope_highlight = 1
@@ -76,9 +59,6 @@ let g:cpp_experimental_template_highlight = 1
 """""""""""""""""""""""""""""""""
 """""""""" KEYBINDINGS """"""""""
 """""""""""""""""""""""""""""""""
-
-" bracket matching for curly brackets (could do it with other stuff too)
-":inoremap { {}<Esc>i
 
 " gr for previous tab
 :map gr :tabprevious<CR>
