@@ -13,6 +13,11 @@ alias cls='clear' # clear the terminal
 #alias ls="ls --color" #list in glorious technicolor, and sorted by file extension
 alias ll="ls -A"
 
+bettergrep() {
+    grep $* -n
+}
+alias grep='bettergrep'
+
 naut() {
 	if [ $# = 0 ]; then
 		nautilus .
@@ -37,17 +42,19 @@ alias size="sizeof" # get the size of a file/folder
 vimextra() {
     # if arguments given, then open these files as tabs
     if [ $# -gt 0 ]; then
-	vim -p $*
+	nvim -p $*
     # else if there's a file called Session.vim, open this file
     elif [ -e Session.vim ]; then
-	vim -S Session.vim
+	nvim -S Session.vim
     # else open vanilla vim (vim-nilla?)
     else
-	vim
+	nvim
     fi
 }
 alias vi="vimextra"
-alias vim="vimextra" # always open multiple files in Vim as tabs
+alias vim="vimextra"
+alias nvi="vimextra"
+alias nvim="vimextra"
 
 sthack() {
 	subl $* &

@@ -1,5 +1,7 @@
 " pathogen plugin
+"if !has('nvim')
 execute pathogen#infect()
+"endif
 filetype plugin on
 
 set t_RV= ttymouse=xterm2	 "stops that annoying glitch when pressing j on startup
@@ -36,6 +38,7 @@ set cindent
 
 " set completeopt=longest,menuone " popup for complete options
 
+set wildmode=longest,full
 set wildmenu " visual autocomplete
 
 set autoread			 "automatically reloads files that have been detected as being changed
@@ -48,9 +51,11 @@ set suffixes=.o,.bin,.class,.out "suffixes that will be given lower priority in 
 
 " Sublime Text-style syntax highlighting
 syntax enable
-set t_Co=256
-colorscheme Benokai
-set guifont=Monospace:h12
+"if (!has('nvim'))
+    set t_Co=256
+    colorscheme Benokai
+    set guifont=Monospace:h12
+"endif
 
 " settings for extra c++ syntax highlighting
 let g:cpp_class_scope_highlight = 1
