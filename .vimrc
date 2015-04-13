@@ -57,11 +57,12 @@ map gr :tabprevious<CR>
 " gb for bottom of file
 map gb :G<CR>
 
-noremap <Silent> j gj
-noremap <Silent> k gk
+"up and down will always go between soft/wrapped lines
+noremap j gj
+noremap k gk
 
 " <Esc> to remove highlights of most recent search
-nnoremap <esc> :noh<return><esc>
+nnoremap <Esc> :noh<return><esc>
 
 " brace matching if you type {*Enter*
 inoremap {<CR> {<CR>}<Esc>ko
