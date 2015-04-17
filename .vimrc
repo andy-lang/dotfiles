@@ -35,7 +35,7 @@ set wildmenu			 "visual autocomplete
 set wildmode=longest,full	 "bash-like autocomplete
 
 set autoread			 "automatically reloads files that have been detected as being changed
-set autowriteall		 "automatically write on edit, :q, :make, etc
+set autowrite			 "automatically write on :make, :next, etc
 "autocmd TabLeave * :write	 "write on tableave
 "autocmd BufWritePost ~/.vimrc,~/.nvimrc :tabdo :so $MYVIMRC	 "write on saving vimrc
 
