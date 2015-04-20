@@ -55,7 +55,7 @@ let g:cpp_experimental_template_highlight = 1
 " gr for previous tab
 map gr :tabprevious<CR>
 " gb for bottom of file
-map gb :G<CR>
+map gb G
 
 "up and down will always go between soft/wrapped lines
 noremap j gj
