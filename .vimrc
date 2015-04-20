@@ -9,7 +9,7 @@ set number			 "add line numbers
 set hlsearch			 "highlight matching search patterns
 set incsearch			 "start searching before pressing enter
 
-set scrolloff=5			 "always a certain number of lines above/below current cursor position
+set scrolloff=1			 "always a certain number of lines above/below current cursor position
 set switchbuf=useopen,usetab,newtab "if make shows an error, be sure to open the errors in new tabs (rather than replacing the current one)
 
 " case insensitive searching, unless an upper case char was specified 
