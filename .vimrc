@@ -39,8 +39,8 @@ set autowrite			 "automatically write on :make, :next, etc
 "autocmd TabLeave * :write	 "write on tableave
 "autocmd BufWritePost ~/.vimrc,~/.nvimrc :tabdo :so $MYVIMRC	 "write on saving vimrc
 
-set wildignore=*.o,*.bin,*.class,*.out "ignore these suffixes completely when expanding
-"set suffixes=.o,.bin,.class,.out "suffixes that will be given lower priority in autocomplete
+"set wildignore=*.o,*.bin,*.class,*.out "ignore these suffixes completely when expanding
+set suffixes=.o,.bin,.class,.out "suffixes that will be given lower priority in autocomplete
 
 " Sublime Text-style syntax highlighting
 syntax enable
@@ -66,3 +66,9 @@ nnoremap <Esc> :noh<return><esc>
 
 " brace matching if you type {*Enter*
 inoremap {<CR> {<CR>}<Esc>ko
+
+function s:DiffWithSaved() 
+    :w !diff % -
+endfunction
+" diff
+com! DiffSaved call s:DiffWithSaved()
