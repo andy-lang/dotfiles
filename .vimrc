@@ -52,6 +52,11 @@ set guifont=Monospace:h12
 let g:cpp_class_scope_highlight = 1
 let g:cpp_experimental_template_highlight = 1
 
+" settings for cross-scope snippets
+let g:snipMate = {}
+let g:snipMate.scope_aliases = {}
+let g:snipMate.scope_aliases['glsl'] = 'c,glsl' " c snippets for OpenGL Shading Language
+
 " gr for previous tab
 map gr :tabprevious<CR>
 " gb for bottom of file
