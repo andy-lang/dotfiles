@@ -61,10 +61,12 @@ let g:snipMate.scope_aliases['glsl'] = 'c,glsl' " c snippets for OpenGL Shading 
 map gr :tabprevious<CR>
 " gb for bottom of file
 map gb G
+" gc to swap two adjacent characters
+map gc xph
 
 "up and down will always go between soft/wrapped lines
-noremap j gj
-noremap k gk
+"noremap j gj
+"noremap k gk
 
 " <Esc> to remove highlights of most recent search
 nnoremap <Esc> :noh<return><esc>
