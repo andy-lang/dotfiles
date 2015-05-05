@@ -71,8 +71,30 @@ nmap j gj
 nmap k gk
 
 " always open new Vim files as tabs, except if vimdiff is used
-au VimEnter * if !&diff | tab all | tabfirst | endif
+autocmd VimEnter * if !&diff | tab all | tabfirst | endif
 
+" always save session on exit
+fu! SaveSess()
+    "execute 'call mkdir(%:p:h/.vim)'
+    execute 'mksession! %:p:h/Session.vim'
+endfunction
+
+" always restore session on entry
+fu! RestoreSess()
+if filereadable('Session.vim') && !&diff
+    execute 'so %:p:h/Session.vim'
+    if bufexists(1)
+        for l in range(1, bufnr('$'))
+            if bufwinnr(l) == -1
+                exec 'sbuffer ' . l
+            endif
+        endfor
+    endif
+endif
+endfunction
+
+"autocmd VimLeave * call SaveSess()
+autocmd VimEnter * call RestoreSess()
 " brace matching if you type {*Enter*
 inoremap {<CR> {<CR>}<Esc>ko
 

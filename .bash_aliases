@@ -39,24 +39,6 @@ sizeof() {
 alias size="sizeof" # get the size of a file/folder
 
 ### Programming ###
-vimextra() {
-    # if there's a session file in the current directory, open it
-    if [ -f Session.vim ]; then
-        if [ $# -eq 0 ]; then
-            vim -S Session.vim $*
-        else
-            vim $*
-        fi
-    # else open vanilla vim (vim-nilla?)
-    else
-	vim $*
-    fi
-}
-alias vi="vimextra"
-alias vim="vimextra"
-alias nvi="vimextra"
-alias nvim="vimextra"
-
 lazysvn() {
     if [ $# = 0 ]; then
 	cd ~/svnRepo/2015/s1
