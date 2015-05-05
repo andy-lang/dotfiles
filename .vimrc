@@ -70,6 +70,9 @@ map 0 ^
 nmap j gj
 nmap k gk
 
+" always open new Vim files as tabs, except if vimdiff is used
+au VimEnter * if !&diff | tab all | tabfirst | endif
+
 " brace matching if you type {*Enter*
 inoremap {<CR> {<CR>}<Esc>ko
 
@@ -79,7 +82,8 @@ function DiffWithSaved()
 endfunction
 com! DiffSaved call DiffWithSaved()
 
-
-" syntax specific
-
+"""""""""""""""""""""""""""""""""""""
+"""""""""" syntax specific """"""""""
+"""""""""""""""""""""""""""""""""""""
+" txt files
 autocmd BufRead,BufWrite *.txt set spell spelllang=en_au

@@ -10,14 +10,14 @@ lscd() {
 }
 alias lcd='lscd' # cd to a place, then list it
 alias cls='clear' # clear the terminal
-#alias ls="ls --color" #list in glorious technicolor, and sorted by file extension
+#alias ls="ls --color" # list in glorious technicolor, and sorted by file extension
 alias ll="ls -A"
-alias cd..="cd .."
+alias cd..="cd .." # for the easiest typo in all of Unix
 
 bettergrep() {
     grep $* -n
 }
-alias grep='bettergrep'
+alias grep='bettergrep' # always show line numbers in grep
 
 naut() {
     if [ $# = 0 ]; then
@@ -30,7 +30,6 @@ alias brow="naut" # open folders in the browser
 
 alias ff="firefox &"
 alias quit="exit"
-alias q="exit"
 
 sizeof() {
     for i in $*; do
@@ -42,8 +41,12 @@ alias size="sizeof" # get the size of a file/folder
 ### Programming ###
 vimextra() {
     # if there's a session file in the current directory, open it
-    if [ -e Session.vim ]; then
-	vim -S Session.vim $*
+    if [ -f Session.vim ]; then
+        if [ $# -eq 0 ]; then
+            vim -S Session.vim $*
+        else
+            vim $*
+        fi
     # else open vanilla vim (vim-nilla?)
     else
 	vim $*
