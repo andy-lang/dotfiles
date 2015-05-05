@@ -19,11 +19,11 @@ bettergrep() {
 alias grep='bettergrep'
 
 naut() {
-	if [ $# = 0 ]; then
-		nautilus .
-	else
-		nautilus $*
-	fi
+    if [ $# = 0 ]; then
+	nautilus .
+    else
+	nautilus $*
+    fi
 }
 alias brow="naut" # open folders in the browser
 
@@ -32,9 +32,9 @@ alias quit="exit"
 alias q="exit"
 
 sizeof() {
-	for i in $*; do
-		stat "$i" -c "%n: %sB"
-	done
+    for i in $*; do
+	stat "$i" -c "%n: %sB"
+    done
 }
 alias size="sizeof" # get the size of a file/folder
 
@@ -56,15 +56,10 @@ alias vim="vimextra"
 alias nvi="vimextra"
 alias nvim="vimextra"
 
-sthack() {
-	subl $* &
-}
-alias st='sthack' #runs a script called sthack that does fancy stuff that one line just can't handle
-
 lazysvn() {
-	if [ $# = 0 ]; then
-		cd ~/svnRepo/2015/s1
-	fi
+    if [ $# = 0 ]; then
+	cd ~/svnRepo/2015/s1
+    fi
 }
 alias sv='lazysvn' #yep
 
