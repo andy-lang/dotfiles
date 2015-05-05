@@ -41,15 +41,12 @@ alias size="sizeof" # get the size of a file/folder
 
 ### Programming ###
 vimextra() {
-    # if arguments given, then open these files as tabs
-    if [ $# -gt 0 ]; then
-	nvim -p $*
-    # else if there's a file called Session.vim, open this file
-    elif [ -e Session.vim ]; then
-	nvim -S Session.vim
+    # if there's a session file in the current directory, open it
+    if [ -e Session.vim ]; then
+	vim -S Session.vim $*
     # else open vanilla vim (vim-nilla?)
     else
-	nvim
+	vim $*
     fi
 }
 alias vi="vimextra"
