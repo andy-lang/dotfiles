@@ -18,7 +18,8 @@ set smartcase
 
 set shell=bash			 "set shell to bash
 set backspace=2			 "backspace skips over indents, EOL, appends, etc
-set wrap			 "wrap long lines
+set wrap linebreak			 "wrap long lines
+"set linebreak=on
 set expandtab		         "tabs to spaces
 
 " 4 physical spaces per indent 
@@ -81,7 +82,7 @@ endfunction
 
 " always restore session on entry
 fu! RestoreSess()
-if filereadable('Session.vim') && !&diff
+if filereadable(getcwd() . '/Session.vim') && !&diff && argc() == 0
     execute 'so %:p:h/Session.vim'
     if bufexists(1)
         for l in range(1, bufnr('$'))
@@ -95,6 +96,7 @@ endfunction
 
 "autocmd VimLeave * call SaveSess()
 autocmd VimEnter * call RestoreSess()
+
 " brace matching if you type {*Enter*
 inoremap {<CR> {<CR>}<Esc>ko
 
@@ -108,4 +110,4 @@ com! DiffSaved call DiffWithSaved()
 """""""""" syntax specific """"""""""
 """""""""""""""""""""""""""""""""""""
 " txt files
-autocmd BufRead,BufWrite *.txt set spell spelllang=en_au
+"autocmd VimEnter *.txt set spell spelllang=en_au
