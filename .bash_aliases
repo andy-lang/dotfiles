@@ -4,11 +4,11 @@
 
 ### Generic things ###
 
-lscd() {
+cdls() {
     cd $*
     ls
 }
-alias lcd='lscd' # cd to a place, then list it
+alias cdl='cdls' # cd to a place, then list it
 alias cls='clear' # clear the terminal
 #alias ls="ls --color" # list in glorious technicolor, and sorted by file extension
 alias ll="ls -A"
