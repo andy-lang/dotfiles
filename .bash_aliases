@@ -19,6 +19,11 @@ bettergrep() {
 }
 alias grep='bettergrep' # always show line numbers in grep
 
+betterhelp() {
+    help $* | less
+}
+alias help='betterhelp'
+
 naut() {
     if [ $# = 0 ]; then
 	nautilus .
