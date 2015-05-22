@@ -44,8 +44,6 @@ lazysvn() {
     if [ $# != 0 ]; then
         if [ -d $upperdir/$1 ]; then
             cd $upperdir/$1
-        else
-            cd $upperdir
         fi
     elif [ $# = 0 ]; then
 	cd $upperdir
