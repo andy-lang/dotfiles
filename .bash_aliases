@@ -52,9 +52,3 @@ lazysvn() {
     fi
 }
 alias sv='lazysvn' #yep
-
-#alias ssh="ssh a1648205@uss.cs.adelaide.edu.au" #ssh into uni servers
-scphack() {
-	scp -rp $* a1648205@uss.cs.adelaide.edu.au:scp
-}
-alias scp="scphack" #scp whatever files I want into my uni account
