@@ -40,8 +40,15 @@ alias size="sizeof" # get the size of a file/folder
 
 ### Programming ###
 lazysvn() {
-    if [ $# = 0 ]; then
-	cd ~/svnRepo/2015/s1
+    upperdir=~/svnRepo/2015/s1
+    if [ $# != 0 ]; then
+        if [ -d $upperdir/$1 ]; then
+            cd $upperdir/$1
+        else
+            cd $upperdir
+        fi
+    elif [ $# = 0 ]; then
+	cd $upperdir
     fi
 }
 alias sv='lazysvn' #yep
