@@ -1,0 +1,17 @@
+# General
+.*.swp
+.*.swo
+*.zip
+*.tar
+.svn
+.svn/*
+*~
+
+# Java
+*.class
+
+# C++
+*.o
+*.exe
+*.out
+*.xcf
