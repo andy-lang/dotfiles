@@ -24,7 +24,7 @@ set wrap linebreak		 "wrap long lines
 set expandtab		         "tabs to spaces
 
 " 4 physical spaces per indent 
-set tabstop=8
+"set tabstop=8
 set softtabstop=4
 set shiftwidth=4
 
@@ -83,16 +83,9 @@ endfunction
 
 " restore session on entry, but only if no other command line arguments & not in diff mode
 fu! RestoreSess()
-if filereadable(getcwd() . '/Session.vim') && !&diff && argc() == 0
-    execute 'so %:p:h/Session.vim'
-    if bufexists(1)
-        for l in range(1, bufnr('$'))
-            if bufwinnr(l) == -1
-                exec 'sbuffer ' . l
-            endif
-        endfor
+    if filereadable(getcwd() . '/Session.vim') && !&diff && argc() == 0
+        execute 'so %:p:h/Session.vim'
     endif
-endif
 endfunction
 
 "autocmd VimLeave * call SaveSess()
@@ -107,9 +100,7 @@ function DiffWithSaved()
 endfunction
 com! DiffSaved call DiffWithSaved()
 
-"""""""""""""""""""""""""""""""""""""
-"""""""""" syntax specific """"""""""
-"""""""""""""""""""""""""""""""""""""
+""" syntax specific
 autocmd VimEnter *.txt set spell spelllang=en_au    " spellcheck for txt files
 autocmd VimEnter *.snippet set syntax=snippets      " snipmate syntax highlighting
 
