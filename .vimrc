@@ -21,10 +21,10 @@ set shell=bash			 "set shell to bash
 set backspace=2			 "backspace skips over indents, EOL, appends, etc
 set wrap linebreak		 "wrap long lines
 "set linebreak=on
-set expandtab		         "tabs to spaces
+"set expandtab		         "tabs to spaces
 
-" 4 physical spaces per indent 
-"set tabstop=8
+" 4 spaces per indent 
+set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
