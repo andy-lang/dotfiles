@@ -1,8 +1,9 @@
 " pathogen plugin
 execute pathogen#infect()
-filetype plugin on
+syntax on
+filetype plugin indent on
 
-set t_RV= ttymouse=xterm2	 "stops that annoying glitch that deletes 2 lines when pressing j on startup
+"set t_RV= ttymouse=xterm2	 "stops that annoying glitch that deletes 2 lines when pressing j on startup
 set number			 "add line numbers
 set ruler                        "ruler: line number, column no, etc.
 
