@@ -8,7 +8,7 @@ cdls() {
     cd $*
     ls
 }
-alias cdl='cdls' # cd to a place, then list it
+alias cs='cdls' # cd to a place, then list it
 alias cls='clear' # clear the terminal
 #alias ls="ls --color" # list in glorious technicolor, and sorted by file extension
 alias ll="ls -A"
@@ -24,34 +24,34 @@ betterhelp() {
 }
 alias help='betterhelp'
 
-naut() {
+brow() {
     if [ $# = 0 ]; then
-	nautilus .
+		nautilus .
     else
-	nautilus $*
+		nautilus $*
     fi
 }
-alias brow="naut" # open folders in the browser
+#alias brow="naut" # open folders in the browser
 
 alias ff="firefox &"
 alias quit="exit"
 
-sizeof() {
+size() {
     for i in $*; do
-	stat "$i" -c "%n: %sB"
+		stat "$i" -c "%n: %sB"
     done
 }
-alias size="sizeof" # get the size of a file/folder
+#alias size="sizeof" # get the size of a file/folder
 
 ### Programming ###
-lazysvn() {
+sv() {
     upperdir=~/svnRepo/2015/s1
     if [ $# != 0 ]; then
         if [ -d $upperdir/$1 ]; then
             cd $upperdir/$1
         fi
     elif [ $# = 0 ]; then
-	cd $upperdir
+		cd $upperdir
     fi
 }
-alias sv='lazysvn' #yep
+#alias sv='lazysvn' #yep
