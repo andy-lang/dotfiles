@@ -1,0 +1,18 @@
+[user]
+	name = HandyAndy136
+	email = langy26@gmail.com
+[credential]
+	helper = cache
+[alias]
+        br = branch
+	ci = commit
+	co = checkout
+        ls = ls-files
+	st = status
+        stu = status -uno
+	stat = status
+        undo = checkout --
+[core]
+	excludesfile = ~/.gitignore
+[github]
+	user = HandyAndy136
