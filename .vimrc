@@ -92,6 +92,8 @@ endfunction
 "autocmd VimLeave * call SaveSess()
 autocmd VimEnter * call RestoreSess()
 
+set shortmess+=A									" ignore warnings if swapfile exists
+
 " brace matching if you type {*Enter*
 inoremap {<CR> {<CR>}<Esc>ko
 
