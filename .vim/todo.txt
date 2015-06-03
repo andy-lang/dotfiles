@@ -1,8 +1,5 @@
 " investigate variable autocomplete. There's some options on this already in Vim(complete, completeopt, etc), but it might be worth investigating some plugins if the inbuilt stuff doesn't quite do the job
 
-" snippets
-
+" bash_aliases' "sv" command with autocomplete
 " add comments with Ctrl+/ and Ctrl+Shift+/
-set showbreak = "> "
-set showtabline = 2 " always show tabs
 

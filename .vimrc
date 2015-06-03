@@ -12,9 +12,9 @@ set incsearch			 "start searching before pressing enter
 nnoremap <Esc> :noh<return><esc>
 
 set scrolloff=1			 "always a certain number of lines above/below current cursor position
-set switchbuf=useopen,usetab,newtab "if make shows an error, be sure to open the errors in new tabs rather than replacing the current one
+"set switchbuf=useopen,usetab,newtab "if make shows an error, be sure to open the errors in new tabs rather than replacing the current one
 
-" case insensitive searching, unless an upper case char was specified 
+" case insensitive searching, unless an upper case char was specified
 set ignorecase
 set smartcase
 
@@ -57,12 +57,12 @@ let g:cpp_class_scope_highlight = 1
 let g:cpp_experimental_template_highlight = 1
 
 " settings for cross-scope snippets
-let g:snipMate = {}
-let g:snipMate.scope_aliases = {}
-let g:snipMate.scope_aliases['glsl'] = 'c,glsl' " c snippets for OpenGL Shading Language
+try
+	let g:snipMate = {}
+	let g:snipMate.scope_aliases = {}
+	let g:snipMate.scope_aliases['glsl'] = 'c,glsl' " c snippets for OpenGL Shading Language
+endtry
 
-" gr for previous tab
-map gr :tabprevious<CR>
 " gb for bottom of file
 map gb G
 " gs to swap two adjacent characters
@@ -74,11 +74,10 @@ nmap j gj
 nmap k gk
 
 " always open new Vim files as tabs, except if vimdiff is used
-autocmd VimEnter * if !&diff | tab all | tabfirst | endif
+"autocmd VimEnter * if !&diff | tab all | tabfirst | endif
 
-" always save session on exit
+" function to save session
 fu! SaveSess()
-    "execute 'call mkdir(%:p:h/.vim)'
     execute 'mksession! %:p:h/Session.vim'
 endfunction
 
@@ -92,18 +91,28 @@ endfunction
 "autocmd VimLeave * call SaveSess()
 autocmd VimEnter * call RestoreSess()
 
+" reload vimrc on save
+autocmd! BufWritePost ~/.vimrc source % 
+autocmd! BufWritePost ~/.nvimrc source % 
+
 set shortmess+=A									" ignore warnings if swapfile exists
 
 " brace matching if you type {*Enter*
 inoremap {<CR> {<CR>}<Esc>ko
 
-" command to compare current buffer with saved version
-function DiffWithSaved() 
-    :w !diff % -
-endfunction
-com! DiffSaved call DiffWithSaved()
-
 """ syntax specific
 autocmd VimEnter *.txt set spell spelllang=en_au    " spellcheck for txt files
 autocmd VimEnter *.snippet set syntax=snippets      " snipmate syntax highlighting
 
+""""" statusline, vim-airline """""
+
+" always show statusline
+set laststatus=2
+
+let g:airline_section_c = '%n %t%m'
+let g:airline_section_y = '%L'						" show total line count
+let g:airline_section_z = '%l,%v'					" show current line
+
+let g:airliine#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1	" show buffer number
+let g:airline#extensions#whitespace#enabled = 0		" don't show whitespace
