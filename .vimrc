@@ -12,7 +12,7 @@ set incsearch			 "start searching before pressing enter
 nnoremap <Esc> :noh<return><esc>
 
 set scrolloff=1			 "always a certain number of lines above/below current cursor position
-"set switchbuf=useopen,usetab,newtab "if make shows an error, be sure to open the errors in new tabs rather than replacing the current one
+set switchbuf=useopen,usetab,split "if make shows an error, be sure to open the errors in new tabs rather than replacing the current one
 
 " case insensitive searching, unless an upper case char was specified
 set ignorecase
@@ -63,6 +63,8 @@ try
 	let g:snipMate.scope_aliases['glsl'] = 'c,glsl' " c snippets for OpenGL Shading Language
 endtry
 
+" gr for previous tab
+map gr gT
 " gb for bottom of file
 map gb G
 " gs to swap two adjacent characters
