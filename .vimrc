@@ -89,6 +89,10 @@ tnoremap <C-j> <C-\><C-n><C-w>j
 tnoremap <C-k> <C-\><C-n><C-w>k
 tnoremap <C-l> <C-\><C-n><C-w>l
 
+" ignore accidental uppercase for W and Q
+command! Q q
+command! W w
+
 " always open new Vim files as tabs, except if vimdiff is used
 "autocmd VimEnter * if !&diff | tab all | tabfirst | endif
 
