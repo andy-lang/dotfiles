@@ -35,6 +35,7 @@ brow() {
 
 alias ff="firefox &"
 alias quit="exit"
+alias :q="exit"
 
 size() {
     for i in $*; do
@@ -54,4 +55,3 @@ sv() {
 		cd $upperdir
     fi
 }
-#alias sv='lazysvn' #yep

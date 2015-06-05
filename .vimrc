@@ -1,18 +1,18 @@
 " pathogen plugin
-execute pathogen#infect()
+call pathogen#infect()
+call pathogen#helptags()
 syntax on
 filetype plugin indent on
 
-"set t_RV= ttymouse=xterm2	 "stops that annoying glitch that deletes 2 lines when pressing j on startup
 set number			 "add line numbers
 set ruler                        "ruler: line number, column no, etc.
 
 set hlsearch			 "highlight matching search patterns
 set incsearch			 "start searching before pressing enter
-nnoremap <Esc> :noh<return><esc>
+nnoremap <Esc> :noh<return><Esc>
 
 set scrolloff=1			 "always a certain number of lines above/below current cursor position
-set switchbuf=useopen,usetab,split "if make shows an error, be sure to open the errors in new tabs rather than replacing the current one
+set switchbuf=useopen,usetab,split "if make shows an error, be sure to open the errors in new split/buffer rather than replacing the current one
 
 " case insensitive searching, unless an upper case char was specified
 set ignorecase
@@ -63,6 +63,8 @@ try
 	let g:snipMate.scope_aliases['glsl'] = 'c,glsl' " c snippets for OpenGL Shading Language
 endtry
 
+" brace creation
+imap {<CR> {<CR>}<Esc>O
 " gr for previous tab
 map gr gT
 " gb for bottom of file
@@ -74,6 +76,18 @@ map 0 ^
 " j and k for soft line movement
 nmap j gj
 nmap k gk
+
+" easier split navigation
+nnoremap <C-H> <C-w>h
+nnoremap <C-J> <C-w>j
+nnoremap <C-K> <C-w>k
+nnoremap <C-L> <C-w>l
+
+" do it for terminal too
+tnoremap <C-h> <C-\><C-n><C-w>h
+tnoremap <C-j> <C-\><C-n><C-w>j
+tnoremap <C-k> <C-\><C-n><C-w>k
+tnoremap <C-l> <C-\><C-n><C-w>l
 
 " always open new Vim files as tabs, except if vimdiff is used
 "autocmd VimEnter * if !&diff | tab all | tabfirst | endif
@@ -102,6 +116,7 @@ set shortmess+=A									" ignore warnings if swapfile exists
 """ syntax specific
 autocmd VimEnter *.txt set spell spelllang=en_au    " spellcheck for txt files
 autocmd VimEnter *.snippet set syntax=snippets      " snipmate syntax highlighting
+
 
 """"" statusline, vim-airline """""
 
