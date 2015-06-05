@@ -99,9 +99,6 @@ autocmd! BufWritePost ~/.nvimrc source %
 
 set shortmess+=A									" ignore warnings if swapfile exists
 
-" brace matching if you type {*Enter*
-inoremap {<CR> {<CR>}<Esc>ko
-
 """ syntax specific
 autocmd VimEnter *.txt set spell spelllang=en_au    " spellcheck for txt files
 autocmd VimEnter *.snippet set syntax=snippets      " snipmate syntax highlighting
