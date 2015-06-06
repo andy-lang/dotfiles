@@ -96,6 +96,9 @@ endif
 " ignore accidental uppercase for W and Q
 command! Q q
 command! W w
+" turn off fucking ex mode
+nnoremap Q <nop>
+
 " buffer delete does not delete window
 command! Bd bp|bd #
 nnoremap <Leader>d :Bd<CR>
