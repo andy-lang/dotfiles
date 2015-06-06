@@ -42,7 +42,7 @@ set wildmode=longest,full	 "bash-like autocomplete
 set autoread			 "automatically reloads files that have been detected as being changed
 set autowrite			 "automatically write on :make, :next, etc
 
-set suffixes=.o,.bin,.class,.out "suffixes that will be given lower priority in autocomplete
+set wildignore=.o,.bin,.class,.out "suffixes to be ignored in autocomplete
 
 " syntax highlighting, suspiciously Sublime Text-like
 syntax enable
@@ -59,11 +59,11 @@ let g:cpp_class_scope_highlight = 1
 let g:cpp_experimental_template_highlight = 1
 
 " settings for cross-scope snippets
-try
-	let g:snipMate = {}
-	let g:snipMate.scope_aliases = {}
-	let g:snipMate.scope_aliases['glsl'] = 'c,glsl' " c snippets for OpenGL Shading Language
-endtry
+"try
+"	let g:snipMate = {}
+"	let g:snipMate.scope_aliases = {}
+"	let g:snipMate.scope_aliases['glsl'] = 'c,glsl' " c snippets for OpenGL Shading Language
+"endtry
 
 " brace creation
 imap {<CR> {<CR>}<Esc>O
@@ -94,6 +94,9 @@ tnoremap <C-l> <C-\><C-n><C-w>l
 " ignore accidental uppercase for W and Q
 command! Q q
 command! W w
+" buffer delete does not delete window
+command! Bd bp|bd #
+nnoremap <Leader>d :Bd<CR>
 
 " always open new Vim files as tabs, except if vimdiff is used
 "autocmd VimEnter * if !&diff | tab all | tabfirst | endif
