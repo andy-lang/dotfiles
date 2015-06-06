@@ -124,15 +124,24 @@ autocmd VimEnter *.txt set spell spelllang=en_au    " spellcheck for txt files
 autocmd VimEnter *.snippet set syntax=snippets      " snipmate syntax highlighting
 
 
-""""" statusline, vim-airline """""
+""""" statusline, vim-airline, bufferline """""
 
 " always show statusline
 set laststatus=2
 
-let g:airline_section_c = '%n %t%m'
+let g:airline#extensions#bufferline#enabled = 1
+let g:airline#extensions#bufferline#overwrite_variables = 0
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#buffer_nr_show = 1	" show buffer number
+let g:airline#extensions#whitespace#enabled = 0		" don't show whitespace
+
+"let g:airline_section_c = '%n %t%m'
 let g:airline_section_y = '%L'						" show total line count
 let g:airline_section_z = '%l,%v'					" show current line
 
-let g:airliine#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1	" show buffer number
-let g:airline#extensions#whitespace#enabled = 0		" don't show whitespace
+let g:bufferline_echo = 0
+autocmd VimEnter *
+\ let &statusline='%{bufferline#refresh_status()}'
+  \ .bufferline#get_status_string()
+
+"let g:bufferline_active_highlight = 'Statusline'
