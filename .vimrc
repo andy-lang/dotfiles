@@ -85,11 +85,13 @@ nnoremap <C-J> <C-w>j
 nnoremap <C-K> <C-w>k
 nnoremap <C-L> <C-w>l
 
-" do it for terminal too
-tnoremap <C-h> <C-\><C-n><C-w>h
-tnoremap <C-j> <C-\><C-n><C-w>j
-tnoremap <C-k> <C-\><C-n><C-w>k
-tnoremap <C-l> <C-\><C-n><C-w>l
+" do it for terminal too, if in Neovim
+if has('nvim')
+	tnoremap <C-h> <C-\><C-n><C-w>h
+	tnoremap <C-j> <C-\><C-n><C-w>j
+	tnoremap <C-k> <C-\><C-n><C-w>k
+	tnoremap <C-l> <C-\><C-n><C-w>l
+endif
 
 " ignore accidental uppercase for W and Q
 command! Q q
