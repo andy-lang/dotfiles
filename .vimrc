@@ -6,8 +6,18 @@ filetype plugin indent on
 
 let mapleader=","
 
-set number			 "add line numbers
-set ruler                        "ruler: line number, column no, etc.
+set number				 "add line numbers
+set ruler                "ruler: line number, column no, etc.
+
+fu! ToggleLineNumbers() 
+	if (&relativenumber == 1)
+		set norelativenumber
+	else
+		set relativenumber
+	endif
+endfunction
+
+nnoremap <Leader>n :call ToggleLineNumbers()<CR>
 
 set hlsearch			 "highlight matching search patterns
 set incsearch			 "start searching before pressing enter
