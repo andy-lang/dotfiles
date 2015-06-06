@@ -4,6 +4,8 @@ call pathogen#helptags()
 syntax on
 filetype plugin indent on
 
+let mapleader=","
+
 set number			 "add line numbers
 set ruler                        "ruler: line number, column no, etc.
 

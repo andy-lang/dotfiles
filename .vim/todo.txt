@@ -1,5 +1,3 @@
-" investigate variable autocomplete. There's some options on this already in Vim(complete, completeopt, etc), but it might be worth investigating some plugins if the inbuilt stuff doesn't quite do the job
-
+" investigate variable autocomplete
 " bash_aliases' "sv" command with autocomplete
-" add comments with Ctrl+/ and Ctrl+Shift+/
 
