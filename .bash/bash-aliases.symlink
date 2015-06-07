@@ -13,6 +13,7 @@ alias cls='clear' # clear the terminal
 #alias ls="ls --color" # list in glorious technicolor, and sorted by file extension
 alias ll="ls -A"
 alias cd..="cd .." # for the easiest typo in all of Unix
+alias tmux="tmux -2" # always start tmux in 256 colours
 
 bettergrep() {
     grep $* -n
@@ -36,6 +37,7 @@ brow() {
 alias ff="firefox &"
 alias quit="exit"
 alias :q="exit"
+alias :qa="exit"
 
 size() {
     for i in $*; do

@@ -1,4 +1,0 @@
-set -g prefix C-a
-unbind C-b
-
-set -s escape-time 0
