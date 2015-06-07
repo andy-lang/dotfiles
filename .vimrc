@@ -1,8 +1,25 @@
-" pathogen plugin
-call pathogen#infect()
-call pathogen#helptags()
-syntax on
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+
+Plugin 'bling/vim-airline'
+Plugin 'bling/vim-bufferline'
+Plugin 'garbas/vim-snipmate'
+Plugin 'keith/tmux.vim'
+Plugin 'beyondmarc/opengl.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'tikhomirov/vim-glsl'
+
+call vundle#end()
 filetype plugin indent on
+
+syntax on
 
 let mapleader=","
 
@@ -16,7 +33,6 @@ fu! ToggleLineNumbers()
 		set relativenumber
 	endif
 endfunction
-
 nnoremap <Leader>n :call ToggleLineNumbers()<CR>
 
 set hlsearch			 "highlight matching search patterns
@@ -135,11 +151,15 @@ autocmd VimEnter * call RestoreSess()
 autocmd! BufWritePost ~/.vimrc source % 
 autocmd! BufWritePost ~/.nvimrc source % 
 
+" do similar if saving .tmux.conf
+autocmd! BufWritePost ~/.tmux.conf !tmux source-file ~/.tmux.conf
+
 set shortmess+=A									" ignore warnings if swapfile exists
 
 """ syntax specific
 autocmd VimEnter *.txt set spell spelllang=en_au    " spellcheck for txt files
 autocmd VimEnter *.snippet set syntax=snippets      " snipmate syntax highlighting
+autocmd BufNewFile,BufRead crontab.* set nobackup | set nowritebackup
 
 
 """"" statusline, vim-airline, bufferline """""
