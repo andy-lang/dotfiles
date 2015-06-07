@@ -1,0 +1,7 @@
+# set prefix to Ctrl+A (well, Caps+A, but y'know...)
+set -g prefix C-a
+unbind C-b
+
+# <Esc> does not cause slight delay
+set -s escape-time 0
+

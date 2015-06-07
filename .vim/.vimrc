@@ -30,7 +30,8 @@ set scrolloff=1
 " bash shell
 set shell=bash
 
-set shortmess+=A									" ignore warnings if swapfile exists
+" ignore warnings if swapfile exists
+set shortmess+=A
 
 " open make errors in new split/buffer if not open
 set switchbuf=useopen,usetab,split
@@ -94,6 +95,10 @@ nnoremap <C-H> <C-w>h
 nnoremap <C-J> <C-w>j
 nnoremap <C-K> <C-w>k
 nnoremap <C-L> <C-w>l
+
+" indentation without shift
+nnoremap <Leader><Leader> <<
+nnoremap <Leader>. >>
 
 " do it for terminal too, if in Neovim
 if has('nvim')
