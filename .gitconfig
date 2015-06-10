@@ -14,5 +14,6 @@
         undo = checkout --
 [core]
 	excludesfile = ~/.gitignore
+	editor = vim
 [github]
 	user = HandyAndy136

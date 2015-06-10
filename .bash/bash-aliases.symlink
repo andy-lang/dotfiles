@@ -13,7 +13,15 @@ alias cls='clear' # clear the terminal
 #alias ls="ls --color" # list in glorious technicolor, and sorted by file extension
 alias ll="ls -A"
 alias cd..="cd .." # for the easiest typo in all of Unix
-alias tmux="tmux -2" # always start tmux in 256 colours
+
+bettertmux() {
+	if [ $# = 0 ]; then
+		~/.tmux/scripts/choose-session.sh
+	else
+		tmux $@
+	fi
+}
+alias tmux='bettertmux' # always start tmux in 256 colours
 
 bettergrep() {
     grep $* -n

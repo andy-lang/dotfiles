@@ -1,3 +1,7 @@
-" investigate variable autocomplete
-" bash_aliases' "sv" command with autocomplete
+- investigate variable autocomplete
+- bash_aliases' "sv" command with autocomplete
 
+- tmux configurations
+	- if vim called in another pane, open it in a currently open one
+	- keybindings
+- zsh
