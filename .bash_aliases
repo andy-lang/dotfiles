@@ -16,7 +16,7 @@ alias cd..="cd .." # for the easiest typo in all of Unix
 
 bettertmux() {
 	if [ $# = 0 ]; then
-		~/.tmux/scripts/choose-session.sh
+		~/.tmux/choose-session.sh
 	else
 		tmux $@
 	fi

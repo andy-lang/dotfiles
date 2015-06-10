@@ -164,7 +164,7 @@ autocmd! BufWritePost ~/.tmux.conf !tmux source-file ~/.tmux.conf
 autocmd VimEnter * call RestoreSess()
 
 " spellcheck for txt files
-autocmd FileType text set spell | set spelllang=en_au
+autocmd BufRead *.txt setlocal spell spelllang=en_au
 " syntax highlighting for snippet files
 autocmd FileType snippet set syntax=snippets
 " special settings for editing crontab files
