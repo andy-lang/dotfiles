@@ -25,12 +25,14 @@ else
 	declare -a script_templates
 	echo "list of script templates:"
 
+	prevWD=$PWD
 	cd ~/.tmux/scripts
 	for	line in $(ls *.sh); do
 		#tmux ls -F '#S'
 		echo ${#script_templates[@]}')' $line
 		script_templates+=("$line")
 	done
+	cd $prevWD
 	read -p "Template: " tempnum
 	if [ $tempnum -lt ${#script_templates[@]} ]; then
 		read -p "Name for new session: " name
