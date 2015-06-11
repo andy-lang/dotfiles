@@ -19,6 +19,8 @@ ms() {
 	cd $1
 }
 
+alias vim='~/.tmux/omnivim.sh'
+
 bettertmux() {
 	if [ $# = 0 ]; then
 		~/.tmux/choose-session.sh
