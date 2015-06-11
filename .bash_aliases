@@ -8,11 +8,16 @@ cdls() {
     cd $*
     ls
 }
+alias cd..="cd .." # for the easiest typo in all of Unix
 alias cs='cdls' # cd to a place, then list it
 alias cls='clear' # clear the terminal
 #alias ls="ls --color" # list in glorious technicolor, and sorted by file extension
 alias ll="ls -A"
-alias cd..="cd .." # for the easiest typo in all of Unix
+
+ms() {
+	mkdir $1
+	cd $1
+}
 
 bettertmux() {
 	if [ $# = 0 ]; then
