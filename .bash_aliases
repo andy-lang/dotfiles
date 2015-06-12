@@ -19,7 +19,7 @@ ms() {
 	cd $1
 }
 
-alias vim='~/.tmux/omnivim.sh'
+#alias vim='~/.tmux/omnivim.sh'
 
 bettertmux() {
 	if [ $# = 0 ]; then
