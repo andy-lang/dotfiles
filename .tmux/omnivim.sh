@@ -1,28 +1,51 @@
 #!/usr/bin/env bash
 
-tmuxProcesses=$(ps -e | grep tmux | wc -l) # get number of tmux processes
-echo '|'"$tmuxProcesses"'|'
-two=2
-if [ "$tmuxProcesses" -ge "$two" ]; then # if at least 2 tmux processes (ie client and server) running, then we're most likely in a tmux session
-	s=$(tmux display-message -p '#S') # get current session
-	for p in `tmux list-panes -s -F "#{pane_current_command}-#{pane_id}" -t "$s"` ; do # get current command of each pane in session, and associated pane id
+#######################################################################
+# Bash script for interaction between tmux and vim
+# If vim is called from a pane in a tmux session,
+# this script checks if vim is already running in another pane.
+# If it is, it sends the commands to the vim process in that pane.
+# Else it creates a new vim process in the pane in which it was called.
+#######################################################################
+
+
+# get number of tmux processes
+tmuxProcesses=$(ps -e | grep tmux | wc -l)
+#echo '|'"$tmuxProcesses"'|'
+
+#if at least 2 tmux processes (ie client and server) running, then we're most likely in a tmux session
+if [ "$tmuxProcesses" -ge "2" ]; then
+
+	##?? TODO check if vim process exists in window of pane where vim was called.
+	s=$(tmux display-message -p '#S') # get current session ID
+
+	# get command in each pane, and the ID of the associated pane
+	for p in `tmux list-panes -s -F "#{pane_current_command}-#{pane_id}" -t "$s"` ; do
+
 		progname=$(echo $p | tr "-" " " | awk '{print $1}')
 		paneid=$(echo $p | tr "-" " " | awk '{print $2}')
 		echo $progname, $paneid
-		if [ $progname == 'vim' ]; then # if the program in the current pane is vim, send commands to vim in this pane
+
+		# if process in current pane is Vim, send commands to the Vim process running in this pane
+		if [ $progname == 'vim' ]; then
+
 			# change vim's pwd to the directory of the pane where the command was sent
 			tmux send-keys -l -t $paneid ":cd $PWD
 			"
+
 			# then send the command line arguments
 			for var in "$@"; do
+				##?? TODO checking for valid files, cmd flags, etc
 				tmux send-keys -l -t $paneid ":ed $var
 				"
 			done
+
 			# move vim back to the previous working directory
 			tmux send-keys -l -t $paneid ":cd -
 			"
 
-			tmux select-pane -t $paneid # select the pane where Vim is located
+			# select the pane where Vim is located
+			tmux select-pane -t $paneid
 			exit # end
 		fi
 	done
