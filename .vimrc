@@ -9,6 +9,11 @@ set t_RV= ttymouse=xterm2
 " Appearance
 """"""""""""""""""""
 
+" Spelling corrections
+abbr abrr abbr
+abbr fuction function
+abbr hierarcy hierarchy
+
 " C-like indentation
 set autoindent
 set smartindent
@@ -23,7 +28,6 @@ set ignorecase
 "et smartcase
 
 " add line numbers
-set relativenumber
 set number
 
 "always a certain number of lines above/below current cursor position
@@ -131,8 +135,12 @@ nnoremap <Leader><Leader> <<
 nnoremap <Leader>. >>
 
 " make with ,m; make clean with ,gm
-nnoremap <Leader>m :call VimuxRunCommand("make")<CR>
-nnoremap <Leader>gm :call VimuxRunCommand("make clean")<CR>
+nnoremap <Leader>m :wa<CR> :call VimuxRunCommand("make")<CR>
+nnoremap <Leader>gm :wa<CR> :call VimuxRunCommand("make clean")<CR>
+
+" some remaps for NerdCommenter
+nnoremap <Leader>ca :call NERDComment('n', "append")<CR>
+nnoremap <Leader>cf :call NERDComment('n', "toggle")<CR>
 
 " ignore accidental uppercase for W and Q
 command! Q q
@@ -158,7 +166,7 @@ autocmd! BufWritePost ~/.vimrc source $MYVIMRC
 "autocmd! BufWritePost ~/.nvimrc source % 
 
 " do similar if saving .tmux.conf
-autocmd! BufWritePost ~/.tmux.conf !tmux source-file ~/.tmux.conf
+autocmd! BufWritePost ~/.tmux.conf :call VimuxRunCommand("tmux source-file ~/.tmux.conf")
 
 " session restore on entering Vim
 autocmd VimEnter * call RestoreSess()
@@ -216,7 +224,7 @@ fu! ToggleLineNumbers()
 		set relativenumber
 	endif
 endfunction
-nnoremap <Leader>n :call ToggleLineNumbers()<CR>
+nnoremap <Leader>l :call ToggleLineNumbers()<CR>
 
 " restore session on entry, but only if no other command line arguments & not in diff mode
 fu! RestoreSess()

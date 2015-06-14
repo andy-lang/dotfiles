@@ -2,6 +2,7 @@
 
 #!/usr/bin/env bash
 
+tmux start-server
 echo "Options: "
 
 declare -a current_sessions
@@ -20,13 +21,15 @@ if [ $num -lt ${#current_sessions[@]} ]; then
 	tmux attach-session -t ${current_sessions[$num]}
 elif [ $num -eq ${#current_sessions[@]} ]; then
 	read -p "Name for new session: " name
+	#tmux new-session bash -s $name
+	#tmux new bash
 	tmux new-session -s $name
 else
 	declare -a script_templates
 	echo "list of script templates:"
 
 	prevWD=$PWD
-	cd ~/.tmux/scripts
+	cd ~/.tmux/templates
 	for	line in $(ls *.sh); do
 		#tmux ls -F '#S'
 		echo ${#script_templates[@]}')' $line
@@ -36,7 +39,7 @@ else
 	read -p "Template: " tempnum
 	if [ $tempnum -lt ${#script_templates[@]} ]; then
 		read -p "Name for new session: " name
-		shell_cmd="~/.tmux/scripts/"${script_templates[$tempnum]}
+		shell_cmd="~/.tmux/templates/"${script_templates[$tempnum]}
 		#chmod +x $shell_cmd
 		tmux new-session -d -s $name
 		tmux send-keys -t $name.0 "$shell_cmd" Enter

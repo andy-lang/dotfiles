@@ -4,3 +4,12 @@
 [submodule ".tmux/plugins/tmux-resurrect"]
 	path = .tmux/plugins/tmux-resurrect
 	url = https://github.com/tmux-plugins/tmux-resurrect
+[submodule "tmux-continuum"]
+	path = tmux-continuum
+	url = https://github.com/tmux-plugins/tmux-continuum.git
+[submodule ".tmux/plugins/tmux-continuum"]
+	path = .tmux/plugins/tmux-continuum
+	url = https://github.com/tmux-plugins/tmux-continuum.git
+[submodule "/home/andrew/.tmux/themes"]
+	path = /home/andrew/.tmux/themes
+	url = https://github.com/seebi/tmux-colors-solarized

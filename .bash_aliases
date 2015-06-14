@@ -19,21 +19,23 @@ ms() {
 	cd $1
 }
 
-#alias vim='~/.tmux/omnivim.sh'
+alias tpadon='~/.bash/touchpad-toggle.sh 1'
+alias tpadoff='~/.bash/touchpad-toggle.sh 0'
+#alias vim='~/.tmux/scripts/omnivim.sh'
 
 bettertmux() {
 	if [ $# = 0 ]; then
-		~/.tmux/choose-session.sh
+		~/.tmux/scripts/choose-session.sh
 	else
 		tmux $@
 	fi
 }
-alias tmux='bettertmux' # always start tmux in 256 colours
+alias tmux='bettertmux'
 
-bettergrep() {
-    grep $* -n
-}
-alias grep='bettergrep' # always show line numbers in grep
+#bettergrep() {
+    #grep $* -n
+#}
+#alias grep='bettergrep' # always show line numbers in grep
 
 betterhelp() {
     help $* | less
@@ -72,3 +74,4 @@ sv() {
 		cd $upperdir
     fi
 }
+
