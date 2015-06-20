@@ -1,0 +1,52 @@
+#!/bin/bash
+#######################################################################
+# Bash script for interaction between tmux and vim
+# If vim is called from a pane in a tmux session,
+# this script checks if vim is already running in another pane.
+# If it is, it sends the commands to the vim process in that pane.
+# Else it creates a new vim process in the pane in which it was called.
+#######################################################################
+
+
+# tmux sets the environment variable $TMUX to be non-null if we're currently in a tmux session
+if [ -n "$TMUX" ]; then
+
+	##?? TODO check if vim process exists in window of pane where vim was called.
+	s=$(tmux display-message -p '#S') # get current session ID
+
+	# get command in each pane, and the ID of the associated pane
+	for p in `tmux list-panes -s -F "#{pane_current_command}-#{pane_id}" -t "$s"` ; do
+
+		progname=$(echo $p | tr "-" " " | awk '{print $1}')
+		paneid=$(echo $p | tr "-" " " | awk '{print $2}')
+		echo $progname, $paneid
+
+		# if process in current pane is Vim, send commands to the Vim process running in this pane
+		if [ $progname == 'vim' ]; then
+
+			# change vim's pwd to the directory of the pane where the command was sent
+			tmux send-keys -l -t $paneid ":cd $PWD
+			"
+
+			# then send the command line arguments
+			for var in "$@"; do
+				##?? TODO checking for valid files, cmd flags, etc
+				tmux send-keys -l -t $paneid ":ed $var
+				"
+			done
+
+			# move vim back to the previous working directory
+			tmux send-keys -l -t $paneid ":cd -
+			"
+
+			# select the pane where Vim is located
+			tmux select-pane -t $paneid
+			exit # end
+		fi
+	done
+	# if we get to here, no process was found. So just make a new Vim session in the current pane.
+	/usr/bin/vim $*
+else
+	# not enough tmux processes, so just make vim in the current terminal window
+	/usr/bin/vim $*
+fi

@@ -1,57 +1,48 @@
 #!/usr/bin/env bash
 
-#######################################################################
-# Bash script for interaction between tmux and vim
-# If vim is called from a pane in a tmux session,
-# this script checks if vim is already running in another pane.
-# If it is, it sends the commands to the vim process in that pane.
-# Else it creates a new vim process in the pane in which it was called.
-#######################################################################
+# make sure we're in tmux. If we are...
+if [ -n "$TMUX" ]; then
+	currentpaneid=$(tmux display-message -p "#D")
+	currentwindowid=$(tmux display-message -p "#{window_id}")
+	vimservercount=$(vim --serverlist | wc -l)
 
+	echo $currentpaneid, $currentwindowid, $vimservercount
+	vimservername="$currentwindowid"
 
-# get number of tmux processes
-tmuxProcesses=$(ps -e | grep tmux | wc -l)
-#echo '|'"$tmuxProcesses"'|'
-
-#if at least 2 tmux processes (ie client and server) running, then we're most likely in a tmux session
-if [ "$tmuxProcesses" -ge "2" ]; then
-
-	##?? TODO check if vim process exists in window of pane where vim was called.
-	s=$(tmux display-message -p '#S') # get current session ID
-
-	# get command in each pane, and the ID of the associated pane
-	for p in `tmux list-panes -s -F "#{pane_current_command}-#{pane_id}" -t "$s"` ; do
-
-		progname=$(echo $p | tr "-" " " | awk '{print $1}')
-		paneid=$(echo $p | tr "-" " " | awk '{print $2}')
-		echo $progname, $paneid
-
-		# if process in current pane is Vim, send commands to the Vim process running in this pane
-		if [ $progname == 'vim' ]; then
-
-			# change vim's pwd to the directory of the pane where the command was sent
-			tmux send-keys -l -t $paneid ":cd $PWD
-			"
-
-			# then send the command line arguments
-			for var in "$@"; do
-				##?? TODO checking for valid files, cmd flags, etc
-				tmux send-keys -l -t $paneid ":ed $var
-				"
-			done
-
-			# move vim back to the previous working directory
-			tmux send-keys -l -t $paneid ":cd -
-			"
-
-			# select the pane where Vim is located
-			tmux select-pane -t $paneid
-			exit # end
+	# no current vim servers open. Create a new vim server
+	if [ "$vimservercount" -eq "0" ]; then
+		# if command line parameters passed in, use 'em.
+		if [ "$#" -eq "0" ]; then
+			vim --servername $vimservername
+		else
+			vim --servername $vimservername --remote-silent $@
 		fi
-	done
-	# if we get to here, no process was found. So just make a new Vim session in the current pane.
-	/usr/bin/vim $*
-else
-	# not enough tmux processes, so just make vim in the current terminal window
-	/usr/bin/vim $*
+	
+	# there is a vim server open in the current window. So use it
+	elif [ "$vimservercount" -eq "1" ]; then
+		vim --servername $vimservername --remote $@
+		##?? TODO switch to pane id of vim
+	
+	# we have multiple vim servers. We want the one that's in the current window.
+	# to do this we search the list of currently-running vim servers.
+	# if there exists a server with this window id, we have a match. Otherwise, open it in the current pane
+	else
+		for p in $(vim --serverlist); do
+			if [ "$p" -eq "$currentwindowid" ]; then
+				vim --servername $vimservername --remote $@
+				exit
+			fi
+		done
+
+		# no vim server currently open in this window.
+		if [ "$#" -eq "0" ]; then
+			vim --servername $vimservername
+		else
+			vim --servername $vimservername --remote-silent $@
+		fi
+	fi
+
+# otherwise we're not in tmux. So just launch Vim business as usual
+else 
+	vim $@
 fi

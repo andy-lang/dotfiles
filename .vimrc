@@ -168,6 +168,13 @@ autocmd! BufWritePost ~/.vimrc source $MYVIMRC
 " do similar if saving .tmux.conf
 autocmd! BufWritePost ~/.tmux.conf :call VimuxRunCommand("tmux source-file ~/.tmux.conf")
 
+" and similar for .zshrc
+autocmd! BufWritePost ~/.zshrc :call VimuxRunCommand(". ~/.zshrc")
+
+" and bashrc, bash aliases
+autocmd! BufWritePost ~/.bashrc :call VimuxRunCommand(". ~/.bashrc")
+autocmd! BufWritePost ~/.bash_aliases :call VimuxRunCommand(". ~/.bash_aliases")
+
 " session restore on entering Vim
 autocmd VimEnter * call RestoreSess()
 
