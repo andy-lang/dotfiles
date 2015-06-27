@@ -1,7 +1,9 @@
 - investigate variable autocomplete
 - bash_aliases' "sv" command with autocomplete
 
-- give w0ng/vim-hybrid a shot
+- vim
+	- give w0ng/vim-hybrid a shot
+	- tpope/vim-dispatch for tmux/make interactions
 
 - tmux configurations
 	- if vim called in another pane, open it in a currently open one
