@@ -25,7 +25,7 @@ set incsearch
 
 " case insensitive searching, unless an upper case char was specified
 set ignorecase
-"et smartcase
+set smartcase
 
 " add line numbers
 set number
