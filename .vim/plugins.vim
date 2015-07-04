@@ -13,15 +13,19 @@ Plugin 'benmills/vimux'
 Plugin 'bling/vim-airline'
 Plugin 'bling/vim-bufferline'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'garbas/vim-snipmate'
+"Plugin 'garbas/vim-snipmate'
 Plugin 'kien/ctrlp.vim'
 "Plugin 'powerline/powerline'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'SirVer/ultisnips'
 
 " Syntax highlighting
 Plugin 'beyondmarc/opengl.vim'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'keith/tmux.vim'
+
+" Colourschemes
+Plugin 'benjaminwhite/Benokai'
 
 call vundle#end()
 filetype plugin indent on
