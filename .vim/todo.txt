@@ -6,7 +6,6 @@
 
 
 - vim
-	- give w0ng/vim-hybrid a shot
 	- tpope/vim-dispatch for tmux/make interactions
 
 - tmux configurations

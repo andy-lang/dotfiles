@@ -38,7 +38,6 @@ set shortmess+=A
 
 " 4 spaces per indent 
 set tabstop=4
-set softtabstop=4
 set shiftwidth=4
 
 " visual, bash-like autocomplete
@@ -48,11 +47,12 @@ set wildmode=longest,full
 " wrap long lines
 set wrap linebreak
 
-" syntax highlighting, suspiciously Sublime Text-like
+" syntax highlighting
 syntax enable
 set t_Co=256
 try
-    colorscheme Benokai
+	colorscheme Benokai
+	"colorscheme monokai
 endtry
 
 
@@ -180,6 +180,7 @@ autocmd VimEnter * call RestoreSess()
 
 " spellcheck for txt files
 autocmd BufRead *.txt setlocal spell spelllang=en_au
+autocmd FileType help setlocal nospell
 " syntax highlighting for snippet files
 autocmd FileType snippet set syntax=snippets
 " special settings for editing crontab files
@@ -216,6 +217,11 @@ let g:bufferline_echo = 0
 let g:ctrlp_clear_cache_on_exit = 0
 " show dotfiles
 let g:ctrlp_show_hidden = 1
+
+""" ultisnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 
 """"""""""""""""""""

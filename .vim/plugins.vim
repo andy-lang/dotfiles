@@ -26,6 +26,7 @@ Plugin 'keith/tmux.vim'
 
 " Colourschemes
 Plugin 'benjaminwhite/Benokai'
+Plugin 'sickill/vim-monokai'
 
 call vundle#end()
 filetype plugin indent on
