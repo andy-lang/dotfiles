@@ -1,3 +1,26 @@
-snippet env
+snippet bash
 	#!/usr/bin/bash
 endsnippet
+
+snippet for
+for (( ${2:i} = ${3:0}; $2 < ${1:count}; $2${4:++} )); do
+	${0}
+done
+endsnippet
+
+snippet if
+if [[ ${1:condition} ]]; then
+	$0
+fi
+endsnippet
+snippet elif
+elif [[ ${1:condition} ]]; then
+	$0
+endsnippet
+
+snippet "wh(ile)?" "while loop" r
+while [[ ${1:condition} ]]; do
+	$0
+done
+endsnippet
+
