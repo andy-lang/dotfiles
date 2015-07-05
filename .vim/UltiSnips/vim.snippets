@@ -1,0 +1,32 @@
+snippet "a(uto)?cmd" "autocommands" r
+autocmd! ${1:Event} ${2:Pattern} ${0:Command}
+endsnippet
+
+snippet for
+for ${1:i} in ${2:range}
+	$0
+endfor
+endsnippet
+
+snippet "fun?c?t?i?o?n?" "" r
+fu! $1($2)
+	$0
+endfunction
+endsnippet
+
+snippet if
+if ($1)
+	$0
+endif
+endsnippet
+snippet "el(se)?if" "elseif" r
+elseif ($1)
+	$0
+endsnippet
+
+snippet "wh(ile)?" "" r
+while ${1:condition}
+	$0
+endwhile
+endsnippet
+
