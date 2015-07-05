@@ -1,0 +1,10 @@
+snippet "com(mand)?" "" r
+${1:$(CC)} ${2:$(CFLAGS)} ${3:FLAGS} ${4:$<} -o ${5:$@}
+endsnippet
+
+snippet rule
+${1:rule}: ${2:dependencies}
+	${3:commands}
+
+endsnippet
+
