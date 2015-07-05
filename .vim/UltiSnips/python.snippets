@@ -1,0 +1,21 @@
+# Babby's first language
+
+#TODO - add functions here
+snippet "cl(ass)?" "Class snippet" r
+class ${1:ClassName}:
+	'${2:Optional documentation string}'
+
+	$3
+
+	def __init__(self$4):
+		${0:pass}
+	
+endsnippet
+
+snippet def "function with class detection. Lovingly modified from honza's snippets repository" b
+def ${1:function}(`!p
+if snip.indent:
+	snip.rv = 'self' + (", " if len(t[2]) else "")`${2:args}):
+	${0:pass}
+endsnippet
+

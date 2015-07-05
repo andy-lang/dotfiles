@@ -145,7 +145,7 @@ command! Q q
 command! W w
 
 " turn off fucking ex mode
-nnoremap Q <nop>
+"nnoremap Q <nop>
 " similar for q:
 nnoremap q: <nop>
 
@@ -185,6 +185,8 @@ autocmd FileType snippet set syntax=snippets
 autocmd BufNewFile,BufRead crontab.* set nobackup | set nowritebackup
 " tab settings for editing makefiles
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+" Python - autocapitalise booleans
+autocmd FileType python :iabbrev <buffer> true True| :iabbrev <buffer> false False
 
 
 """"""""""""""""""""
@@ -216,7 +218,7 @@ let g:ctrlp_clear_cache_on_exit = 0
 " show dotfiles
 let g:ctrlp_show_hidden = 1
 
-""" ultisnips
+""" UltiSnips
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
