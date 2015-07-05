@@ -1,5 +1,6 @@
-snippet class
-public class ${1:`(expand('%:r'))`} extends ${2:Parent} {
+snippet "cl(ass)?" "" r
+public class ${1:`(expand('%:r'))`}`!p
+snip.rv = ( " extends" if len(t[2]) else "")`${2: Parent} {
 	${3:}
 }
 endsnippet
@@ -30,7 +31,7 @@ public static void main(String[] args) {
 }
 endsnippet
 
-snippet println
+snippet "print(ln)?" "" r
 System.out.println(${1:});
 endsnippet
 
