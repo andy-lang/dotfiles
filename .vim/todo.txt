@@ -4,9 +4,8 @@
 - xcape
 - neocomplete, neocachecomplete
 
-
 - vim
-	- tpope/vim-dispatch for tmux/make interactions
+	- snippets for markdown, (html/css?, ruby?)
 
 - tmux configurations
 	- vimrc checks if running in a tmux pane or not, maps stuff accordingly

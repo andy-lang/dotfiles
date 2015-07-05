@@ -188,6 +188,8 @@ autocmd! BufNewFile,BufRead crontab.* set nobackup | set nowritebackup
 autocmd! FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 " Python - autocapitalise booleans
 autocmd! FileType python :iabbrev <buffer> true True| :iabbrev <buffer> false False
+" Ruby - capitalise = capitalize
+autocmd! FileType ruby :iabbrev <buffer> capitalise capitalize
 
 
 """"""""""""""""""""
