@@ -1,0 +1,45 @@
+snippet class
+public class ${1:`(expand('%:r'))`} extends ${2:Parent} {
+	${3:}
+}
+endsnippet
+
+snippet for
+for (int ${2:i} = ${3:0}; $2 < ${1:count}; ${4:$2++}) {
+	${0:/* code */}
+}
+endsnippet
+
+snippet if
+if (${1}) {
+	${2}
+}
+endsnippet
+
+snippet imp "Import custom package"
+import ${1};
+endsnippet
+
+snippet Imp "Import Java package"
+import java.${1};
+endsnippet
+
+snippet main
+public static void main(String[] args) {
+	${1:}
+}
+endsnippet
+
+snippet println
+System.out.println(${1:});
+endsnippet
+
+snippet todo
+//TODO 
+endsnippet
+
+snippet while
+while (${1}) {
+	${0}
+}
+endsnippet

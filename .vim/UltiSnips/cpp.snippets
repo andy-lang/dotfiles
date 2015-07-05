@@ -1,0 +1,34 @@
+extends c
+
+
+snippet begin
+${1:vect}.begin(), $1.end()
+endsnippet
+
+snippet cerr
+std::cerr << ${1:data} << ${2:std::endl};
+endsnippet
+
+snippet cin
+std::cin >> ${1:data};
+endsnippet
+
+snippet class
+class ${1:`expand('%:t:r')`} {
+public:
+	$1();
+	$1(${2:args});
+	~$1();
+
+private:
+
+};
+endsnippet
+
+snippet cout
+std::cout << ${1:data} << ${2:std::endl};
+endsnippet
+
+snippet vect
+std::vector<${1:int}> ${2:};
+endsnippet

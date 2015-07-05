@@ -1,0 +1,44 @@
+snippet for
+for (var ${2:i} = ${3:0}; $2 < ${1:count}; ${4:$2++}) {
+	${0:/* code */}
+}
+endsnippet
+
+snippet forin
+for (var ${1:i} in ${2:}) {
+	${0}
+}
+endsnippet
+
+snippet forpr "For loop over the properties of an object"
+for (var property in ${1}) {
+	${0}
+}
+endsnippet
+
+snippet fun
+function ${1}(${2}) {
+	${0}
+}
+endsnippet
+
+snippet if
+if (${1}) {
+	${2}
+}
+endsnippet
+
+snippet hasown
+${1}.hasOwnProperty('${2}');
+endsnippet
+
+snippet log
+console.log(${1});
+endsnippet
+
+snippet while
+while (${1}) {
+	${2}
+}
+endsnippet
+
