@@ -91,8 +91,6 @@ let mapleader=","
 " Esc to hide syntax highlighting
 nnoremap <Esc> :noh<return><Esc>
 
-" automatic brace creation
-imap {<CR> {<CR>}<Esc>O
 " gr for previous tab
 map gr gT
 " gb for bottom of file

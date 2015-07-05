@@ -14,10 +14,12 @@ Plugin 'bling/vim-airline'
 Plugin 'bling/vim-bufferline'
 Plugin 'christoomey/vim-tmux-navigator'
 "Plugin 'garbas/vim-snipmate'
+Plugin 'jiangmiao/auto-pairs'
 Plugin 'kien/ctrlp.vim'
 "Plugin 'powerline/powerline'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'SirVer/ultisnips'
+Plugin 'tpope/vim-dispatch'
 
 " Syntax highlighting
 Plugin 'beyondmarc/opengl.vim'
