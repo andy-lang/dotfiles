@@ -53,6 +53,7 @@ set t_Co=256
 try
 	colorscheme Benokai
 	"colorscheme monokai
+catch
 endtry
 
 
@@ -133,8 +134,8 @@ nnoremap <Leader><Leader> <<
 nnoremap <Leader>. >>
 
 " make with ,m; make clean with ,gm
-nnoremap <Leader>m :wa<CR> :call VimuxRunCommand("make")<CR>
-nnoremap <Leader>gm :wa<CR> :call VimuxRunCommand("make clean")<CR>
+nnoremap <Leader>m :Make <CR>
+nnoremap <Leader>gm :Make clean<CR>
 
 " some remaps for NerdCommenter
 nnoremap <Leader>ca :call NERDComment('n', "append")<CR>
@@ -174,19 +175,19 @@ autocmd! BufWritePost ~/.bashrc :call VimuxRunCommand(". ~/.bashrc")
 autocmd! BufWritePost ~/.bash_aliases :call VimuxRunCommand(". ~/.bash_aliases")
 
 " session restore on entering Vim
-autocmd VimEnter * call RestoreSess()
+autocmd! VimEnter * call RestoreSess()
 
 " spellcheck for txt files
-autocmd BufRead *.txt setlocal spell spelllang=en_au
-autocmd FileType help setlocal nospell
+autocmd! BufRead *.txt setlocal spell spelllang=en_au
+autocmd! FileType help setlocal nospell
 " syntax highlighting for snippet files
-autocmd FileType snippet set syntax=snippets
+autocmd! FileType snippet set syntax=snippets
 " special settings for editing crontab files
-autocmd BufNewFile,BufRead crontab.* set nobackup | set nowritebackup
+autocmd! BufNewFile,BufRead crontab.* set nobackup | set nowritebackup
 " tab settings for editing makefiles
-autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+autocmd! FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 " Python - autocapitalise booleans
-autocmd FileType python :iabbrev <buffer> true True| :iabbrev <buffer> false False
+autocmd! FileType python :iabbrev <buffer> true True| :iabbrev <buffer> false False
 
 
 """"""""""""""""""""
