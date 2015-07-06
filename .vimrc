@@ -146,7 +146,7 @@ command! Q q
 command! W w
 
 " turn off fucking ex mode
-"nnoremap Q <nop>
+nnoremap Q <nop>
 " similar for q:
 nnoremap q: <nop>
 
