@@ -11,11 +11,12 @@ while getopts "hps" opt; do
 			echo $usage
 			;;
 		p)
-			battery_percentage=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep 'percentage' | awk '{print $2}' | tr ".%" " " | awk '{print $1}')
-			echo $battery_percentage'%'
+
+			battery_percentage=$(upower -i $(upower -e | grep 'BAT') | grep -E 'percentage' | awk '{print $2}')
+			echo $battery_percentage
 			;;
 		s) 
-			battery_state=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep 'state' | awk '{print $2}')
+			battery_state=$(upower -i $(upower -e | grep 'BAT') | grep -E 'state' | awk '{print $2}')
 			echo $battery_state
 			;;
 		\?)
