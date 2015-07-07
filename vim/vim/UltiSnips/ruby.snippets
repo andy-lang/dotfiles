@@ -4,6 +4,23 @@ $0
 =end
 endsnippet
 
+snippet cl(ass)?
+class ${1:Class}
+	def initialize(${2})
+		${3}
+	end
+
+	$0
+endsnippet
+
+snippet def
+def ${1:function}`!p
+snip.rv = ('(' if len(t[2]) else "")`${2:args}`!p
+snip.rv = (')' if len(t[2]) else "")`
+	$3
+end
+endsnippet
+
 snippet for
 for ${1:i} in ${5:${2:1}${4:...}${3:10}}
 	$0
@@ -38,15 +55,11 @@ endsnippet
 
 
 # String manipulation
-snippet "down?c(ase)?" "lowercase a string" r
+snippet "down(case)?" "lowercase a string" r
 $0.downcase
 endsnippet
-snippet "upc(ase)?" "uppercase a string" r
+snippet "up(case)?" "uppercase a string" r
 $0.upcase
-endsnippet
-
-snippet "inc(lude)?" "include" r
-$1.include? $0
 endsnippet
 
 snippet len "length of a string"
