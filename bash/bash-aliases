@@ -19,8 +19,8 @@ ms() {
 	cd $1
 }
 
-alias tpadon='~/.bash/touchpad-toggle.sh 1'
-alias tpadoff='~/.bash/touchpad-toggle.sh 0'
+#alias tpadon='~/.bash/touchpad-toggle.sh 1'
+#alias tpadoff='~/.bash/touchpad-toggle.sh 0'
 #alias vim='~/.tmux/scripts/omnivim.sh'
 
 bettertmux() {
@@ -75,3 +75,4 @@ sv() {
     fi
 }
 
+alias git=hub

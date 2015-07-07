@@ -1,5 +1,5 @@
 [user]
-	name = HandyAndy136
+	name = andy-lang
 	email = langy26@gmail.com
 [credential]
 	helper = cache
@@ -16,4 +16,4 @@
 	excludesfile = ~/.gitignore
 	editor = vim
 [github]
-	user = HandyAndy136
+	user = andy-lang
