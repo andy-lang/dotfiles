@@ -141,6 +141,9 @@ nnoremap <Leader>gm :Make clean<CR>
 nnoremap <Leader>ca :call NERDComment('n', "append")<CR>
 nnoremap <Leader>cf :call NERDComment('n', "toggle")<CR>
 
+" ,ev to edit vimrc
+nnoremap <Leader>ev :e $MYVIMRC<CR>
+
 " ignore accidental uppercase for W and Q
 command! Q q
 command! W w
@@ -177,9 +180,6 @@ autocmd! BufWritePost ~/.bash_aliases :call VimuxRunCommand(". ~/.bash_aliases")
 " session restore on entering Vim
 autocmd! VimEnter * call RestoreSess()
 
-" spellcheck for txt files
-autocmd! BufRead *.txt setlocal spell spelllang=en_au
-autocmd! FileType help setlocal nospell
 " syntax highlighting for snippet files
 autocmd! FileType snippet set syntax=snippets
 " special settings for editing crontab files
@@ -190,7 +190,12 @@ autocmd! FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 autocmd! FileType python :iabbrev <buffer> true True| :iabbrev <buffer> false False
 " Ruby - capitalise = capitalize
 autocmd! FileType ruby :iabbrev <buffer> capitalise capitalize
+" Markdown - syntax highlighting
+autocmd! BufRead,BufNew *.md setlocal filetype=markdown
 
+" spellcheck for txt files
+autocmd! FileType text,markdown setlocal spell spelllang=en_au
+autocmd! FileType help setlocal nospell
 
 """"""""""""""""""""
 " Plugin-specific settings

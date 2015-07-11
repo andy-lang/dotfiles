@@ -14,6 +14,10 @@ alias cls='clear' # clear the terminal
 #alias ls="ls --color" # list in glorious technicolor, and sorted by file extension
 alias ll="ls -A"
 
+vim() {
+	~/.tmux/scripts/omnivim.sh $@
+}
+
 ms() {
 	mkdir $1
 	cd $1
@@ -22,6 +26,7 @@ ms() {
 #alias tpadon='~/.bash/touchpad-toggle.sh 1'
 #alias tpadoff='~/.bash/touchpad-toggle.sh 0'
 #alias vim='~/.tmux/scripts/omnivim.sh'
+#alias vim=vimx
 
 bettertmux() {
 	if [ $# = 0 ]; then

@@ -19,4 +19,6 @@ PROMPT="%{$fg_bold[magenta]%}%n%{$reset_color%}@%{$fg_bold[green]%}%m%{$fg_no_bo
 
 autoload -U compinit
 
-
+if [ -f ~/.bash_aliases ]; then
+	. ~/.bash_aliases
+fi

@@ -19,6 +19,7 @@ snip.rv = ('(' if len(t[2]) else "")`${2:args}`!p
 snip.rv = (')' if len(t[2]) else "")`
 	$3
 end
+
 endsnippet
 
 snippet for
@@ -68,5 +69,12 @@ endsnippet
 
 snippet rev "reverse a string"
 $0.reverse
+endsnippet
+
+#########
+# RAILS #
+#########
+snippet "vali?d?a?t?e?s?" "" r
+validates :${1:var}, ${2:presence}: ${3:true}
 endsnippet
 

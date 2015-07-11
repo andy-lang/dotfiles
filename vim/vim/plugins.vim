@@ -20,9 +20,11 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-dispatch'
+"Plugin 'tpope/vim-surround'
 
 " Syntax highlighting
 Plugin 'beyondmarc/opengl.vim'
+Plugin 'gabrielelana/vim-markdown'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'keith/tmux.vim'
 
