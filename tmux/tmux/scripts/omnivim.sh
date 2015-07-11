@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# TODO:
+# - fix command line arguments (eg -e)
+# - fix stuff like +PluginInstall
 # if you have a custom alias for vim (eg default flag commands), change this variable as necessary in order to maintain it.
 vim_command='gvim -v'
 
@@ -21,7 +24,7 @@ if [ -n "$TMUX" ]; then
 		if [ "$#" -eq "0" ]; then
 			tmux send-keys -t "$currentpaneid" "$vim_command --servername $vimservername" C-m
 		else
-			tmux send-keys -t "$currentpaneid" "$vim_command --servername $vimservername --remote-silent $@" C-m
+			tmux send-keys -t "$currentpaneid" "$vim_command --servername $vimservername --remote-silent $*" C-m
 		fi
 	
 	# there is a vim server open in the current window. So use it
@@ -35,7 +38,7 @@ if [ -n "$TMUX" ]; then
 	else
 		for p in $($vim_command --serverlist); do
 			if [ "$p" == "$currentwindowid" ]; then
-				$vim_command --servername $vimservername --remote "$@"
+				$vim_command --servername $vimservername --remote $@
 				exit
 			fi
 		done
@@ -43,7 +46,7 @@ if [ -n "$TMUX" ]; then
 		if [ "$#" -eq "0" ]; then
 			tmux send-keys -t "$currentpaneid" "$vim_command --servername $vimservername" C-m
 		else
-			tmux send-keys -t "$currentpaneid" "$vim_command --servername $vimservername --remote-silent $@" C-m
+			tmux send-keys -t "$currentpaneid" "$vim_command --servername $vimservername --remote-silent $*" C-m
 		fi
 	fi
 	#else
