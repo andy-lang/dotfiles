@@ -35,8 +35,7 @@ if [ -n "$TMUX" ]; then
 	else
 		for p in $($vim_command --serverlist); do
 			if [ "$p" == "$currentwindowid" ]; then
-				echo "HERE"
-				$vim_command --servername $vimservername --remote $@
+				$vim_command --servername $vimservername --remote "$@"
 				exit
 			fi
 		done
