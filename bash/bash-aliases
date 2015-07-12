@@ -14,9 +14,7 @@ alias cls='clear' # clear the terminal
 #alias ls="ls --color" # list in glorious technicolor, and sorted by file extension
 alias ll="ls -A"
 
-vim() {
-	~/.tmux/scripts/omnivim.sh $@
-}
+alias vim="~/.tmux/scripts/omnivim.sh --vimcmd gvim --vimflags \"-v\""
 
 ms() {
 	mkdir $1
