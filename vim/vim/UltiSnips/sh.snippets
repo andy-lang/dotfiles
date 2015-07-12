@@ -8,6 +8,12 @@ for (( ${2:i} = ${3:0}; $2 < ${1:count}; $2${4:++} )); do
 done
 endsnippet
 
+snippet forin
+for ${1:arg} in ${2:$*}; do
+	$0
+done
+endsnippet
+
 snippet if
 if [[ ${1:condition} ]]; then
 	$0
