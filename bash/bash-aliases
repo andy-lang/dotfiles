@@ -13,7 +13,9 @@ alias cs='cdls' # cd to a place, then list it
 alias cls='clear' # clear the terminal
 #alias ls="ls --color" # list in glorious technicolor, and sorted by file extension
 alias ll="ls -A"
+alias la="ls -A"
 
+alias viml="~/.tmux/scripts/omnivim.sh --vimcmd gvim --vimflags \"-v\" --lit"
 alias vim="~/.tmux/scripts/omnivim.sh --vimcmd gvim --vimflags \"-v\""
 
 ms() {
