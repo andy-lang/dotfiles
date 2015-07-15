@@ -90,7 +90,7 @@ let g:cpp_experimental_template_highlight = 1
 let mapleader=","
 
 " Esc to hide syntax highlighting
-nnoremap <Esc> :noh<return><Esc>
+"nnoremap <Esc> :noh<return><Esc>
 
 " gr for previous tab
 map gr gT
@@ -210,7 +210,7 @@ let g:airline#extensions#bufferline#enabled = 1
 let g:airline#extensions#bufferline#overwrite_variables = 0
 let g:airline#extensions#whitespace#enabled = 0
 
-"let g:airline_section_c = '%n %t%m'
+let g:airline_section_c = '%n %t%m'
 let g:airline_section_y = '%L'
 let g:airline_section_z = '%l,%v'
 let g:bufferline_echo = 0
