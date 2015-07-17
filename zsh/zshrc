@@ -1,13 +1,14 @@
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
-SAVEHIST=1000
-setopt autocd
-setopt extendedglob
+SAVEHIST=10000
+setopt appendhistory autocd extendedglob
 unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
+
+zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
 zstyle :compinstall filename '/home/andrew/.zshrc'
 
 autoload -Uz compinit
@@ -15,10 +16,26 @@ compinit
 # End of lines added by compinstall
 
 autoload -U colors && colors
-PROMPT="%{$fg_bold[magenta]%}%n%{$reset_color%}@%{$fg_bold[green]%}%m%{$fg_no_bold[yellow]%}%1\%{$reset_color%}: "
+autoload -U promptinit
+PROMPT="$fg_bold[magenta]%3c$fg_no_bold[magenta] %(?.$fg[green].$fg[red])%%%f "
 
 autoload -U compinit
 
+# autoload bash aliases
 if [ -f ~/.bash_aliases ]; then
 	. ~/.bash_aliases
 fi
+
+setopt completealiases
+
+# Ignore duplicate lines in history
+setopt HIST_IGNORE_DUPS
+
+# Reenable help command
+autoload -U run-help
+autoload run-help-git
+autoload run-help-svn
+autoload run-help-svk
+#unalias run-help
+alias help=run-help
+
