@@ -15,9 +15,11 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+export DOTFILES=~/.dotfiles
+
 autoload -U colors && colors
 autoload -U promptinit
-PROMPT="$fg_bold[magenta]%3c$fg_no_bold[magenta] %(?.$fg[green].$fg[red])%%%f "
+#PROMPT="$fg_bold[magenta]%3c$fg_no_bold[magenta] %(?.$fg[green].$fg[red])%%%f "
 
 autoload -U compinit
 
@@ -39,3 +41,4 @@ autoload run-help-svk
 #unalias run-help
 alias help=run-help
 
+source $DOTFILES/zsh/ohmyzshrc
