@@ -1,0 +1,36 @@
+snippet do
+do ${1:i}=${2:expr}
+	$0
+end do
+endsnippet
+
+snippet "dowh(ile)?" "do while loop" r
+do while (${1:i}=${2:expr})
+	$0
+end do
+endsnippet
+
+
+snippet imp
+implicit none
+$0
+endsnippet
+
+snippet "prog(ram)?" "new program" r
+program $1
+	$0
+
+end program $1
+endsnippet
+
+
+# control flow
+snippet if
+if ($1) then
+	$0
+endif
+endsnippet
+snippet "el(se)?if" "" r
+else if ($1) then
+	$0
+endsnippet
