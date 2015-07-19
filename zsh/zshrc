@@ -1,34 +1,38 @@
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=10000
-setopt appendhistory autocd extendedglob
+# environment variables
+export DOTFILES=~/.dotfiles
+export ANTIGEN=~/Programs/antigen
+export EDITOR=vim
+
+# We use antigen now
+source $ANTIGEN/antigen.zsh
+antigen use oh-my-zsh
+antigen bundle git
+#antigen bundle svn-fast-info
+antigen bundle svn
+
+antigen theme $DOTFILES/zsh/themes andrew
+#antigen theme gallois
+
+# make sure prompt & colours are initialised BEFORE you start setting prompts ;)
+autoload -U colors && colors
+autoload -U promptinit
+
+# Prompt & theme
+#source $DOTFILES/zsh/themes/andrew.zsh-theme
+
 unsetopt beep
 bindkey -v
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
 
+# Completion
 zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
 zstyle :compinstall filename '/home/andrew/.zshrc'
 
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
 
-export DOTFILES=~/.dotfiles
-
-autoload -U colors && colors
-autoload -U promptinit
-#PROMPT="$fg_bold[magenta]%3c$fg_no_bold[magenta] %(?.$fg[green].$fg[red])%%%f "
 
 autoload -U compinit
 
-# autoload bash aliases
-if [ -f ~/.bash_aliases ]; then
-	. ~/.bash_aliases
-fi
-
-setopt completealiases
 
 # Ignore duplicate lines in history
 setopt HIST_IGNORE_DUPS
@@ -41,4 +45,17 @@ autoload run-help-svk
 #unalias run-help
 alias help=run-help
 
-source $DOTFILES/zsh/ohmyzshrc
+
+# History
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
+setopt autocd
+setopt extendedglob
+
+# Aliases
+setopt completealiases
+if [ -f ~/.bash_aliases ]; then
+	. ~/.bash_aliases
+fi
