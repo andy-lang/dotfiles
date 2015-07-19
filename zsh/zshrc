@@ -27,6 +27,11 @@ autoload run-help-svn
 autoload run-help-svk
 alias help=run-help
 
+# Run other config scripts
+for config_script in $ZSH/*.zsh; do
+	source "$config_script"
+done
+
 # History
 HISTFILE=~/.histfile
 HISTSIZE=10000
@@ -35,9 +40,4 @@ setopt appendhistory
 setopt autocd
 setopt extendedglob
 setopt HIST_IGNORE_DUPS
-
-# Run other config scripts
-for config_script in $ZSH/*.zsh; do
-	source "$config_script"
-done
-
+unsetopt HIST_VERIFY # make sure this is done last, as OMZ will overwrite it
