@@ -16,7 +16,10 @@ source $ZSH/completion.zsh
 
 # turn off beep
 unsetopt beep
+
+# vim command line editing
 bindkey -v
+export KEYTIMEOUT=1
 
 # Reenable help command
 autoload -U run-help
