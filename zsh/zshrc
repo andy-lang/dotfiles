@@ -1,25 +1,15 @@
 # environment variables
-export DOTFILES=~/.dotfiles
+export DOTFILES=$HOME/.dotfiles
+export ZSH=$DOTFILES/zsh
+
 export ANTIGEN=~/Programs/antigen
 export EDITOR=vim
 
-# We use antigen now
-source $ANTIGEN/antigen.zsh
-antigen use oh-my-zsh
-antigen bundle git
-#antigen bundle svn-fast-info
-antigen bundle svn
-
-antigen theme $DOTFILES/zsh/themes andrew
-#antigen theme gallois
-
-# make sure prompt & colours are initialised BEFORE you start setting prompts ;)
+# make sure prompt & colours are initialised BEFORE you start setting prompts
 autoload -U colors && colors
 autoload -U promptinit
 
-# Prompt & theme
-#source $DOTFILES/zsh/themes/andrew.zsh-theme
-
+# turn off beep
 unsetopt beep
 bindkey -v
 
@@ -30,21 +20,12 @@ zstyle :compinstall filename '/home/andrew/.zshrc'
 autoload -Uz compinit
 compinit
 
-
-autoload -U compinit
-
-
-# Ignore duplicate lines in history
-setopt HIST_IGNORE_DUPS
-
 # Reenable help command
 autoload -U run-help
 autoload run-help-git
 autoload run-help-svn
 autoload run-help-svk
-#unalias run-help
 alias help=run-help
-
 
 # History
 HISTFILE=~/.histfile
@@ -53,9 +34,10 @@ SAVEHIST=10000
 setopt appendhistory
 setopt autocd
 setopt extendedglob
+setopt HIST_IGNORE_DUPS
 
-# Aliases
-setopt completealiases
-if [ -f ~/.bash_aliases ]; then
-	. ~/.bash_aliases
-fi
+# Run other config scripts
+for config_script in $ZSH/*.zsh; do
+	source "$config_script"
+done
+
