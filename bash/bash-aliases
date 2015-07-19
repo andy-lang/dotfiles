@@ -35,7 +35,7 @@ bettertmux() {
 		tmux $@
 	fi
 }
-alias tmux='bettertmux'
+#alias tmux='bettertmux'
 
 #bettergrep() {
     #grep $* -n
