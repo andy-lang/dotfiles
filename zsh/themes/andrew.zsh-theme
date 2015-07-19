@@ -28,11 +28,21 @@ function gitrprompt {
 		gitrpromptstr="git"$ZSH_THEME_VCTRL_PROMPT_PREFIX
 		gitrpromptstr="$gitrpromptstr$(current_branch)"
 
+    gca=$(git_commits_ahead)
+    if [ -n "$gca" ]; then
+      gitrpromptstr="$gitrpromptstr|+${gca}"
+    fi
+
+
     pgd=$(git status --porcelain --untracked-files=no | wc -l)
-    if  [ "$pgd" != "0" ]; then
-      gitrpromptstr="$gitrpromptstr|$ZSH_THEME_VCTRL_PROMPT_DIRTY${pgd}"
+    if  [[ "$pgd" != "0" ]]; then
+      if [[ -n "$gca" ]]; then
+        gitrpromptstr="$gitrpromptstr,$ZSH_THEME_VCTRL_PROMPT_DIRTY${pgd}"
+      else
+        gitrpromptstr="$gitrpromptstr|$ZSH_THEME_VCTRL_PROMPT_DIRTY${pgd}"
+      fi
     else
-      gitrpromptstr="$gitrpromptstr$ZSH_THEME_VCTRL_PROMPT_CLEAN$(parse_git_dirty)"
+      gitrpromptstr="$gitrpromptstr$ZSH_THEME_VCTRL_PROMPT_CLEAN"
     fi
 
 		gitrpromptstr="$gitrpromptstr$ZSH_THEME_VCTRL_PROMPT_SUFFIX"
@@ -43,9 +53,5 @@ function gitrprompt {
 delim="%%"
 ret_status="%(?:%{$fg[green]%}$delim :%{$fg[red]%}$delim %s)"
 
-local termwidth=$(( ${COLUMNS}-1 ))
-#PROMPT='$fg_bold[magenta]%3c$fg_no_bold[magenta] ${ret_status}%f'
 PROMPT='%F{magenta}%B%3c%b%f ${ret_status}%f'
-rpromptstr='$(gitrprompt)$(svnrprompt)'
-RPROMPT=$rpromptstr
-
+RPROMPT='$(gitrprompt)$(svnrprompt)'
