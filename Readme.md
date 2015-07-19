@@ -2,7 +2,7 @@ A repository for my personal set of dotfiles. Currently the main software config
 
 Unlike the traditional structure of dotfiles, each program is split up into its own folder. The reason for this is purely my own need for compulsive organisation. If you want to use the dotfiles, you can either move them to the appropriate location (not recommended), or symlink them to the locations expected by their software. For example,
 
-	   ```sudo ln -s ~/.dotfiles/vim/vimrc ~/.vimrc```
+	   sudo ln -s ~/.dotfiles/vim/vimrc ~/.vimrc
 
 would symbolically link the vimrc file to a location that Vim expects.
 
