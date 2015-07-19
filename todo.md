@@ -8,9 +8,8 @@
 	* snippets for markdown, (html/css?, ruby?)
 
 * tmux configurations
-	* vimrc checks if running in a tmux pane or not, maps stuff accordingly
 	* vim-resurrect
-	* if vim called in another pane, open it in a currently open one
-	* automatic window naming to pane current directory (not absolute path)
 	* keybindings
+
 * zsh
+  * move bash stuff to zsh folder
