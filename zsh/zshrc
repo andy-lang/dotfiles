@@ -9,16 +9,14 @@ export EDITOR=vim
 autoload -U colors && colors
 autoload -U promptinit
 
+# This *could* be done in a for loop, but I like to specify the order
+source $ZSH/antigen.zsh
+source $ZSH/aliases.zsh
+source $ZSH/completion.zsh
+
 # turn off beep
 unsetopt beep
 bindkey -v
-
-# Completion
-zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
-zstyle :compinstall filename '/home/andrew/.zshrc'
-
-autoload -Uz compinit
-compinit
 
 # Reenable help command
 autoload -U run-help
@@ -26,11 +24,6 @@ autoload run-help-git
 autoload run-help-svn
 autoload run-help-svk
 alias help=run-help
-
-# Run other config scripts
-for config_script in $ZSH/*.zsh; do
-	source "$config_script"
-done
 
 # History
 HISTFILE=~/.histfile
