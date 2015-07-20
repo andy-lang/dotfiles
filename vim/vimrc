@@ -158,6 +158,7 @@ autocmd! VimEnter * call RestoreSess()
 
 " syntax highlighting for snippet files
 autocmd! FileType snippet set syntax=snippets
+autocmd! BufRead,BufNewFile *.snippets set filetype=snippets
 " special settings for editing crontab files
 autocmd! BufNewFile,BufRead crontab.* set nobackup | set nowritebackup
 " tab settings for editing makefiles
