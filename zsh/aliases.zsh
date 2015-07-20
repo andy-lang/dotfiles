@@ -36,12 +36,10 @@ function ms() {
 }
 
 function size() {
-	for i in $*; do
-		stat "$i" -c "%n: %sB"
-	done
+	du -k $*
 }
 alias cd..='cd ..'
-alias ll='ls -A'
+alias ll='ls -alF'
 alias la='ls -A'
 
 # Programming
