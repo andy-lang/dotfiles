@@ -16,20 +16,40 @@ implicit none
 $0
 endsnippet
 
-snippet "prog(ram)?" "new program" r
+snippet intent
+${1:type}, intent(${2:inout}) :: $0
+endsnippet
+
+snippet "mod(ule)?" "module" r
+module ${1:mod}
+	$0
+end module $1
+endsnippet
+
+
+snippet "pro(gram)?" "new program" r
 program $1
 	$0
-
 end program $1
+endsnippet
+
+snippet "func(tion)?" "function" r
+function ${1:subr}(${2:args}) `!p
+snip.rv = ("result(" if len(t[3]) else "")`${3:ret}`!p
+snip.rv = (")" if len(t[3]) else "")`
+	${4:intent}
+
+	$0
+end function $1
 endsnippet
 
 snippet "subro?u?t?i?n?e?" "subroutine" r
 subroutine ${1:subr}(${2:args})
-	${3:intents}
+	${3:intent}
+
 	$0
 end subroutine $1
 endsnippet
-
 
 
 # control flow
