@@ -23,11 +23,6 @@ ms() {
 	cd $1
 }
 
-#alias tpadon='~/.bash/touchpad-toggle.sh 1'
-#alias tpadoff='~/.bash/touchpad-toggle.sh 0'
-#alias vim='~/.tmux/scripts/omnivim.sh'
-#alias vim=vimx
-
 bettertmux() {
 	if [ $# = 0 ]; then
 		~/.tmux/scripts/choose-session.sh
