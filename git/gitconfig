@@ -4,14 +4,14 @@
 [credential]
 	helper = cache
 [alias]
-        br = branch
+	br = branch
 	ci = commit
 	co = checkout
-        ls = ls-files
+	ls = ls-files
 	st = status
-        stu = status -uno
 	stat = status
-        undo = checkout --
+	stu = status -uno
+	undo = checkout --
 [core]
 	excludesfile = ~/.gitignore
 	editor = vim
