@@ -52,8 +52,8 @@ set wrap linebreak
 syntax enable
 set t_Co=256
 try
-	"colorscheme Benokai
-	colorscheme focuspoint
+	colorscheme Benokai
+	"colorscheme focuspoint
 catch
 endtry
 
@@ -118,8 +118,9 @@ nnoremap <Leader>gm :Make clean<CR>
 nnoremap <Leader>ca :call NERDComment('n', "append")<CR>
 nnoremap <Leader>cf :call NERDComment('n', "toggle")<CR>
 
-" ,ev to edit vimrc
+" shortcuts to edit rc files
 nnoremap <Leader>ev :e $MYVIMRC<CR>
+nnoremap <Leader>ez :e ~/.zshrc<CR>
 
 " ignore accidental uppercase for W and Q
 command! Q q

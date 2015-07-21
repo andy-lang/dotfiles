@@ -53,6 +53,7 @@ function sv() {
 		cd $upperdir
     fi
 }
+alias gfort='gfortran'
 alias viml="~/.tmux/scripts/omnivim.sh --vimcmd gvim --vimflags \"-v\" --lit"
 alias vim="~/.tmux/scripts/omnivim.sh --vimcmd gvim --vimflags \"-v\""
 
