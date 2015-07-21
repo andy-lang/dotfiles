@@ -5,6 +5,11 @@ export ZSH=$DOTFILES/zsh
 export ANTIGEN=~/Programs/antigen
 export EDITOR=vim
 
+xcapeInstalled=$(which xcape 2>/dev/null)
+if [ -n "$xcapeInstalled" ]; then
+	xcape -e 'Control_L=Escape;Control_R=Escape;Caps_Lock=Escape'
+fi
+
 # make sure prompt & colours are initialised BEFORE you start setting prompts
 autoload -U colors && colors
 autoload -U promptinit
