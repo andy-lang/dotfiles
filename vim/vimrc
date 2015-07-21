@@ -52,7 +52,8 @@ set wrap linebreak
 syntax enable
 set t_Co=256
 try
-	colorscheme Benokai
+	"colorscheme Benokai
+	colorscheme focuspoint
 catch
 endtry
 
