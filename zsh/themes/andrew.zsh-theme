@@ -50,8 +50,9 @@ function gitrprompt {
 	fi
 }
 
-delim="%%"
-ret_status="%(?:%{$fg[green]%}$delim :%{$fg[red]%}$delim %s)"
+delim="%(#:★:•)"
+ret_status="%(?:%{%F{green}%}$delim :%{%F{red}%}$delim %s)%b%f"
 
+#PROMPT='${root_str}%F{magenta}%B%3c%b%f ${ret_status}%f'
 PROMPT='%F{magenta}%B%3c%b%f ${ret_status}%f'
 RPROMPT='$(gitrprompt)$(svnrprompt)'

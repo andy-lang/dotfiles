@@ -1,8 +1,8 @@
 # environment variables
-export DOTFILES=$HOME/.dotfiles
+export DOTFILES=/home/andrew/.dotfiles
 export ZSH=$DOTFILES/zsh
 
-export ANTIGEN=~/Programs/antigen
+export ANTIGEN=/home/andrew/Programs/antigen
 export EDITOR=vim
 
 # if xcape is installed, remap Ctrl keys + CapsLock to be Escape
@@ -17,7 +17,10 @@ autoload -U promptinit
 # This *could* be done in a for loop, but I like to specify the order
 source $ZSH/antigen.zsh
 source $ZSH/aliases.zsh
-source $ZSH/completion.zsh
+if [ "$EUID" -ne 0 ]; then
+	# don't set autocomplete if running in root privileges
+	source $ZSH/completion.zsh
+fi
 
 # turn off beep
 unsetopt beep
