@@ -12,8 +12,9 @@ Plugin 'tomtom/tlib_vim'
 
 Plugin 'benmills/vimux'
 Plugin 'bling/vim-airline'
-Plugin 'bling/vim-bufferline'
+"Plugin 'bling/vim-bufferline'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'edkolev/tmuxline.vim'
 "Plugin 'garbas/vim-snipmate'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'johnsyweb/vim-makeshift'
@@ -35,10 +36,7 @@ Plugin 'keith/tmux.vim'
 
 " Colourschemes
 Plugin 'benjaminwhite/Benokai'
-Plugin 'chase/focuspoint-vim'
-"Plugin 'sickill/vim-monokai'
+Plugin 'nanotech/jellybeans.vim'
 
 call vundle#end()
 filetype plugin indent on
-
-

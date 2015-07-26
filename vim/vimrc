@@ -5,6 +5,8 @@ filetype plugin on
 " stop that annoying glitch where vim deletes lines on entry
 set t_RV= ttymouse=xterm2
 
+set nocompatible
+
 """"""""""""""""""""
 " Appearance
 """"""""""""""""""""
@@ -52,8 +54,10 @@ set wrap linebreak
 syntax enable
 set t_Co=256
 try
-	colorscheme Benokai
+	"colorscheme Benokai
+	"colorscheme adio
 	"colorscheme focuspoint
+	colorscheme jellybeans
 catch
 endtry
 
@@ -72,8 +76,8 @@ set backspace=2
 " if no register specified, copy to system clipboard
 set clipboard=unnamedplus
 
-" bash shell
-set shell=bash
+" zsh shell
+set shell=zsh
 
 " open make errors in new split/buffer if not open
 set switchbuf=useopen,usetab,split
@@ -106,13 +110,9 @@ if !exists(':TmuxNavigateRight')
 	nnoremap <C-L> <C-w>l
 endif
 
-" indentation without shift
-nnoremap <Leader><Leader> <<
-nnoremap <Leader>. >>
-
 " make with ,m; make clean with ,gm
 nnoremap <Leader>m :Make <CR>
-nnoremap <Leader>gm :Make clean<CR>
+nnoremap <Leader>mc :Make clean<CR>
 
 " some remaps for NerdCommenter
 nnoremap <Leader>ca :call NERDComment('n', "append")<CR>
@@ -174,6 +174,7 @@ autocmd! BufRead,BufNew *.md set filetype=markdown
 " zsh - highlight theme files
 autocmd! BufRead,BufNewFile *.zsh-theme set filetype=zsh
 
+" Extra Fortran settings for syntactic goodness
 let fortran_free_source=1
 let fortran_do_enddo=1
 
@@ -185,16 +186,19 @@ autocmd! FileType help setlocal nospell
 " Plugin-specific settings
 """"""""""""""""""""
 
-""" airline, bufferline, statusline
+""" vim-airline
 
 " always show statusline
 set laststatus=2
 
-let g:airline#extensions#bufferline#enabled = 1
-let g:airline#extensions#bufferline#overwrite_variables = 0
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'jellybeans'
+let g:airline#extensions#tmuxline#enabled = 1
+let g:airline#extensions#tmuxline#snapshot_file = "~/.tmux/themes/vim-tmuxline.conf"
 let g:airline#extensions#whitespace#enabled = 0
 
-let g:airline_section_c = '%n %t%m'
+let g:airline_section_b = '%n %t%m'
+let g:airline_section_c = ''
 let g:airline_section_y = '%L'
 let g:airline_section_z = '%l,%v'
 let g:bufferline_echo = 0
@@ -208,18 +212,6 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 """"""""""""""""""""
 " Functions
 """"""""""""""""""""
-" Toggle between relative and absolute line numbers
-fu! ToggleLineNumbers() 
-	if (&relativenumber == 1)
-		set norelativenumber
-		set number
-	else
-		set nonumber
-		set relativenumber
-	endif
-endfunction
-nnoremap <Leader>l :call ToggleLineNumbers()<CR>
-
 " restore session on entry, but only if no other command line arguments & not in diff mode
 fu! RestoreSess()
     if filereadable(getcwd() . '/Session.vim') && !&diff && argc() == 0
