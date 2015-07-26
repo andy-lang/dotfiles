@@ -76,9 +76,6 @@ set backspace=2
 " if no register specified, copy to system clipboard
 set clipboard=unnamedplus
 
-" zsh shell
-set shell=zsh
-
 " open make errors in new split/buffer if not open
 set switchbuf=useopen,usetab,split
 
