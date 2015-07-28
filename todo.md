@@ -1,12 +1,11 @@
-* investigate xcape
+* installation script
 
 * vim
 	* snippets for markdown, (html/css?, ruby?)
+  * eclim
 
-* tmux configurations
-	* vim-resurrect
+* tmux
 	* keybindings
 
 * zsh
   * bash_aliases' "sv" command with autocomplete
-  * move bash stuff to zsh folder

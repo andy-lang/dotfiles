@@ -175,8 +175,12 @@ autocmd! BufRead,BufNewFile *.zsh-theme set filetype=zsh
 let fortran_free_source=1
 let fortran_do_enddo=1
 
+" LaTeX settings
+let g:tex_flavor='latex'
+let g:tex_nospell=0
+
 " spellcheck for txt files
-autocmd! FileType text,markdown setlocal spelllang=en_au
+autocmd! FileType text,markdown,tex setlocal spell spelllang=en_au
 autocmd! FileType help setlocal nospell
 
 """"""""""""""""""""
@@ -199,6 +203,13 @@ let g:airline_section_c = ''
 let g:airline_section_y = '%L'
 let g:airline_section_z = '%l,%v'
 let g:bufferline_echo = 0
+
+""" vim-makeshift
+" additional make commands for LaTeX
+let g:makeshift_systems = {
+	\'*.tex': 'latexmk -pdf'
+	\}
+
 
 """ UltiSnips
 let g:UltiSnipsExpandTrigger="<tab>"
