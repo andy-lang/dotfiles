@@ -5,14 +5,14 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " initial plugins, required for some other stuff
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 "Plugin 'xolox/vim-misc'
 
 Plugin 'benmills/vimux'
 Plugin 'bling/vim-airline'
-"Plugin 'bling/vim-bufferline'
+Plugin 'bling/vim-bufferline'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'jiangmiao/auto-pairs'

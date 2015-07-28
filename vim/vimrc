@@ -118,6 +118,8 @@ nnoremap <Leader>cf :call NERDComment('n', "toggle")<CR>
 " shortcuts to edit rc files
 nnoremap <Leader>ev :e $MYVIMRC<CR>
 nnoremap <Leader>ez :e ~/.zshrc<CR>
+" ,es to edit UltiSnips file
+nnoremap <Leader>es :call OpenSnipFile()<CR>
 
 " ignore accidental uppercase for W and Q
 command! Q q
@@ -175,12 +177,16 @@ autocmd! BufRead,BufNewFile *.zsh-theme set filetype=zsh
 let fortran_free_source=1
 let fortran_do_enddo=1
 
+" Java
+let java_highlight_java_lang_ids=1
+
 " LaTeX settings
 let g:tex_flavor='latex'
 let g:tex_nospell=0
 
 " spellcheck for txt files
-autocmd! FileType text,markdown,tex setlocal spell spelllang=en_au
+set spell spelllang=en_au
+"autocmd! FileType text,markdown,tex setlocal spell spelllang=en_au
 autocmd! FileType help setlocal nospell
 
 """"""""""""""""""""
@@ -194,12 +200,14 @@ set laststatus=2
 
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'jellybeans'
+"let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#bufferline#enabled = 1
+let g:airline#extensions#bufferline#overwrite_variables = 1
 let g:airline#extensions#tmuxline#enabled = 1
 let g:airline#extensions#tmuxline#snapshot_file = "~/.tmux/themes/vim-tmuxline.conf"
 let g:airline#extensions#whitespace#enabled = 0
 
-let g:airline_section_b = '%n %t%m'
-let g:airline_section_c = ''
+let g:airline_section_b = '%{getcwd()}'
 let g:airline_section_y = '%L'
 let g:airline_section_z = '%l,%v'
 let g:bufferline_echo = 0
@@ -207,7 +215,7 @@ let g:bufferline_echo = 0
 """ vim-makeshift
 " additional make commands for LaTeX
 let g:makeshift_systems = {
-	\'*.tex': 'latexmk -pdf'
+	\'*.tex': 'latexmk -pdf -pdflatex="pdflatex -interaction nonstopmode"'
 	\}
 
 
@@ -225,4 +233,8 @@ fu! RestoreSess()
     if filereadable(getcwd() . '/Session.vim') && !&diff && argc() == 0
         execute 'so %:p:h/Session.vim'
     endif
+endfunction
+
+fu! OpenSnipFile()
+	execute 'edit ~/.vim/UltiSnips/' . &ft . '.snippets'
 endfunction
