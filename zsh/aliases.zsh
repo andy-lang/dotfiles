@@ -29,7 +29,7 @@ function cs() {
 	ls
 }
 
-function ms() {
+function mc() {
 	# Make a directory, cd to it
 	mkdir $*
 	cd $1
