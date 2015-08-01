@@ -119,7 +119,7 @@ nnoremap <Leader>cf :call NERDComment('n', "toggle")<CR>
 nnoremap <Leader>ev :e $MYVIMRC<CR>
 nnoremap <Leader>ez :e ~/.zshrc<CR>
 " ,es to edit UltiSnips file
-nnoremap <Leader>es :call OpenSnipFile()<CR>
+nnoremap <Leader>es :call GetSnipFile()<CR>
 
 " ignore accidental uppercase for W and Q
 command! Q q
@@ -129,6 +129,12 @@ command! W w
 "nnoremap Q <nop>
 " similar for q:
 nnoremap q: <nop>
+
+" disable arrow keys 
+nnoremap <Up> <nop>
+nnoremap <Down> <nop>
+nnoremap <Left> <nop>
+nnoremap <Right> <nop>
 
 " buffer delete does not delete window
 command! Bd bp|bd #
@@ -207,8 +213,11 @@ let g:airline#extensions#tmuxline#enabled = 1
 let g:airline#extensions#tmuxline#snapshot_file = "~/.tmux/themes/vim-tmuxline.conf"
 let g:airline#extensions#whitespace#enabled = 0
 
-let g:airline_section_b = '%{getcwd()}'
+" b: basename of current working directory
+let g:airline_section_b = '%{fnamemodify(getcwd(), '':t'')}'
+" y: linecount
 let g:airline_section_y = '%L'
+" z: current line, current column
 let g:airline_section_z = '%l,%v'
 let g:bufferline_echo = 0
 
@@ -235,6 +244,6 @@ fu! RestoreSess()
     endif
 endfunction
 
-fu! OpenSnipFile()
+fu! GetSnipFile()
 	execute 'edit ~/.vim/UltiSnips/' . &ft . '.snippets'
 endfunction
