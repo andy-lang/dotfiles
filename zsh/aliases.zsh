@@ -42,7 +42,7 @@ alias cd..='cd ..'
 alias ll='ls -alF'
 alias la='ls -A'
 alias mkdir='mkdir -p'
-alias mk='mkdir'
+#alias mk='mkdir'
 
 # Programming
 function sv() {
@@ -62,4 +62,16 @@ alias vim="~/.tmux/scripts/omnivim.sh --vimcmd gvim --vimflags \"-v\""
 # Git. Most of the others are covered by OMZ's git plugin
 alias git=hub # always use Github's nifty plugin
 alias gpom='git push origin master'
-alias gun='git checkout --'
+alias gun='git checkout --' # "git undo"
+
+# aliases for svn
+alias sva='svn add'
+alias svc='svn commit'
+alias svd='svn diff'
+alias svl='svn log'
+alias svm='svn move'
+alias svr='svn revert'
+alias svrr='svn revert --depth=infinity'
+alias svs='svn status'
+alias svu='svn update'
+alias svrm='svn delete'
