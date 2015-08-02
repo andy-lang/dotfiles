@@ -87,6 +87,9 @@ source ~/.vim/ignores.vim
 """"""""""""""""""""
 let mapleader=","
 
+" Esc to turn off search highlighting
+nnoremap <Esc> :noh<CR>
+
 " gr for previous tab
 map gr gT
 " gb for bottom of file
@@ -164,10 +167,10 @@ autocmd! BufWritePost ~/.bash_aliases :call VimuxRunCommand("source ~/.bash_alia
 autocmd! VimEnter * call RestoreSess()
 
 " syntax highlighting for snippet files
-autocmd! FileType snippet set syntax=snippets
-autocmd! BufRead,BufNewFile *.snippets set filetype=snippets
+autocmd! FileType snippet setlocal syntax=snippets
+autocmd! BufRead,BufNewFile *.snippets setlocal filetype=snippets
 " special settings for editing crontab files
-autocmd! BufNewFile,BufRead crontab.* set nobackup | set nowritebackup
+autocmd! BufNewFile,BufRead crontab.* setlocal nobackup | set nowritebackup
 " tab settings for editing makefiles
 autocmd! FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 " Python - autocapitalise booleans
@@ -175,9 +178,9 @@ autocmd! FileType python :iabbrev <buffer> true True| :iabbrev <buffer> false Fa
 " Ruby - capitalise = capitalize
 autocmd! FileType ruby :iabbrev <buffer> capitalise capitalize
 " Markdown - syntax highlighting
-autocmd! BufRead,BufNew *.md set filetype=markdown
+autocmd! BufRead,BufNew *.md setlocal filetype=markdown
 " zsh - highlight theme files
-autocmd! BufRead,BufNewFile *.zsh-theme set filetype=zsh
+autocmd! BufRead,BufNewFile *.zsh-theme setlocal filetype=zsh
 
 " Extra Fortran settings for syntactic goodness
 let fortran_free_source=1
@@ -191,8 +194,7 @@ let g:tex_flavor='latex'
 let g:tex_nospell=0
 
 " spellcheck for txt files
-set spell spelllang=en_au
-"autocmd! FileType text,markdown,tex setlocal spell spelllang=en_au
+setlocal spell spelllang=en_au
 autocmd! FileType help setlocal nospell
 
 """"""""""""""""""""
