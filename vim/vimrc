@@ -16,6 +16,7 @@ abbr abrr abbr
 abbr fuction function
 abbr juint junit
 abbr hierarcy hierarchy
+abbr pbulic public
 
 " C-like indentation
 set autoindent
@@ -101,6 +102,8 @@ map 0 ^
 " j and k for soft line movement
 nmap j gj
 nmap k gk
+vmap j gj
+vmap k gk
 
 if !exists(':TmuxNavigateRight')
 	" tmux navigation will provide the pane navigation, so only map these if tmux isn't in use
@@ -167,20 +170,20 @@ autocmd! BufWritePost ~/.bash_aliases :call VimuxRunCommand("source ~/.bash_alia
 autocmd! VimEnter * call RestoreSess()
 
 " syntax highlighting for snippet files
-autocmd! FileType snippet setlocal syntax=snippets
-autocmd! BufRead,BufNewFile *.snippets setlocal filetype=snippets
+autocmd! FileType snippet set syntax=snippets
+autocmd! BufRead,BufNewFile *.snippets set filetype=snippets
 " special settings for editing crontab files
-autocmd! BufNewFile,BufRead crontab.* setlocal nobackup | set nowritebackup
+autocmd! BufNewFile,BufRead crontab.* set nobackup | set nowritebackup
 " tab settings for editing makefiles
-autocmd! FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+autocmd! FileType make set ts=8 sts=8 sw=8 noexpandtab
 " Python - autocapitalise booleans
 autocmd! FileType python :iabbrev <buffer> true True| :iabbrev <buffer> false False
 " Ruby - capitalise = capitalize
 autocmd! FileType ruby :iabbrev <buffer> capitalise capitalize
 " Markdown - syntax highlighting
-autocmd! BufRead,BufNew *.md setlocal filetype=markdown
+autocmd! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 " zsh - highlight theme files
-autocmd! BufRead,BufNewFile *.zsh-theme setlocal filetype=zsh
+autocmd! BufRead,BufNewFile *.zsh-theme setfiletype=zsh
 
 " Extra Fortran settings for syntactic goodness
 let fortran_free_source=1
@@ -229,6 +232,8 @@ let g:makeshift_systems = {
 	\'*.tex': 'latexmk -pdf -pdflatex="pdflatex -interaction nonstopmode"'
 	\}
 
+""" vim-signature
+let g:SignatureEnabledAtStartup = 1
 
 """ UltiSnips
 let g:UltiSnipsExpandTrigger="<tab>"
