@@ -42,7 +42,7 @@ alias cd..='cd ..'
 alias ll='ls -alF'
 alias la='ls -A'
 alias mkdir='mkdir -p'
-#alias mk='mkdir'
+alias mk='mkdir'
 
 # Programming
 function sv() {

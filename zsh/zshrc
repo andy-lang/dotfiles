@@ -7,11 +7,6 @@ export EDITOR=vim
 
 unset SSH_ASKPASS
 
-# if xcape is installed, remap Ctrl keys + CapsLock to be Escape
-if [ -n $(which xcape 2>/dev/null) ]; then
-	xcape -e 'Control_L=Escape;Control_R=Escape;Caps_Lock=Escape'
-fi
-
 # make sure prompt & colours are initialised BEFORE you start setting prompts
 autoload -U colors && colors
 autoload -U promptinit
@@ -22,6 +17,10 @@ source $ZSH/aliases.zsh
 if [ "$EUID" -ne 0 ]; then
 	# don't set autocomplete if running in root privileges
 	source $ZSH/completion.zsh
+fi
+
+if [ -z $(pidof xcape) ]; then
+	$ZSH/xcape.sh
 fi
 
 # turn off beep
