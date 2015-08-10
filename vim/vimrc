@@ -118,8 +118,8 @@ nnoremap <Leader>m :Make <CR>
 nnoremap <Leader>mc :Make clean<CR>
 
 " some remaps for NerdCommenter
-nnoremap <Leader>ca :call NERDComment('n', "append")<CR>
-nnoremap <Leader>cf :call NERDComment('n', "toggle")<CR>
+"nnoremap <Leader>ca :call NERDComment('n', "append")<CR>
+"nnoremap <Leader>cf :call NERDComment('n', "toggle")<CR>
 
 " shortcuts to edit rc files
 nnoremap <Leader>ev :e $MYVIMRC<CR>
