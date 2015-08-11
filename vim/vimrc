@@ -66,6 +66,8 @@ endtry
 """"""""""""""""""""
 " Functionality
 """"""""""""""""""""
+set spell spelllang=en_au
+
 " automatically reloads files that have been detected as being changed
 set autoread
 " automatically write on :make, :next, etc
@@ -127,9 +129,8 @@ nnoremap <Leader>ez :e ~/.zshrc<CR>
 " ,es to edit UltiSnips file
 nnoremap <Leader>es :call GetSnipFile()<CR>
 
-" ignore accidental uppercase for W and Q
-command! Q q
-command! W w
+" :W saves as sudo
+command! W :w !sudo tee > /dev/null %
 
 " turn off fucking ex mode
 "nnoremap Q <nop>
@@ -195,10 +196,9 @@ let java_highlight_java_lang_ids=1
 " LaTeX settings
 let g:tex_flavor='latex'
 let g:tex_nospell=0
-
+autocmd BufNewFile,BufFilePre,BufRead *.tex setlocal makeprg=latexmk\ %\ -pdf\ -pdflatex=\"pdflatex\ -interaction\ nonstopmode\"
 " spellcheck for txt files
-setlocal spell spelllang=en_au
-autocmd! FileType help setlocal nospell
+" autocmd! FileType help setlocal nospell
 
 """"""""""""""""""""
 " Plugin-specific settings
@@ -226,11 +226,14 @@ let g:airline_section_y = '%L'
 let g:airline_section_z = '%l,%v'
 let g:bufferline_echo = 0
 
+""" vim-commentary
+autocmd! FileType octave setlocal commentstring=%\ %s
+
 """ vim-makeshift
 " additional make commands for LaTeX
-let g:makeshift_systems = {
-	\'*.tex': 'latexmk -pdf -pdflatex="pdflatex -interaction nonstopmode"'
-	\}
+" let g:makeshift_systems = {
+" 	\'*.tex': 'latexmk -pdf -pdflatex=\"pdflatex -interaction nonstopmode\"'
+" 	\}
 
 """ vim-signature
 let g:SignatureEnabledAtStartup = 1
