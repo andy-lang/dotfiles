@@ -10,6 +10,16 @@ while ${3:${1:i}<${2:10}}
 end
 endsnippet
 
+snippet if
+if ${1:}
+	$0
+end
+endsnippet
+snippet "els?e?if" "elsif" r
+elseif ${1:}
+	$0
+endsnippet
+
 
 snippet "func?t?i?o?n?" "function" r
 function [${3:outputs}] = ${1:name}(${2:inputs})
