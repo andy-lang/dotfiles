@@ -129,8 +129,10 @@ nnoremap <Leader>ez :e ~/.zshrc<CR>
 " ,es to edit UltiSnips file
 nnoremap <Leader>es :call GetSnipFile()<CR>
 
-" :W saves as sudo
-command! W :w !sudo tee > /dev/null %
+" W and Q work as w and q do.
+" Who do? Q do
+command Q :q
+command W :w
 
 " turn off fucking ex mode
 "nnoremap Q <nop>
