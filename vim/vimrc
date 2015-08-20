@@ -3,7 +3,7 @@ source ~/.vim/plugins.vim
 
 filetype plugin on
 " stop that annoying glitch where vim deletes lines on entry
-set t_RV= ttymouse=xterm2
+" set t_RV= ttymouse=xterm2
 
 set nocompatible
 
@@ -115,9 +115,13 @@ if !exists(':TmuxNavigateRight')
 	nnoremap <C-L> <C-w>l
 endif
 
-" make with ,m; make clean with ,gm
+" make with ,m ; make clean with ,cm
 nnoremap <Leader>m :Make <CR>
-nnoremap <Leader>mc :Make clean<CR>
+nnoremap <Leader>cm :Make clean<CR>
+
+" K performs the reverse of J - i.e. split the line at the current cursor
+" location
+nnoremap K s<Enter><Esc>k$
 
 " some remaps for NerdCommenter
 "nnoremap <Leader>ca :call NERDComment('n', "append")<CR>
@@ -131,19 +135,13 @@ nnoremap <Leader>es :call GetSnipFile()<CR>
 
 " W and Q work as w and q do.
 " Who do? Q do
-command Q :q
-command W :w
+command! Q :q
+command! W :w
 
 " turn off fucking ex mode
 "nnoremap Q <nop>
 " similar for q:
 nnoremap q: <nop>
-
-" disable arrow keys 
-nnoremap <Up> <nop>
-nnoremap <Down> <nop>
-nnoremap <Left> <nop>
-nnoremap <Right> <nop>
 
 " buffer delete does not delete window
 command! Bd bp|bd #
