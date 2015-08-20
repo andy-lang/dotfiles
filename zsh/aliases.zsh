@@ -17,9 +17,9 @@ alias :qa='exit'
 # Directory movement & management
 function brow() {
 	if [ $# = 0 ]; then
-		nautilus .
+		nautilus . &
 	else
-		nautilus $*
+		nautilus $* &
 	fi
 }
 
