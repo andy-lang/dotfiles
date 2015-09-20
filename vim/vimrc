@@ -3,7 +3,7 @@ source ~/.vim/plugins.vim
 
 filetype plugin on
 " stop that annoying glitch where vim deletes lines on entry
-" set t_RV= ttymouse=xterm2
+set t_RV= ttymouse=xterm2
 
 set nocompatible
 
@@ -22,6 +22,11 @@ abbr pbulic public
 set autoindent
 set smartindent
 set cindent
+
+" options to hide sections of the GUI. Mostly for eclim shenanigans
+set guioptions-=m
+set guioptions-=T
+set guioptions-=r
 
 " highlight matching search patterns, start searching before pressing enter
 set hlsearch
@@ -55,9 +60,7 @@ set wrap linebreak
 syntax enable
 set t_Co=256
 try
-	"colorscheme Benokai
-	"colorscheme adio
-	"colorscheme focuspoint
+	" colorscheme Benokai
 	colorscheme jellybeans
 catch
 endtry
@@ -98,7 +101,7 @@ map gr gT
 " gb for bottom of file
 map gb G
 " gs to swap two adjacent characters
-map gs xph
+" map gs xph
 " 0 jumps to first non-blank character, instead of hard BOL
 map 0 ^
 " j and k for soft line movement
@@ -121,11 +124,10 @@ nnoremap <Leader>cm :Make clean<CR>
 
 " K performs the reverse of J - i.e. split the line at the current cursor
 " location
-nnoremap K s<Enter><Esc>k$
+nnoremap K i<Enter><Esc>k$
 
-" some remaps for NerdCommenter
-"nnoremap <Leader>ca :call NERDComment('n', "append")<CR>
-"nnoremap <Leader>cf :call NERDComment('n', "toggle")<CR>
+" Y works similarly to C, D, etc
+nnoremap Y y$
 
 " shortcuts to edit rc files
 nnoremap <Leader>ev :e $MYVIMRC<CR>
@@ -139,9 +141,11 @@ command! Q :q
 command! W :w
 
 " turn off fucking ex mode
-"nnoremap Q <nop>
+nnoremap Q <nop>
 " similar for q:
 nnoremap q: <nop>
+nnoremap q? <nop>
+nnoremap q/ <nop>
 
 " buffer delete does not delete window
 command! Bd bp|bd #
