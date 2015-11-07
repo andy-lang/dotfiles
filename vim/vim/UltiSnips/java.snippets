@@ -14,12 +14,12 @@ for (int ${2:i} = ${3:0}; $2 < ${1:count}; $2${4:++}) {
 	${0:/* code */}
 }
 endsnippet
+
 snippet forin
-for (${1:Failure} ${2:failure} : ${3:result.getFailures()}) {
+for (${1:Object} ${2:o} : ${3:objects}) {
 	$0
 }
 endsnippet
-
 
 snippet if
 if (${1}) {
@@ -53,12 +53,14 @@ System.out.println(${1:});
 endsnippet
 
 snippet todo
-//TODO 
+// TODO 
 endsnippet
 
-snippet catch
-catch (${1:Exception e}) {
-	$0
+snippet try
+try {
+	$1
+} catch (${2:Exception e}) {
+	$3
 }
 endsnippet
 
