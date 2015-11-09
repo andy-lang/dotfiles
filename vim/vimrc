@@ -3,7 +3,7 @@ source ~/.vim/plugins.vim
 
 filetype plugin on
 " stop that annoying glitch where vim deletes lines on entry
-set t_RV= ttymouse=xterm2
+" set t_RV= ttymouse=xterm2
 
 set nocompatible
 
@@ -58,10 +58,13 @@ set wrap linebreak
 
 " syntax highlighting
 syntax enable
-set t_Co=256
+" set t_Co=256
+let base16colorspace=256
 try
 	" colorscheme Benokai
-	colorscheme jellybeans
+	" colorscheme jellybeans
+	set background=dark
+	colorscheme base16-monokai
 catch
 endtry
 
@@ -69,7 +72,7 @@ endtry
 """"""""""""""""""""
 " Functionality
 """"""""""""""""""""
-set spell spelllang=en_au
+" set spell spelllang=en_au
 
 " automatically reloads files that have been detected as being changed
 set autoread
@@ -94,7 +97,7 @@ source ~/.vim/ignores.vim
 let mapleader=","
 
 " Esc to turn off search highlighting
-nnoremap <Esc> :noh<CR>
+" nnoremap <Esc> :noh<CR>
 
 " gr for previous tab
 map gr gT
@@ -188,7 +191,7 @@ autocmd! FileType ruby :iabbrev <buffer> capitalise capitalize
 " Markdown - syntax highlighting
 autocmd! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 " zsh - highlight theme files
-autocmd! BufRead,BufNewFile *.zsh-theme setfiletype=zsh
+autocmd! BufRead,BufNewFile *.zsh-theme set filetype=zsh
 
 " Extra Fortran settings for syntactic goodness
 let fortran_free_source=1
@@ -199,8 +202,9 @@ let java_highlight_java_lang_ids=1
 
 " LaTeX settings
 let g:tex_flavor='latex'
-let g:tex_nospell=0
+" let g:tex_nospell=0
 autocmd BufNewFile,BufFilePre,BufRead *.tex setlocal makeprg=latexmk\ %\ -pdf\ -pdflatex=\"pdflatex\ -interaction\ nonstopmode\"
+autocmd filetype rust setlocal makeprg=cargo\ build
 " spellcheck for txt files
 " autocmd! FileType help setlocal nospell
 
@@ -214,7 +218,7 @@ autocmd BufNewFile,BufFilePre,BufRead *.tex setlocal makeprg=latexmk\ %\ -pdf\ -
 set laststatus=2
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'jellybeans'
+let g:airline_theme = 'hybrid'
 "let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#bufferline#enabled = 1
 let g:airline#extensions#bufferline#overwrite_variables = 1
@@ -234,7 +238,7 @@ let g:bufferline_echo = 0
 autocmd! FileType octave setlocal commentstring=%\ %s
 
 """ vim-makeshift
-" additional make commands for LaTeX
+" additional make commands for Rust
 " let g:makeshift_systems = {
 " 	\'*.tex': 'latexmk -pdf -pdflatex=\"pdflatex -interaction nonstopmode\"'
 " 	\}
