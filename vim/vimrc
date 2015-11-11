@@ -62,6 +62,12 @@ try
 catch
 endtry
 
+set enc=utf8
+set fillchars=vert:\│,fold:-
+
+set foldmethod=syntax
+set foldnestmax=1
+
 
 """"""""""""""""""""
 " Functionality
@@ -91,7 +97,7 @@ source ~/.vim/ignores.vim
 let mapleader=","
 
 " Esc to turn off search highlighting
-nnoremap <Esc> :noh<CR>
+" nnoremap <Esc> :noh<CR>
 
 " gr for previous tab
 map gr gT
