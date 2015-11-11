@@ -1,7 +1,7 @@
 # ~/.tmuxinator/latex.yml
 
 name: latex
-root: ~/
+root: .
 
 # Optional tmux socket
 # socket_name: foo

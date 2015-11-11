@@ -23,6 +23,11 @@ set autoindent
 set smartindent
 set cindent
 
+" options to hide sections of the GUI. Mostly for eclim shenanigans
+set guioptions-=m
+set guioptions-=T
+set guioptions-=r
+
 " highlight matching search patterns, start searching before pressing enter
 set hlsearch
 set incsearch
@@ -53,12 +58,13 @@ set wrap linebreak
 
 " syntax highlighting
 syntax enable
-set t_Co=256
+" set t_Co=256
+let base16colorspace=256
 try
-	"colorscheme Benokai
-	"colorscheme adio
-	"colorscheme focuspoint
-	colorscheme jellybeans
+	" colorscheme Benokai
+	" colorscheme jellybeans
+	set background=dark
+	colorscheme base16-monokai
 catch
 endtry
 
@@ -72,7 +78,7 @@ set foldnestmax=1
 """"""""""""""""""""
 " Functionality
 """"""""""""""""""""
-set spell spelllang=en_au
+" set spell spelllang=en_au
 
 " automatically reloads files that have been detected as being changed
 set autoread
@@ -104,7 +110,7 @@ map gr gT
 " gb for bottom of file
 map gb G
 " gs to swap two adjacent characters
-map gs xph
+" map gs xph
 " 0 jumps to first non-blank character, instead of hard BOL
 map 0 ^
 " j and k for soft line movement
@@ -127,11 +133,10 @@ nnoremap <Leader>cm :Make clean<CR>
 
 " K performs the reverse of J - i.e. split the line at the current cursor
 " location
-nnoremap K s<Enter><Esc>k$
+nnoremap K i<Enter><Esc>k$
 
-" some remaps for NerdCommenter
-"nnoremap <Leader>ca :call NERDComment('n', "append")<CR>
-"nnoremap <Leader>cf :call NERDComment('n', "toggle")<CR>
+" Y works similarly to C, D, etc
+nnoremap Y y$
 
 " shortcuts to edit rc files
 nnoremap <Leader>ev :e $MYVIMRC<CR>
@@ -145,9 +150,11 @@ command! Q :q
 command! W :w
 
 " turn off fucking ex mode
-"nnoremap Q <nop>
+nnoremap Q <nop>
 " similar for q:
 nnoremap q: <nop>
+nnoremap q? <nop>
+nnoremap q/ <nop>
 
 " buffer delete does not delete window
 command! Bd bp|bd #
@@ -190,7 +197,7 @@ autocmd! FileType ruby :iabbrev <buffer> capitalise capitalize
 " Markdown - syntax highlighting
 autocmd! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 " zsh - highlight theme files
-autocmd! BufRead,BufNewFile *.zsh-theme setfiletype=zsh
+autocmd! BufRead,BufNewFile *.zsh-theme set filetype=zsh
 
 " Extra Fortran settings for syntactic goodness
 let fortran_free_source=1
@@ -201,8 +208,9 @@ let java_highlight_java_lang_ids=1
 
 " LaTeX settings
 let g:tex_flavor='latex'
-let g:tex_nospell=0
+" let g:tex_nospell=0
 autocmd BufNewFile,BufFilePre,BufRead *.tex setlocal makeprg=latexmk\ %\ -pdf\ -pdflatex=\"pdflatex\ -interaction\ nonstopmode\"
+autocmd filetype rust setlocal makeprg=cargo\ build
 " spellcheck for txt files
 " autocmd! FileType help setlocal nospell
 
@@ -216,7 +224,7 @@ autocmd BufNewFile,BufFilePre,BufRead *.tex setlocal makeprg=latexmk\ %\ -pdf\ -
 set laststatus=2
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'jellybeans'
+let g:airline_theme = 'hybrid'
 "let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#bufferline#enabled = 1
 let g:airline#extensions#bufferline#overwrite_variables = 1
@@ -236,7 +244,7 @@ let g:bufferline_echo = 0
 autocmd! FileType octave setlocal commentstring=%\ %s
 
 """ vim-makeshift
-" additional make commands for LaTeX
+" additional make commands for Rust
 " let g:makeshift_systems = {
 " 	\'*.tex': 'latexmk -pdf -pdflatex=\"pdflatex -interaction nonstopmode\"'
 " 	\}

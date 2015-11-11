@@ -1,3 +1,6 @@
+export TERM="xterm-256color"
+
+
 # environment variables
 export DOTFILES=/home/andrew/.dotfiles
 export ZSH=$DOTFILES/zsh
@@ -6,6 +9,10 @@ export ANTIGEN=/home/andrew/Programs/antigen
 export EDITOR=vim
 
 unset SSH_ASKPASS
+
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/base16-monokai.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 # make sure prompt & colours are initialised BEFORE you start setting prompts
 autoload -U colors && colors
@@ -39,8 +46,8 @@ alias help=run-help
 
 # History
 HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=1000
+SAVEHIST=1000
 setopt appendhistory
 setopt autocd
 setopt extendedglob
