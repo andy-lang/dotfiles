@@ -15,9 +15,10 @@ alias cls='clear' # clear the terminal
 alias ll="ls -A"
 alias la="ls -A"
 
-if [ -e "~/.tmux/scripts/omnivim.sh" ]; then
-	alias viml="~/.tmux/scripts/omnivim.sh --vimcmd gvim --vimflags \"-v\" --lit"
-	alias vim="~/.tmux/scripts/omnivim.sh --vimcmd gvim --vimflags \"-v\""
+if [ -e "~/.tmux/scripts/omnivim.py" ]; then
+	export OMNIVIM_EDITOR=nvim
+	alias viml="~/.tmux/scripts/omnivim.py --lit"
+	alias vim="~/.tmux/scripts/omnivim.py"
 fi
 
 ms() {
@@ -46,9 +47,9 @@ alias help='betterhelp'
 
 brow() {
     if [ $# = 0 ]; then
-		nautilus .
+		nautilus . &
     else
-		nautilus $*
+		nautilus $* &
     fi
 }
 #alias brow="naut" # open folders in the browser
@@ -76,5 +77,8 @@ sv() {
 		cd $upperdir
     fi
 }
+
+alias viml="~/.tmux/scripts/omnivim.sh --vimcmd gvim --vimflags \"-v\" --lit"
+alias vim="~/.tmux/scripts/omnivim.sh --vimcmd gvim --vimflags \"-v\""
 
 #alias git=hub

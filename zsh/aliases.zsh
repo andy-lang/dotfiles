@@ -56,8 +56,11 @@ function sv() {
     fi
 }
 alias gfort='gfortran'
-alias viml="~/.tmux/scripts/omnivim.sh --vimcmd gvim --vimflags \"-v\" --lit"
-alias vim="~/.tmux/scripts/omnivim.sh --vimcmd gvim --vimflags \"-v\""
+# alias viml="~/.tmux/scripts/omnivim.sh --vimcmd gvim --vimflags \"-v\" --lit"
+# alias vim="~/.tmux/scripts/omnivim.sh --vimcmd gvim --vimflags \"-v\""
+alias viml="python ~/.tmux/scripts/omnivim.py --lit"
+alias vim="python ~/.tmux/scripts/omnivim.py"
+export OMNIVIM_EDITOR=nvim
 
 # Git. Most of the others are covered by OMZ's git plugin
 alias git=hub # always use Github's nifty plugin
