@@ -131,6 +131,7 @@ endif
 " make with ,m ; make clean with ,cm
 nnoremap <Leader>m :Make <CR>
 nnoremap <Leader>cm :Make clean<CR>
+autocmd BufWritePost * Neomake
 
 " K performs the reverse of J - i.e. split the line at the current cursor
 " location
