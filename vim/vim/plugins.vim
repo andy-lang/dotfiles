@@ -1,43 +1,39 @@
-set nocompatible
-filetype off
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
 " initial plugins, required for some other stuff
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-"Plugin 'xolox/vim-misc'
+" Plug 'VundleVim/Vundle.vim'
+Plug 'junegunn/vim-plug'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+"Plug 'xolox/vim-misc'
 
-Plugin 'benmills/vimux'
-Plugin 'bkad/CamelCaseMotion'
-Plugin 'bling/vim-airline'
-Plugin 'bling/vim-bufferline'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'edkolev/tmuxline.vim'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'johnsyweb/vim-makeshift'
-"Plugin 'kien/ctrlp.vim'
-Plugin 'SirVer/ultisnips'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-surround'
-"Plugin 'xolox/vim-easytags'
+Plug 'benmills/vimux'
+Plug 'bkad/CamelCaseMotion'
+Plug 'bling/vim-airline'
+Plug 'bling/vim-bufferline'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'edkolev/tmuxline.vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'johnsyweb/vim-makeshift'
+"Plug 'kien/ctrlp.vim'
+Plug 'SirVer/ultisnips'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-surround'
+"Plug 'xolox/vim-easytags'
 
 " Syntax highlighting
-Plugin 'beyondmarc/opengl.vim'
-Plugin 'gabrielelana/vim-markdown'
-"Plugin 'hdima/python-syntax'
-Plugin 'jvirtanen/vim-octave'
-Plugin 'tikhomirov/vim-glsl'
-Plugin 'keith/tmux.vim'
-Plugin 'rust-lang/rust.vim'
+Plug 'beyondmarc/opengl.vim'
+Plug 'gabrielelana/vim-markdown'
+"Plug 'hdima/python-syntax'
+Plug 'jvirtanen/vim-octave'
+Plug 'tikhomirov/vim-glsl'
+Plug 'keith/tmux.vim'
+Plug 'rust-lang/rust.vim'
 
 " Colourschemes
-Plugin 'benjaminwhite/Benokai'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'chriskempson/base16-vim'
+Plug 'benjaminwhite/Benokai'
+Plug 'nanotech/jellybeans.vim'
+Plug 'chriskempson/base16-vim'
 
-call vundle#end()
-filetype plugin indent on
+call plug#end()

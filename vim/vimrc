@@ -1,11 +1,12 @@
 " Read vim plugins from file
 source ~/.vim/plugins.vim
 
-filetype plugin on
+filetype plugin indent on
+
 " stop that annoying glitch where vim deletes lines on entry
 " set t_RV= ttymouse=xterm2
 
-set nocompatible
+" set nocompatible
 
 """"""""""""""""""""
 " Appearance
@@ -68,7 +69,7 @@ try
 catch
 endtry
 
-set enc=utf8
+" set enc=utf8
 set fillchars=vert:\│,fold:-
 
 set foldmethod=syntax
