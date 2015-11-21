@@ -8,7 +8,7 @@ Plug 'tomtom/tlib_vim'
 " Functionality
 Plug 'benekastah/neomake'
 Plug 'bkad/CamelCaseMotion'
-Plug 'christoomey/vim-tmux-navigator', { 'on': 'echo $TMUX' } | Plug 'benmills/vimux' | Plug 'edkolev/tmuxline.vim' 
+Plug 'christoomey/vim-tmux-navigator' | Plug 'benmills/vimux' | Plug 'edkolev/tmuxline.vim' 
 Plug 'jiangmiao/auto-pairs'
 Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-commentary'
@@ -24,7 +24,7 @@ Plug 'nanotech/jellybeans.vim'
 
 " Syntax highlighting
 Plug 'gabrielelana/vim-markdown', { 'for': 'markdown' }
-Plug 'jvirtanen/vim-octave', { 'for': 'octave,matlab' }
+Plug 'jvirtanen/vim-octave', { 'for': ['matlab', 'octave'] }
 Plug 'keith/tmux.vim'
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
