@@ -81,6 +81,22 @@ alias svu='svn update'
 alias svrm='svn delete'
 alias svrmk='svn delete --keep-local'
 
+# aliases for dnf. Similar to oh-my-zsh's yum aliases
+alias dns="dnf search"                       # search package
+alias dnp="dnf info"                         # show package info
+alias dnl="dnf list"                         # list packages
+alias dngl="dnf grouplist"                   # list package groups
+alias dnli="dnf list installed"              # print all installed packages
+alias dnmc="dnf makecache"                   # rebuilds the yum package list
+
+alias dnu="sudo dnf update"                  # upgrate packages
+alias dni="sudo dnf install"                 # install package
+alias dngi="sudo dnf groupinstall"           # install package group
+alias dnr="sudo dnf remove"                  # remove package
+alias dngr="sudo dnf groupremove"            # remove pagage group
+alias dnrl="sudo dnf remove --remove-leaves" # remove package and leaves
+alias dnc="sudo dnf clean all"               # clean cache
+
 # command to start streaming to Twitch
 streaming() {
      INRES="1366x768" # input resolution
