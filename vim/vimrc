@@ -133,8 +133,7 @@ nnoremap <Leader>m :Make <CR>
 nnoremap <Leader>cm :Make clean<CR>
 autocmd BufWritePost * Neomake
 
-" K performs the reverse of J - i.e. split the line at the current cursor
-" location
+" K performs the reverse of J - i.e. split the line at the current cursor location
 nnoremap K i<Enter><Esc>k$
 
 " Y works similarly to C, D, etc
@@ -245,11 +244,9 @@ let g:bufferline_echo = 0
 """ vim-commentary
 autocmd! FileType octave setlocal commentstring=%\ %s
 
-""" vim-makeshift
-" additional make commands for Rust
-" let g:makeshift_systems = {
-" 	\'*.tex': 'latexmk -pdf -pdflatex=\"pdflatex -interaction nonstopmode\"'
-" 	\}
+""" vim-easy-align
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 """ vim-signature
 let g:SignatureEnabledAtStartup = 1
