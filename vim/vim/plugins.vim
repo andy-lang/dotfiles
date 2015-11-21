@@ -5,29 +5,27 @@ Plug 'junegunn/vim-plug'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 
-Plug 'benmills/vimux'
+" Functionality
+Plug 'benekastah/neomake'
 Plug 'bkad/CamelCaseMotion'
-Plug 'bling/vim-airline'
-Plug 'bling/vim-bufferline'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'edkolev/tmuxline.vim'
+Plug 'christoomey/vim-tmux-navigator', { 'on': 'echo $TMUX' } | Plug 'benmills/vimux' | Plug 'edkolev/tmuxline.vim' 
 Plug 'jiangmiao/auto-pairs'
-Plug 'johnsyweb/vim-makeshift'
-"Plug 'kien/ctrlp.vim'
 Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
-Plug 'benekastah/neomake'
 Plug 'tpope/vim-surround'
 
-" Syntax highlighting
-Plug 'gabrielelana/vim-markdown'
-Plug 'jvirtanen/vim-octave'
-Plug 'keith/tmux.vim'
-Plug 'rust-lang/rust.vim'
+" Appearance
+Plug 'bling/vim-airline' | Plug 'bling/vim-bufferline'
 
 " Colourschemes
-Plug 'nanotech/jellybeans.vim'
 Plug 'chriskempson/base16-vim'
+Plug 'nanotech/jellybeans.vim'
+
+" Syntax highlighting
+Plug 'gabrielelana/vim-markdown', { 'for': 'markdown' }
+Plug 'jvirtanen/vim-octave', { 'for': 'octave,matlab' }
+Plug 'keith/tmux.vim'
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
 call plug#end()
