@@ -6,8 +6,6 @@ filetype plugin indent on
 " stop that annoying glitch where vim deletes lines on entry
 " set t_RV= ttymouse=xterm2
 
-" set nocompatible
-
 """"""""""""""""""""
 " Appearance
 """"""""""""""""""""
@@ -74,6 +72,7 @@ set fillchars=vert:\│,fold:-
 
 set foldmethod=syntax
 set foldnestmax=1
+set nofoldenable
 
 
 """"""""""""""""""""
@@ -142,7 +141,7 @@ nnoremap Y y$
 " shortcuts to edit rc files
 nnoremap <Leader>ev :e $MYVIMRC<CR>
 nnoremap <Leader>ez :e ~/.zshrc<CR>
-" ,es to edit UltiSnips file
+" " ,es to edit UltiSnips file
 nnoremap <Leader>es :call GetSnipFile()<CR>
 
 " W and Q work as w and q do.
@@ -160,8 +159,6 @@ nnoremap q/ <nop>
 " buffer delete does not delete window
 command! Bd bp|bd #
 nnoremap <Leader>d :Bd<CR>
-
-
 
 """"""""""""""""""""
 " Autocommands
@@ -241,12 +238,19 @@ let g:airline_section_y = '%L'
 let g:airline_section_z = '%l,%v'
 let g:bufferline_echo = 0
 
+" camelcasemotion
+map <silent> <Leader>w <Plug>CamelCaseMotion_w
+map <silent> <Leader>b <Plug>CamelCaseMotion_b
+map <silent> <Leader>e <Plug>CamelCaseMotion_e
+map <silent> <Leader>ge <Plug>CamelCaseMotion_ge
+
 """ vim-commentary
 autocmd! FileType octave setlocal commentstring=%\ %s
 
 """ vim-easy-align
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
+let g:easy_align_ignore_groups = []
 
 """ vim-signature
 let g:SignatureEnabledAtStartup = 1
