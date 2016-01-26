@@ -1,5 +1,27 @@
 #!/usr/bin/bash
 
+dotfiles_location='~/.dotfiles'
+
+while getopts "h?d:" opt; do
+	case "$opt" in
+		d)
+			if [ -d "$OPTARG" ]; then
+				dotfiles_location="$OPTARG"
+			else
+				printf "$s is not a valid directory. Exiting." "$OPTARG"
+				exit 1
+			fi
+			;;
+		h|\?)
+			printf "Installs the dotfiles and programs necessary for this workflow."
+			printf ""
+			printf "-h:		Print this help file."
+			printf "-d ARG:	The location of the dotfiles. This defaults to ~/.dotfiles if not given."
+			exit 0
+			;;
+	esac
+done
+
 # Install necessary programs. Assumes that apt-get is the package manager of choice.
 sudo apt-get install software-properties-common
 sudo add-apt-repository ppa:neovim-ppa/unstable
@@ -8,9 +30,6 @@ sudo apt-get install neovim
 sudo apt-get install python-dev python-pip python3-dev python3-pip
 
 sudo apt-get install tmux zsh 
-
-# TODO: command line parameter
-dotfiles_location='~/.dotfiles'
 
 attempts=0
 failures=0
