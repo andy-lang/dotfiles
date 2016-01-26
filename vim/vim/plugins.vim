@@ -16,6 +16,9 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-surround'
 
+Plug 'kana/vim-textobj-user'
+Plug 'bps/vim-textobj-python', { 'for': 'python' }
+
 " Appearance
 Plug 'bling/vim-airline' | Plug 'bling/vim-bufferline'
 
@@ -27,6 +30,7 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'gabrielelana/vim-markdown', { 'for': 'markdown' }
 Plug 'jvirtanen/vim-octave', { 'for': ['matlab', 'octave'] }
 Plug 'keith/tmux.vim'
+Plug 'othree/html5.vim', { 'for': 'html' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
 call plug#end()
