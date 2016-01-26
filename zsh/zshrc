@@ -6,7 +6,7 @@ export DOTFILES=/home/andrew/.dotfiles
 export ZSH=$DOTFILES/zsh
 
 export ANTIGEN=/home/andrew/Programs/antigen
-export EDITOR=vim
+export EDITOR=nvim
 
 unset SSH_ASKPASS
 
