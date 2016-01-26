@@ -1,5 +1,14 @@
 #!/usr/bin/bash
 
+# Install necessary programs. Assumes that apt-get is the package manager of choice.
+sudo apt-get install software-properties-common
+sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo apt-get update
+sudo apt-get install neovim
+sudo apt-get install python-dev python-pip python3-dev python3-pip
+
+sudo apt-get install tmux zsh 
+
 # TODO: command line parameter
 dotfiles_location='~/.dotfiles'
 
@@ -12,19 +21,17 @@ if hash nvim 2>/dev/null; then
 	printf "Neovim installation found."
 	ln -s "$dotfiles_location"/vim/vimrc "$dotfiles_location"/vim/vim/init.vim
 	ln -s "$dotfiles_location"/vim/vim ~/.config/nvim
-else
+elif hash vim 2>/dev/null; then
 	failures=$((failures+1))
-	printf "Neovim installation missing."
-fi
-
-# Install Vim dotfiles
-attempts=$((attempts+1))
-if hash vim 2>/dev/null; then
+	printf "Neovim installation missing, falling back to Vim."
+	attempts=$((attempts+1))
 	printf "Vim installation found."
 	ln -s "$dotfiles_location"/vim/vimrc ~/.vimrc
 	ln -s "$dotfiles_location"/vim ~/.vim
 else
-	failures=$((failures+1))
+	attempts=$((attempts+1))
+	failures=$((failures+2))
+	printf "Neovim installation missing."
 	printf "Vim installation missing."
 fi
 
@@ -48,7 +55,7 @@ if hash zsh 2>/dev/null; then
 elif hash bash 2>/dev/null; then
 	attempts=$((attempts+1))
 	failures=$((failures+1))
-	printf "Zsh installation missing."
+	printf "Zsh installation missing, falling back to Bash."
 	printf "Bash installation found."
 	ln -s "$dotfiles_location"/bash/bashrc ~/.bashrc
 	ln -s "$dotfiles_location"/bash/bash-aliases ~/.bash_aliases
