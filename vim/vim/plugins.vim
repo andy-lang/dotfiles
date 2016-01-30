@@ -10,8 +10,8 @@ Plug 'tomtom/tlib_vim'
 " Plug 'benekastah/neomake'
 Plug 'bkad/CamelCaseMotion'
 Plug 'christoomey/vim-tmux-navigator' | Plug 'benmills/vimux' | Plug 'edkolev/tmuxline.vim' 
-Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-easy-align'
+Plug 'Raimondi/delimitMate'
 Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
@@ -19,10 +19,8 @@ Plug 'tpope/vim-surround'
 
 " Appearance
 Plug 'bling/vim-airline' | Plug 'bling/vim-bufferline'
-
 " Colourschemes
 Plug 'chriskempson/base16-vim'
-Plug 'nanotech/jellybeans.vim'
 
 " Syntax-specific
 Plug 'bps/vim-textobj-python', { 'for': 'python' }
