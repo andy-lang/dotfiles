@@ -10,6 +10,7 @@ Plug 'tomtom/tlib_vim'
 " Plug 'benekastah/neomake'
 Plug 'bkad/CamelCaseMotion'
 Plug 'christoomey/vim-tmux-navigator' | Plug 'benmills/vimux' | Plug 'edkolev/tmuxline.vim' 
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/vim-easy-align'
 Plug 'Raimondi/delimitMate'
 Plug 'SirVer/ultisnips'

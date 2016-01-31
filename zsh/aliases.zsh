@@ -88,7 +88,6 @@ alias dnl="dnf list"                         # list packages
 alias dngl="dnf grouplist"                   # list package groups
 alias dnli="dnf list installed"              # print all installed packages
 alias dnmc="dnf makecache"                   # rebuilds the yum package list
-
 alias dnu="sudo dnf update"                  # upgrate packages
 alias dni="sudo dnf install"                 # install package
 alias dngi="sudo dnf groupinstall"           # install package group

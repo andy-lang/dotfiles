@@ -53,3 +53,6 @@ setopt autocd
 setopt extendedglob
 setopt HIST_IGNORE_DUPS
 unsetopt HIST_VERIFY # make sure this is done last, as OMZ will overwrite it
+
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

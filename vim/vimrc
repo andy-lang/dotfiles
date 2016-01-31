@@ -6,6 +6,8 @@ filetype plugin indent on
 " stop that annoying glitch where vim deletes lines on entry
 " set t_RV= ttymouse=xterm2
 
+set shell=/bin/sh
+
 """"""""""""""""""""
 " Appearance
 """"""""""""""""""""
@@ -165,7 +167,7 @@ nnoremap <Leader>d :Bd<CR>
 """"""""""""""""""""
 
 " reload vimrc on save
-autocmd! BufWritePost ~/.vimrc source $MYVIMRC
+autocmd! BufWritePost ~/.vimrc,$MYVIMRC,~/.vim/plugins.vim source $MYVIMRC
 "autocmd! BufWritePost ~/.nvimrc source % 
 
 " do similar if saving .tmux.conf
@@ -252,9 +254,6 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 let g:easy_align_ignore_groups = []
 
-""" vim-signature
-let g:SignatureEnabledAtStartup = 1
-
 """ UltiSnips
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
@@ -262,6 +261,11 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 """ DelimitMate
 let delimitMate_expand_cr=1
+au FileType python let b:delimitMate_nesting_quotes = ['"']
+
+""" FZF
+map <silent> <Leader>f :FZF<CR>
+
 
 
 """"""""""""""""""""
