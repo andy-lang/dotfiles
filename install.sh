@@ -92,6 +92,10 @@ if hash git 2>/dev/null; then
 	printf "Git installation found."
 	ln -s "$dotfiles_location"/git/gitconfig ~/.gitconfig
 	ln -s "$dotfiles_location"/git/gitignore ~/.gitignore
+
+	# Also install FZF
+	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+	~/.fzf/install
 else
 	failures=$((failures+1))
 	printf "Git installation missing."
