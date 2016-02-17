@@ -29,11 +29,9 @@ if [ "$EUID" -ne 0 ]; then
 	source $ZSH/completion.zsh
 fi
 
-# eval "$(dircolors ~/.config/dircolors)"
-
-# if [ -z $(pidof xcape) ]; then
-# 	$ZSH/xcape.sh
-# fi
+if [ -z $(pidof xcape) ]; then
+	$ZSH/xcape.sh
+fi
 
 # turn off beep
 unsetopt beep
