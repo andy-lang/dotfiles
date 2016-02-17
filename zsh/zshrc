@@ -1,12 +1,15 @@
-export TERM="xterm-256color"
+if [ "$TMUX" = "" ]; then tmux; fi
 
+export TERM="xterm-256color"
 
 # environment variables
 export DOTFILES=/home/andrew/.dotfiles
 export ZSH=$DOTFILES/zsh
 
-export ANTIGEN=/home/andrew/Programs/antigen
+export ANTIGEN=/home/andrew/software/antigen
 export EDITOR=nvim
+
+export FZF_DEFAULT_COMMAND='find .'
 
 unset SSH_ASKPASS
 
@@ -26,9 +29,11 @@ if [ "$EUID" -ne 0 ]; then
 	source $ZSH/completion.zsh
 fi
 
-if [ -z $(pidof xcape) ]; then
-	$ZSH/xcape.sh
-fi
+# eval "$(dircolors ~/.config/dircolors)"
+
+# if [ -z $(pidof xcape) ]; then
+# 	$ZSH/xcape.sh
+# fi
 
 # turn off beep
 unsetopt beep

@@ -46,7 +46,7 @@ alias mk='mkdir'
 
 # Programming
 function sv() {
-    upperdir=~/svnRepo/2015/s2
+    upperdir="/home/andrew/uni/svn"
     if [ $# != 0 ]; then
         if [ -d $upperdir/$1 ]; then
             cd $upperdir/$1
