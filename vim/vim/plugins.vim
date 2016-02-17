@@ -19,7 +19,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-surround'
 
 " Appearance
-Plug 'bling/vim-airline' | Plug 'bling/vim-bufferline'
+Plug 'vim-airline/vim-airline' | Plug 'bling/vim-bufferline' | Plug 'vim-airline/vim-airline-themes'
 " Colourschemes
 Plug 'chriskempson/base16-vim'
 

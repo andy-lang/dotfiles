@@ -229,6 +229,14 @@ let g:airline_theme = 'hybrid'
 let g:airline#extensions#bufferline#enabled = 1
 let g:airline#extensions#bufferline#overwrite_variables = 1
 let g:airline#extensions#tmuxline#enabled = 1
+let g:tmuxline_preset = {
+	\'a':       '#I|#P',
+	\'win':     '#I #W',
+	\'cwin':    '#I #W',
+	\'x':       '#(python3 ~/.tmux/scripts/MediaPlayerStatus/MediaPlayerStatus.py)',
+	\'y':       '%R',
+	\'z':       '#(echo $USER)',
+	\'options': {'status-justify' : 'left'}}
 let g:airline#extensions#tmuxline#snapshot_file = "~/.tmux/themes/vim-tmuxline.conf"
 let g:airline#extensions#whitespace#enabled = 0
 
@@ -264,7 +272,8 @@ let delimitMate_expand_cr=1
 au FileType python let b:delimitMate_nesting_quotes = ['"']
 
 """ FZF
-map <silent> <Leader>f :FZF<CR>
+map <silent> <Leader>f :FZF -m<CR>
+map <silent> <Leader>hf :FZF -m ~<CR>
 
 
 
