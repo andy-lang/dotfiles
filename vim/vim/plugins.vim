@@ -9,7 +9,8 @@ Plug 'tomtom/tlib_vim'
 " Functionality
 " Plug 'benekastah/neomake'
 Plug 'bkad/CamelCaseMotion'
-Plug 'christoomey/vim-tmux-navigator' | Plug 'benmills/vimux' | Plug 'edkolev/tmuxline.vim' 
+Plug 'christoomey/vim-tmux-navigator' | Plug 'benmills/vimux' "| Plug 'edkolev/tmuxline.vim' 
+Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/vim-easy-align'
 Plug 'Raimondi/delimitMate'
