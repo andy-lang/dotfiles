@@ -1,0 +1,194 @@
+Started backup at Tue Mar  1 12:34:29 ACDT 2016.
+/media/Switch/ will be backed up.
+Backing up to /run/media/andrew/Circle/Backup/Switch/.
+Excluding files listed in /home/andrew/.dotfiles/rsync/exclude-switch.
+No include file specified. Exclusions will not be made.
+full command: rsync --info=MOUNT,DEL,SKIP,STATS --archive --delete --no-links --exclude-from=/home/andrew/.dotfiles/rsync/exclude-switch   /media/Switch/ /run/media/andrew/Circle/Backup/Switch/
+cannot delete non-empty directory: Switch
+
+sent 1,545,010 bytes  received 150,388 bytes  52,166.09 bytes/sec
+total size is 155,464,262,549  speedup is 91,697.80
+Completed backup at Tue Mar  1 12:35:01 ACDT 2016.
+=========================================
+Started backup at Wed Mar  2 18:49:44 ACDT 2016.
+/media/Switch/ will be backed up.
+Backing up to /run/media/andrew/Circle/Backup/Switch/.
+Excluding files listed in /home/andrew/.dotfiles/rsync/exclude-switch.
+No include file specified. Exclusions will not be made.
+full command: rsync --info=MOUNT,DEL,SKIP,STATS --archive --delete --no-links --exclude-from=/home/andrew/.dotfiles/rsync/exclude-switch   /media/Switch/ /run/media/andrew/Circle/Backup/Switch/
+
+sent 306,984,739 bytes  received 150,756 bytes  3,815,347.76 bytes/sec
+total size is 155,768,305,983  speedup is 507.16
+Completed backup at Wed Mar  2 18:51:04 ACDT 2016.
+=========================================
+Started backup at Thu Mar  3 12:38:31 ACDT 2016.
+/media/Switch/ will be backed up.
+Backing up to /run/media/andrew/Circle/Backup/Switch/.
+Excluding files listed in /home/andrew/.dotfiles/rsync/exclude-switch.
+No include file specified. Exclusions will not be made.
+full command: rsync --info=MOUNT,DEL,SKIP,STATS --archive --delete --no-links --exclude-from=/home/andrew/.dotfiles/rsync/exclude-switch   /media/Switch/ /run/media/andrew/Circle/Backup/Switch/
+deleting Music/Music Library/Podcasts/loadingreadyrun.com/Qwerpline Ep11 - Contract & Release.mp3
+deleting Music/Music Library/Podcasts/www.omnycontent.com/TOFOP 118- Aaron Norris Jokes.mp3
+deleting Music/Music Library/Podcasts/www.omnycontent.com/FOFOP 236- Not All Jen.mp3
+deleting Music/Music Library/Watch/Ian William Craig - PS079 - Ian William Craig - Zugzwang for Fostex.zip
+deleting Music/Music Library/Watch/I'lls - A Warm Reception.zip
+deleting Music/Music Library/Watch/Dominic Coppola - Beloved.zip
+deleting Music/Music Library/Watch/Clementine - Crooked Brain.zip
+deleting Music/Music Library/Watch/Beautumn - Bordeaux.zip
+deleting Music/Music Library/Watch/Watch+Play/cover.jpg
+deleting Music/Music Library/Watch/Watch+Play/I'lls - A Warm Reception - 06 Mine's Here or My End's Here or Nineteen.mp3
+deleting Music/Music Library/Watch/Watch+Play/I'lls - A Warm Reception - 05 To- All The Blurred.mp3
+deleting Music/Music Library/Watch/Watch+Play/I'lls - A Warm Reception - 04 Sharing.mp3
+deleting Music/Music Library/Watch/Watch+Play/I'lls - A Warm Reception - 03 Outright.mp3
+deleting Music/Music Library/Watch/Watch+Play/I'lls - A Warm Reception - 02 Plans Only Drawn.mp3
+deleting Music/Music Library/Watch/Watch+Play/I'lls - A Warm Reception - 01 Speak Low.mp3
+deleting Music/Music Library/Watch/Watch+Play/Beautumn - Bordeaux - 09 Blame The Mars.mp3
+deleting Music/Music Library/Watch/Watch+Play/Beautumn - Bordeaux - 08 But What Can You Do.mp3
+deleting Music/Music Library/Watch/Watch+Play/Beautumn - Bordeaux - 07 Please Do Something.mp3
+deleting Music/Music Library/Watch/Watch+Play/Beautumn - Bordeaux - 06 Bordeaux.mp3
+deleting Music/Music Library/Watch/Watch+Play/Beautumn - Bordeaux - 05 Meadowhole.mp3
+deleting Music/Music Library/Watch/Watch+Play/Beautumn - Bordeaux - 04 Offer Me Questions.mp3
+deleting Music/Music Library/Watch/Watch+Play/Beautumn - Bordeaux - 03 Relent.mp3
+deleting Music/Music Library/Watch/Watch+Play/Beautumn - Bordeaux - 02 Snohetta.mp3
+deleting Music/Music Library/Watch/Watch+Play/Beautumn - Bordeaux - 01 Telegram.mp3
+
+sent 1,232,854,064 bytes  received 153,647 bytes  18,824,545.21 bytes/sec
+total size is 156,108,585,242  speedup is 126.61
+Completed backup at Thu Mar  3 12:39:36 ACDT 2016.
+=========================================
+Started backup at Sat Mar  5 13:41:31 ACDT 2016.
+/media/Switch/ will be backed up.
+Backing up to /run/media/andrew/Circle/Backup/Switch/.
+Excluding files listed in /home/andrew/.dotfiles/rsync/exclude-switch.
+No include file specified. Exclusions will not be made.
+full command: rsync --info=MOUNT,DEL,SKIP,STATS --archive --delete --no-links --exclude-from=/home/andrew/.dotfiles/rsync/exclude-switch   /media/Switch/ /run/media/andrew/Circle/Backup/Switch/
+
+sent 97,561,390 bytes  received 150,826 bytes  1,670,294.29 bytes/sec
+total size is 156,166,219,118  speedup is 1,598.23
+Completed backup at Sat Mar  5 13:42:29 ACDT 2016.
+=========================================
+Started backup at Sun Mar  6 14:32:35 ACDT 2016.
+/media/Switch/ will be backed up.
+Backing up to /run/media/andrew/Circle/Backup/Switch/.
+Excluding files listed in /home/andrew/.dotfiles/rsync/exclude-switch.
+No include file specified. Exclusions will not be made.
+full command: rsync --info=MOUNT,DEL,SKIP,STATS --archive --delete --no-links --exclude-from=/home/andrew/.dotfiles/rsync/exclude-switch   /media/Switch/ /run/media/andrew/Circle/Backup/Switch/
+
+sent 1,547,231 bytes  received 150,530 bytes  31,151.58 bytes/sec
+total size is 156,166,219,118  speedup is 91,983.63
+Completed backup at Sun Mar  6 14:33:29 ACDT 2016.
+=========================================
+Started backup at Mon Mar  7 10:42:36 ACDT 2016.
+/media/Switch/ will be backed up.
+Backing up to /run/media/andrew/Circle/Backup/Switch/.
+Excluding files listed in /home/andrew/.dotfiles/rsync/exclude-switch.
+No include file specified. Exclusions will not be made.
+full command: rsync --info=MOUNT,DEL,SKIP,STATS --archive --delete --no-links --exclude-from=/home/andrew/.dotfiles/rsync/exclude-switch   /media/Switch/ /run/media/andrew/Circle/Backup/Switch/
+
+sent 1,596,417 bytes  received 150,549 bytes  32,054.42 bytes/sec
+total size is 156,166,268,193  speedup is 89,392.85
+Completed backup at Mon Mar  7 10:43:30 ACDT 2016.
+=========================================
+Started backup at Tue Mar  8 09:26:01 ACDT 2016.
+/media/Switch/ will be backed up.
+Backing up to /run/media/andrew/Circle/Backup/Switch/.
+Excluding files listed in /home/andrew/.dotfiles/rsync/exclude-switch.
+'/run/media/andrew/Circle/Backup/Switch/' is not a valid backup directory. Aborting.
+Started backup at Wed Mar  9 09:10:36 ACDT 2016.
+/media/Switch/ will be backed up.
+Backing up to /run/media/andrew/Circle/Backup/Switch/.
+Excluding files listed in /home/andrew/.dotfiles/rsync/exclude-switch.
+No include file specified. Exclusions will not be made.
+full command: rsync --info=MOUNT,DEL,SKIP,STATS --archive --delete --no-links --exclude-from=/home/andrew/.dotfiles/rsync/exclude-switch   /media/Switch/ /run/media/andrew/Circle/Backup/Switch/
+
+sent 241,684,652 bytes  received 151,350 bytes  4,205,843.51 bytes/sec
+total size is 156,367,987,534  speedup is 646.59
+Completed backup at Wed Mar  9 09:11:33 ACDT 2016.
+=========================================
+Started backup at Thu Mar 10 09:18:36 ACDT 2016.
+/media/Switch/ will be backed up.
+Backing up to /run/media/andrew/Circle/Backup/Switch/.
+Excluding files listed in /home/andrew/.dotfiles/rsync/exclude-switch.
+No include file specified. Exclusions will not be made.
+full command: rsync --info=MOUNT,DEL,SKIP,STATS --archive --delete --no-links --exclude-from=/home/andrew/.dotfiles/rsync/exclude-switch   /media/Switch/ /run/media/andrew/Circle/Backup/Switch/
+deleting Music/Music Production/FL Studio/Projects/Releases/Burnt Shade/album_art.jpg
+deleting Pictures/PixelSorter/me-(artist-photo)/ImageToSoundSetup.exe
+
+sent 2,743,805,583 bytes  received 151,453 bytes  23,757,203.77 bytes/sec
+total size is 159,067,336,621  speedup is 57.97
+Completed backup at Thu Mar 10 09:20:31 ACDT 2016.
+=========================================
+Started backup at Sat Mar 12 13:09:03 ACDT 2016.
+/media/Switch/ will be backed up.
+Backing up to /run/media/andrew/Circle/Backup/Switch/.
+Excluding files listed in /home/andrew/.dotfiles/rsync/exclude-switch.
+'/run/media/andrew/Circle/Backup/Switch/' is not a valid backup directory. Aborting.
+Started backup at Sun Mar 13 13:38:01 ACDT 2016.
+/media/Switch/ will be backed up.
+Backing up to /run/media/andrew/Circle/Backup/Switch/.
+Excluding files listed in /home/andrew/.dotfiles/rsync/exclude-switch.
+'/run/media/andrew/Circle/Backup/Switch/' is not a valid backup directory. Aborting.
+Started backup at Tue Mar 15 10:42:01 ACDT 2016.
+/media/Switch/ will be backed up.
+Backing up to /run/media/andrew/Circle/Backup/Switch/.
+Excluding files listed in /home/andrew/.dotfiles/rsync/exclude-switch.
+'/run/media/andrew/Circle/Backup/Switch/' is not a valid backup directory. Aborting.
+Started backup at Wed Mar 16 09:14:46 ACDT 2016.
+/media/Switch/ will be backed up.
+Backing up to /run/media/andrew/Circle/Backup/Switch/.
+Excluding files listed in /home/andrew/.dotfiles/rsync/exclude-switch.
+No include file specified. Exclusions will not be made.
+full command: rsync --info=MOUNT,DEL,SKIP,STATS --archive --delete --no-links --exclude-from=/home/andrew/.dotfiles/rsync/exclude-switch   /media/Switch/ /run/media/andrew/Circle/Backup/Switch/
+deleting Documents/My Games/Rocket League/TAGame/Logs/RL-v160212.65765.127596-2016.02.19-23.04.34.dmp
+deleting Documents/My Games/Rocket League/TAGame/Logs/Launch-backup-2016.02.19-23.57.48.log
+deleting Documents/My Games/Rocket League/TAGame/Logs/Launch-backup-2016.02.19-23.50.55.log
+deleting Documents/My Games/Rocket League/TAGame/Logs/Launch-backup-2016.02.19-23.42.59.log
+deleting Documents/My Games/Rocket League/TAGame/Logs/Launch-backup-2016.02.19-23.21.54.log
+deleting Documents/My Games/Rocket League/TAGame/Logs/Launch-backup-2016.02.19-23.11.55.log
+deleting Documents/My Games/Rocket League/TAGame/Logs/Launch-backup-2016.02.19-23.06.28.log
+deleting Documents/My Games/Rocket League/TAGame/Logs/Launch-backup-2016.02.19-23.04.34.log
+deleting Documents/My Games/Rocket League/TAGame/Logs/Launch-backup-2016.02.19-23.03.44.log
+deleting Documents/My Games/Rocket League/TAGame/SaveData/DBE_Production/76561198036315339_1.save
+deleting Music/Music Library/Music/A Winged Victory for the Sullen/Atomos VII EP/3 Atomos VII (Greenhouse Re-Interpretation).mp3
+deleting Music/Music Library/Music/A Winged Victory for the Sullen/Atomos VII EP/2 Minuet For A Cheap Piano Number One.mp3
+deleting Music/Music Library/Music/A Winged Victory for the Sullen/Atomos VII EP/1 Atomos VII.mp3
+deleting Music/Music Library/Podcasts/feeds.serialpodcast.org/Serial.jpg
+deleting Music/Music Library/Podcasts/feeds.serialpodcast.org/S02 Episode 09  Trade Secrets.mp3
+deleting Music/Music Library/Podcasts/feeds.serialpodcast.org/S02 Episode 08  Hindsight, Part 2.mp3
+deleting Music/Music Library/Podcasts/feeds.serialpodcast.org/S02 Episode 07  Hindsight, Part 1.mp3
+deleting Music/Music Library/Podcasts/feeds.serialpodcast.org/S02 Episode 06  5 O'Clock Shadow.mp3
+deleting Music/Music Library/Podcasts/feeds.serialpodcast.org/S02 Episode 05  Meanwhile, in Tampa.mp3
+deleting Music/Music Library/Podcasts/feeds.serialpodcast.org/S01 Update  Day 03, Adnan Syed’s Hearing.mp3
+deleting Music/Music Library/Podcasts/feeds.serialpodcast.org/S01 Update  Day 01, Adnan Syed’s Hearing.mp3
+deleting Music/Music Library/Podcasts/feeds.serialpodcast.org/
+deleting Music/Music Library/Podcasts/loadingreadyrun.com/Qwerpline Ep10 - Key to the City.mp3
+deleting Music/Music Library/Podcasts/roosterteeth.com/Salty about Salty – #365.mp3
+deleting Music/Music Library/Podcasts/roosterteeth.com/Gustavo the Birthday Boy – #364.mp3
+deleting Music/Music Library/Podcasts/songexploder.libsyn.com/The Arcs - Put a Flower in Your Pocket.mp3
+deleting Music/Music Library/Podcasts/walkingtheroom.libsyn.com/#208 - Live from SF Sketchfest w  Dana Gould and Mike Meehan.mp3
+deleting Music/Music Library/Podcasts/www.omnycontent.com/FOFOP 238- Circus Olay.mp3
+deleting Music/Music Library/Podcasts/www.omnycontent.com/FOFOP 237- Two Months At Bernies.mp3
+deleting Music/Music Library/Podcasts/www.omnycontent.com/FOFOP 235- ArtJizzinal.mp3
+deleting Music/Music Library/Podcasts/www.omnycontent.com/FOFOP 234- Style Versus Convenience.mp3
+deleting Music/Music Library/Podcasts/www.omnycontent.com/FOFOP 226- You Wrote The Book.mp3
+deleting Music/Music Library/Watch/The Gloaming - 2.zip
+deleting Music/Music Library/Watch/Olan Mill - JAN SBR 15.zip
+deleting Torrents/Avid Sibelius 7.5.0 (Emulator-R2R) [ChingLiu]/How To Open Nfo Files.txt
+deleting Torrents/Avid Sibelius 7.5.0 (Emulator-R2R) [ChingLiu]/ChingLiu.Install.Notes.nfo
+deleting Torrents/Avid Sibelius 7.5.0 (Emulator-R2R) [ChingLiu]/Avid.Sibelius.v7.5.0.R2R.rar
+
+sent 5,425,269,801 bytes  received 194,397 bytes  24,717,376.76 bytes/sec
+total size is 161,918,008,475  speedup is 29.84
+Completed backup at Wed Mar 16 09:18:25 ACDT 2016.
+=========================================
+Started backup at Thu Mar 17 18:29:48 ACDT 2016.
+/media/Switch/ will be backed up.
+Backing up to /run/media/andrew/Circle/Backup/Switch/.
+Excluding files listed in /home/andrew/.dotfiles/rsync/exclude-switch.
+No include file specified. Exclusions will not be made.
+full command: rsync --info=MOUNT,DEL,SKIP,STATS --archive --delete --no-links --exclude-from=/home/andrew/.dotfiles/rsync/exclude-switch   /media/Switch/ /run/media/andrew/Circle/Backup/Switch/
+
+sent 649,885,400 bytes  received 157,887 bytes  7,345,121.89 bytes/sec
+total size is 162,523,538,609  speedup is 250.02
+Completed backup at Thu Mar 17 18:31:16 ACDT 2016.
+=========================================
