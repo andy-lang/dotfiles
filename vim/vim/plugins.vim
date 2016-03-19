@@ -9,7 +9,7 @@ Plug 'tomtom/tlib_vim'
 " Functionality
 " Plug 'benekastah/neomake'
 Plug 'bkad/CamelCaseMotion'
-Plug 'christoomey/vim-tmux-navigator' | Plug 'benmills/vimux' "| Plug 'edkolev/tmuxline.vim' 
+Plug 'christoomey/vim-tmux-navigator' | Plug 'benmills/vimux' | Plug 'edkolev/tmuxline.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/vim-easy-align'
@@ -31,6 +31,7 @@ Plug 'jvirtanen/vim-octave', { 'for': ['matlab', 'octave'] }
 Plug 'keith/tmux.vim'
 Plug 'othree/html5.vim', { 'for': 'html' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'rbonvall/vim-textobj-latex', { 'for': 'tex' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
 call plug#end()

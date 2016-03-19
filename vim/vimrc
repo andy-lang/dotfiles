@@ -46,7 +46,7 @@ set scrolloff=1
 " ignore warnings if swapfile exists
 set shortmess+=A
 
-" 4 spaces per indent 
+" 4 spaces per indent
 set tabstop=4
 set shiftwidth=4
 
@@ -80,7 +80,7 @@ set nofoldenable
 """"""""""""""""""""
 " Functionality
 """"""""""""""""""""
-" set spell spelllang=en_au
+set spell spelllang=en_au
 
 " automatically reloads files that have been detected as being changed
 set autoread
@@ -91,7 +91,7 @@ set autowrite
 set backspace=2
 
 " if no register specified, copy to system clipboard
-set clipboard=unnamedplus
+set clipboard+=unnamedplus
 
 " open make errors in new split/buffer if not open
 set switchbuf=useopen,usetab,split
@@ -168,7 +168,7 @@ nnoremap <Leader>d :Bd<CR>
 
 " reload vimrc on save
 autocmd! BufWritePost ~/.vimrc,$MYVIMRC,~/.vim/plugins.vim source $MYVIMRC
-"autocmd! BufWritePost ~/.nvimrc source % 
+"autocmd! BufWritePost ~/.nvimrc source %
 
 " do similar if saving .tmux.conf
 autocmd! BufWritePost ~/.tmux.conf :call VimuxRunCommand("tmux source-file ~/.tmux.conf")
@@ -208,9 +208,13 @@ let java_highlight_java_lang_ids=1
 
 " LaTeX settings
 let g:tex_flavor='latex'
-" let g:tex_nospell=0
-autocmd BufNewFile,BufFilePre,BufRead *.tex setlocal makeprg=latexmk\ %\ -pdf\ -pdflatex=\"pdflatex\ -interaction\ nonstopmode\"
+let g:tex_nospell=0
+" autocmd BufNewFile,BufFilePre,BufRead *.tex setlocal makeprg=latexmk\ %\ -pdf\ -pdflatex=\"pdflatex\ -interaction\ nonstopmode\"
+" autocmd FileType tex let b:Dispatch = 'texfot latexmk -pdf -pvc %'
+
+" Rust
 autocmd filetype rust setlocal makeprg=cargo\ build
+
 " spellcheck for txt files
 " autocmd! FileType help setlocal nospell
 
@@ -225,7 +229,6 @@ set laststatus=2
 
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'hybrid'
-"let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#bufferline#enabled = 1
 let g:airline#extensions#bufferline#overwrite_variables = 1
 let g:airline#extensions#tmuxline#enabled = 1
