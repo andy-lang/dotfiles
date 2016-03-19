@@ -3,10 +3,10 @@ if [ "$TMUX" = "" ]; then tmux; fi
 export TERM="xterm-256color"
 
 # environment variables
-export DOTFILES=/home/andrew/.dotfiles
+export DOTFILES=$HOME/.dotfiles
 export ZSH=$DOTFILES/zsh
 
-export ANTIGEN=/home/andrew/software/antigen
+export ANTIGEN=$HOME/software/antigen
 export EDITOR=nvim
 
 export FZF_DEFAULT_COMMAND='find .'
@@ -16,6 +16,9 @@ unset SSH_ASKPASS
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/base16-monokai.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
+# eval "`dircolors ~/.mydircolors`"
+# alias ls='ls --color=auto'
 
 # make sure prompt & colours are initialised BEFORE you start setting prompts
 autoload -U colors && colors

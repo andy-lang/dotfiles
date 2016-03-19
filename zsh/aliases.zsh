@@ -31,8 +31,9 @@ function cs() {
 
 function mc() {
 	# Make a directory, cd to it
-	mkdir $*
-	cd $1
+	dir=$(pwd)/$*
+	mkdir "$dir"
+	cd "$1"
 }
 
 function size() {
@@ -46,7 +47,7 @@ alias mk='mkdir'
 
 # Programming
 function sv() {
-    upperdir="/home/andrew/uni/svn"
+    upperdir="/home/andrew/uni/svn/2016"
     if [ $# != 0 ]; then
         if [ -d $upperdir/$1 ]; then
             cd $upperdir/$1
@@ -55,12 +56,13 @@ function sv() {
 		cd $upperdir
     fi
 }
-alias gfort='gfortran'
+# alias gfort='gfortran'
 # alias viml="~/.tmux/scripts/omnivim.sh --vimcmd gvim --vimflags \"-v\" --lit"
 # alias vim="~/.tmux/scripts/omnivim.sh --vimcmd gvim --vimflags \"-v\""
 alias viml="python ~/.tmux/scripts/omnivim.py --lit"
 alias vim="python ~/.tmux/scripts/omnivim.py"
 export OMNIVIM_EDITOR=nvim
+export NVIM_SOCKET_PATH='/home/andrew/'
 
 # Git. Most of the others are covered by OMZ's git plugin
 alias git=hub # always use Github's nifty plugin
