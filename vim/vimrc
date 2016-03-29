@@ -98,6 +98,9 @@ set switchbuf=useopen,usetab,split
 
 source ~/.vim/ignores.vim
 
+set undofile
+set undodir=${HOME}/.vim/undo
+
 
 """"""""""""""""""""
 " Keybindings & commands
@@ -259,6 +262,7 @@ map <silent> <Leader>ge <Plug>CamelCaseMotion_ge
 
 """ vim-commentary
 autocmd! FileType octave setlocal commentstring=%\ %s
+autocmd! FileType cmake setlocal commentstring=#\ %s
 
 """ vim-easy-align
 xmap ga <Plug>(EasyAlign)
