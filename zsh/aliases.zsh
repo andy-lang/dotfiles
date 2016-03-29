@@ -56,16 +56,16 @@ function sv() {
 		cd $upperdir
     fi
 }
-# alias gfort='gfortran'
-# alias viml="~/.tmux/scripts/omnivim.sh --vimcmd gvim --vimflags \"-v\" --lit"
-# alias vim="~/.tmux/scripts/omnivim.sh --vimcmd gvim --vimflags \"-v\""
+
 alias viml="python ~/.tmux/scripts/omnivim.py --lit"
 alias vim="python ~/.tmux/scripts/omnivim.py"
 export OMNIVIM_EDITOR=nvim
 export NVIM_SOCKET_PATH='/home/andrew/'
 
 # Git. Most of the others are covered by OMZ's git plugin
-alias git=hub # always use Github's nifty plugin
+if hash hub 2>/dev/null; then
+	alias git=hub # always use Github's nifty plugin
+fi
 alias gpom='git push origin master'
 alias gun='git checkout --' # "git undo"
 
@@ -83,17 +83,7 @@ alias svu='svn update'
 alias svrm='svn delete'
 alias svrmk='svn delete --keep-local'
 
-# aliases for dnf. Similar to oh-my-zsh's yum aliases
-alias dns="dnf search"                       # search package
-alias dnp="dnf info"                         # show package info
-alias dnl="dnf list"                         # list packages
-alias dngl="dnf grouplist"                   # list package groups
-alias dnli="dnf list installed"              # print all installed packages
-alias dnmc="dnf makecache"                   # rebuilds the yum package list
-alias dnu="sudo dnf update"                  # upgrate packages
-alias dni="sudo dnf install"                 # install package
-alias dngi="sudo dnf groupinstall"           # install package group
-alias dnr="sudo dnf remove"                  # remove package
-alias dngr="sudo dnf groupremove"            # remove pagage group
-alias dnrl="sudo dnf remove --remove-leaves" # remove package and leaves
-alias dnc="sudo dnf clean all"               # clean cache
+# geeknote
+if hash geeknote 2>/dev/null; then
+	alias gn=geeknote
+fi
