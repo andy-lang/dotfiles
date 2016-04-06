@@ -183,9 +183,6 @@ autocmd! BufWritePost ~/.zshrc,*.zsh-theme,$DOTFILES/zsh/*.zsh :call VimuxRunCom
 autocmd! BufWritePost ~/.bashrc :call VimuxRunCommand("source ~/.bashrc")
 autocmd! BufWritePost ~/.bash_aliases :call VimuxRunCommand("source ~/.bash_aliases")
 
-" session restore on entering Vim
-autocmd! VimEnter * call RestoreSess()
-
 " syntax highlighting for snippet files
 autocmd! FileType snippet set syntax=snippets
 autocmd! BufRead,BufNewFile *.snippets set filetype=snippets
@@ -261,8 +258,9 @@ map <silent> <Leader>e <Plug>CamelCaseMotion_e
 map <silent> <Leader>ge <Plug>CamelCaseMotion_ge
 
 """ vim-commentary
-autocmd! FileType octave setlocal commentstring=%\ %s
+autocmd! FileType c,cpp setlocal commentstring=\/\/\ %s
 autocmd! FileType cmake setlocal commentstring=#\ %s
+autocmd! FileType octave setlocal commentstring=%\ %s
 
 """ vim-easy-align
 xmap ga <Plug>(EasyAlign)
@@ -282,18 +280,9 @@ au FileType python let b:delimitMate_nesting_quotes = ['"']
 map <silent> <Leader>f :FZF -m<CR>
 map <silent> <Leader>hf :FZF -m ~<CR>
 
-
-
 """"""""""""""""""""
 " Functions
 """"""""""""""""""""
-" restore session on entry, but only if no other command line arguments & not in diff mode
-fu! RestoreSess()
-    if filereadable(getcwd() . '/Session.vim') && !&diff && argc() == 0
-        execute 'so %:p:h/Session.vim'
-    endif
-endfunction
-
 fu! GetSnipFile()
 	execute 'edit ~/.vim/UltiSnips/' . &ft . '.snippets'
 endfunction
