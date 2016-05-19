@@ -2,11 +2,11 @@ snippet def
 #ifndef ${1:`toupper(expand('%:r'))`}_HPP
 #define $1_HPP
 
-#endif
+#endif // $1_HPP
 endsnippet
 
 snippet for
-for (int ${2:i} = ${3:0}; $2 < ${1:count}; $2${4:++}) {
+for (int ${2:i} = ${3:0}; $2 < ${1:count}; ++$2) {
 	${0:/* code */}
 }
 endsnippet
