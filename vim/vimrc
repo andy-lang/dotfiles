@@ -137,9 +137,6 @@ nnoremap <Leader>m :Make <CR>
 nnoremap <Leader>cm :Make clean<CR>
 " autocmd BufWritePost * Neomake
 
-" K performs the reverse of J - i.e. split the line at the current cursor location
-nnoremap K i<Enter><Esc>k$
-
 " Y works similarly to C, D, etc
 nnoremap Y y$
 
