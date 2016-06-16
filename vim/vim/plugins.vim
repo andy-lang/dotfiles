@@ -13,10 +13,10 @@ Plug 'christoomey/vim-tmux-navigator' | Plug 'benmills/vimux' | Plug 'edkolev/tm
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-" Plug 'junegunn/vim-easy-align'
-Plug 'tommcdo/vim-lion'
+Plug 'mhinz/vim-signify'
 Plug 'Raimondi/delimitMate'
 Plug 'SirVer/ultisnips'
+Plug 'tommcdo/vim-lion'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-surround'
