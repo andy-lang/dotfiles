@@ -229,6 +229,7 @@ let g:airline_theme = 'hybrid'
 let g:airline#extensions#bufferline#enabled = 1
 let g:airline#extensions#bufferline#overwrite_variables = 1
 let g:airline#extensions#tmuxline#enabled = 1
+let g:airline#extensions#wordcount#enabled = 0
 let g:tmuxline_preset = {
 	\'a':       '#I|#P',
 	\'win':     '#I #W',
@@ -271,7 +272,11 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 """ DelimitMate
 let delimitMate_expand_cr=1
-au FileType python let b:delimitMate_nesting_quotes = ['"']
+au! FileType python let b:delimitMate_nesting_quotes = ['"']
+
+""" vim-signify
+let g:signify_vcs_list = ['svn', 'git']
+" let g:signify_line_highlight = 1
 
 """ FZF
 map <silent> <Leader>f :FZF -m<CR>
