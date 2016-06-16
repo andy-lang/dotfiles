@@ -59,7 +59,8 @@ function sv() {
 
 alias viml="python ~/.tmux/scripts/omnivim.py --lit"
 alias vim="python ~/.tmux/scripts/omnivim.py"
-export OMNIVIM_EDITOR=nvim
+# export OMNIVIM_EDITOR=nvim
+export OMNIVIM_EDITOR=/usr/bin/nvim
 export NVIM_SOCKET_PATH='/home/andrew/'
 
 # Git. Most of the others are covered by OMZ's git plugin
