@@ -44,6 +44,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias mkdir='mkdir -p'
 alias mk='mkdir'
+alias cclip='echo -n | xclip -selection clipboard'
 
 # Programming
 function sv() {
