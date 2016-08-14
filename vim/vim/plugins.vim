@@ -19,6 +19,7 @@ Plug 'SirVer/ultisnips'
 Plug 'tommcdo/vim-lion'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 
 " Appearance
