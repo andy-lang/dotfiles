@@ -1,10 +1,10 @@
 snippet "cla?s?s?" "java class" r
-public class ${1:`!v expand('%:t:r')`} $2{
+public class ${1:`!p snip.rv = snip.basename or "name"`} $2{
 	$0
 }
 endsnippet
 snippet "interf?a?c?e?" "java interface" r
-public interface ${1:`!v expand('%:t:r')`} $2{
+public interface ${1:`!p snip.rv = snip.basename or "name"`} $2{
 	$0
 }
 endsnippet

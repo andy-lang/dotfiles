@@ -1,7 +1,7 @@
 snippet def
-#ifndef ${1:`toupper(expand('%:r'))`}_HPP
+#ifndef ${1:`!p snip.rv = snip.basename.upper() or "NAME"`}_HPP
 #define $1_HPP
-
+$0
 #endif // $1_HPP
 endsnippet
 
@@ -15,19 +15,6 @@ snippet if
 if (${1}) {
 	${2}
 }
-endsnippet
-
-snippet head
-/*
- * Course: COMPSCI ${1:3000}
- * Assignment ${2:1}, question ${3:1}
- * Author: ${4:Andrew Lang}
- * Student ID: a1648205
- * Filename: `expand('%:t')`
- * Design began: ${5:`strftime("%b %d, %Y")`}
- * Coding began: ${6:`strftime("%b %d, %Y")`}
- * Description: ${7:Description}
- */
 endsnippet
 
 snippet inc
