@@ -59,11 +59,9 @@ set wrap linebreak
 
 " syntax highlighting
 syntax enable
-" set t_Co=256
 let base16colorspace=256
+" set t_Co=256
 try
-	" colorscheme Benokai
-	" colorscheme jellybeans
 	set background=dark
 	colorscheme base16-monokai
 catch
