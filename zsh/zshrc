@@ -1,4 +1,4 @@
-if [ "$TMUX" = "" ]; then tmux; fi
+if [ "$TMUX" = "" ]; then tmux -2; fi
 
 export TERM="xterm-256color"
 
@@ -11,10 +11,12 @@ export EDITOR=nvim
 
 export FZF_DEFAULT_COMMAND='find .'
 
+export MANPAGER="env MAN_PN=1 vimx -M +MANPAGER -"
+
 unset SSH_ASKPASS
 
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/base16-monokai.dark.sh"
+BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-monokai.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 # eval "`dircolors ~/.mydircolors`"
