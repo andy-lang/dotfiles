@@ -204,8 +204,6 @@ let java_highlight_java_lang_ids=1
 " LaTeX settings
 let g:tex_flavor='latex'
 let g:tex_nospell=0
-" autocmd BufNewFile,BufFilePre,BufRead *.tex setlocal makeprg=latexmk\ %\ -pdf\ -pdflatex=\"pdflatex\ -interaction\ nonstopmode\"
-" autocmd FileType tex let b:Dispatch = 'texfot latexmk -pdf -pvc %'
 
 " Rust
 autocmd filetype rust setlocal makeprg=cargo\ build
@@ -213,39 +211,50 @@ autocmd filetype rust setlocal makeprg=cargo\ build
 " spellcheck for txt files
 " autocmd! FileType help setlocal nospell
 
-""""""""""""""""""""
-" Plugin-specific settings
-""""""""""""""""""""
+""" Statusline
+function! BufNum()
+	""" Returns the number of open buffers.
+	return len(filter(range(1, bufnr('$')), 'buflisted(v:val)'))
+endfunction
 
-""" vim-airline
+function! BasenamePwd()
+	""" Returns the basename of the current working directory
+	return fnamemodify(getcwd(), ':t')
+endfunction
 
 " always show statusline
 set laststatus=2
 
-let g:airline_powerline_fonts = 1
-let g:airline_theme = 'hybrid'
-let g:airline#extensions#bufferline#enabled = 1
-let g:airline#extensions#bufferline#overwrite_variables = 1
-let g:airline#extensions#tmuxline#enabled = 1
-let g:airline#extensions#wordcount#enabled = 0
-let g:tmuxline_preset = {
-	\'a':       '#I|#P',
-	\'win':     '#I #W',
-	\'cwin':    '#I #W',
-	\'x':       '#(python3 ~/.tmux/scripts/MediaPlayerStatus/MediaPlayerStatus.py)',
-	\'y':       '%R',
-	\'z':       '#(echo $USER)',
-	\'options': {'status-justify' : 'left'}}
-let g:airline#extensions#tmuxline#snapshot_file = "~/.tmux/themes/vim-tmuxline.conf"
-let g:airline#extensions#whitespace#enabled = 0
+set statusline=
+set statusline +=%#Visual#
+set statusline +=%-2{BufNum()}
 
-" b: basename of current working directory
-let g:airline_section_b = '%{fnamemodify(getcwd(), '':t'')}'
-" y: linecount
-let g:airline_section_y = '%L'
-" z: current line, current column
-let g:airline_section_z = '%l,%v'
-let g:bufferline_echo = 0
+set statusline +=%#TabLineSel#
+set statusline +=%.30{BasenamePwd()}\ \ 
+set statusline +=%#ModeMsg#
+set statusline +=%n\ 
+set statusline +=%t\ 
+set statusline +=%m
+set statusline +=%#Pmenu#
+set statusline +=\ %y
+
+set statusline +=%=
+set statusline +=%#Pmenu#
+set statusline +=(%l/%L)
+set statusline +=,%-2v
+
+""""""""""""""""""""
+" Plugin-specific settings
+""""""""""""""""""""
+
+" let g:tmuxline_preset = {
+" 	\'a':       '#I|#P',
+" 	\'win':     '#I #W',
+" 	\'cwin':    '#I #W',
+" 	\'x':       '#(python3 ~/.tmux/scripts/MediaPlayerStatus/MediaPlayerStatus.py)',
+" 	\'y':       '%R',
+" 	\'z':       '#(echo $USER)',
+" 	\'options': {'status-justify' : 'left'}}
 
 " camelcasemotion
 map <silent> <Leader>w <Plug>CamelCaseMotion_w
@@ -257,11 +266,6 @@ map <silent> <Leader>ge <Plug>CamelCaseMotion_ge
 autocmd! FileType c,cpp setlocal commentstring=\/\/\ %s
 autocmd! FileType cmake setlocal commentstring=#\ %s
 autocmd! FileType octave setlocal commentstring=%\ %s
-
-""" vim-easy-align
-xmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
-let g:easy_align_ignore_groups = []
 
 """ UltiSnips
 let g:UltiSnipsExpandTrigger="<tab>"
