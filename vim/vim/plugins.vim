@@ -9,6 +9,7 @@ Plug 'kana/vim-textobj-user'
 Plug 'bkad/CamelCaseMotion'
 Plug 'christoomey/vim-tmux-navigator' | Plug 'benmills/vimux'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-signify'
 Plug 'Raimondi/delimitMate'
