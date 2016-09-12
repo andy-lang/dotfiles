@@ -226,8 +226,6 @@ set statusline=
 set statusline +=%#Visual#
 set statusline +=%-2{BufNum()}
 
-set statusline +=%#TabLineSel#
-set statusline +=%.30{BasenamePwd()}\ \ 
 set statusline +=%#ModeMsg#
 set statusline +=%n\ 
 set statusline +=%t\ 
@@ -237,8 +235,10 @@ set statusline +=\ %y
 
 set statusline +=%=
 set statusline +=%#Pmenu#
-set statusline +=(%l/%L)
-set statusline +=,%-2v
+set statusline +=%l,
+set statusline +=%L\ 
+set statusline +=%#TabLineSel#
+set statusline +=%-.30{BasenamePwd()}
 
 """"""""""""""""""""
 " Plugin-specific settings
