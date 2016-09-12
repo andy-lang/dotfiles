@@ -70,6 +70,7 @@ if hash hub 2>/dev/null; then
 fi
 alias gpom='git push origin master'
 alias gun='git checkout --' # "git undo"
+alias gap='git add -p'
 
 # aliases for svn
 alias sva='svn add'
