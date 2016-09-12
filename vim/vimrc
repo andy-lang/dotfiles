@@ -71,6 +71,37 @@ set foldmethod=syntax
 set foldnestmax=1
 set nofoldenable
 
+""" Statusline
+function! BufNum()
+	""" Returns the number of open buffers.
+	return len(filter(range(1, bufnr('$')), 'buflisted(v:val)'))
+endfunction
+
+function! BasenamePwd()
+	""" Returns the basename of the current working directory
+	return fnamemodify(getcwd(), ':t')
+endfunction
+
+" always show statusline
+set laststatus=2
+
+set statusline=
+set statusline +=%#Visual#
+set statusline +=%-2{BufNum()}
+
+set statusline +=%#ModeMsg#
+set statusline +=%n\ 
+set statusline +=%t\ 
+set statusline +=%m
+set statusline +=%#Pmenu#
+set statusline +=\ %y
+
+set statusline +=%=
+set statusline +=%#Pmenu#
+set statusline +=%l,
+set statusline +=%L\ 
+set statusline +=%#TabLineSel#
+set statusline +=%-.30{BasenamePwd()}
 
 """"""""""""""""""""
 " Functionality
@@ -208,37 +239,6 @@ autocmd filetype rust setlocal makeprg=cargo\ build
 " spellcheck for txt files
 " autocmd! FileType help setlocal nospell
 
-""" Statusline
-function! BufNum()
-	""" Returns the number of open buffers.
-	return len(filter(range(1, bufnr('$')), 'buflisted(v:val)'))
-endfunction
-
-function! BasenamePwd()
-	""" Returns the basename of the current working directory
-	return fnamemodify(getcwd(), ':t')
-endfunction
-
-" always show statusline
-set laststatus=2
-
-set statusline=
-set statusline +=%#Visual#
-set statusline +=%-2{BufNum()}
-
-set statusline +=%#ModeMsg#
-set statusline +=%n\ 
-set statusline +=%t\ 
-set statusline +=%m
-set statusline +=%#Pmenu#
-set statusline +=\ %y
-
-set statusline +=%=
-set statusline +=%#Pmenu#
-set statusline +=%l,
-set statusline +=%L\ 
-set statusline +=%#TabLineSel#
-set statusline +=%-.30{BasenamePwd()}
 
 """"""""""""""""""""
 " Plugin-specific settings
