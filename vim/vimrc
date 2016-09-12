@@ -3,9 +3,6 @@ source ~/.vim/plugins.vim
 
 filetype plugin indent on
 
-" stop that annoying glitch where vim deletes lines on entry
-" set t_RV= ttymouse=xterm2
-
 set shell=/bin/sh
 
 """"""""""""""""""""
