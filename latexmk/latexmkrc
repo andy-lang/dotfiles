@@ -1,6 +1,3 @@
-# write all additional files to a ./build directory
-$out_dir = "build";
-
 # always in continuous make mode
 $preview_continuous_mode = 1;
 # always compile to a PDF
