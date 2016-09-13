@@ -42,6 +42,8 @@ function sv() {
     fi
 }
 
+alias gdb='gdb -q'
+
 alias viml="python ~/.tmux/scripts/omnivim.py --lit"
 alias vim="python ~/.tmux/scripts/omnivim.py"
 export OMNIVIM_EDITOR=/usr/bin/nvim
