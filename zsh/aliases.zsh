@@ -22,27 +22,12 @@ function brow() {
 	fi
 }
 
-function cs() {
-	# cd to a directory and list it
-	cd $1
-	ls
-}
-
-function mc() {
-	# Make a directory, cd to it
-	dir=$(pwd)/$*
-	mkdir "$dir"
-	cd "$1"
-}
-
 function size() {
 	du -k $*
 }
-alias cd..='cd ..'
 alias ll='ls -alF'
 alias la='ls -A'
 alias mkdir='mkdir -p'
-alias mk='mkdir'
 alias cclip='echo -n | xclip -selection clipboard'
 
 # Programming
@@ -53,13 +38,12 @@ function sv() {
             cd $upperdir/$1
         fi
     elif [ $# = 0 ]; then
-		cd $upperdir
+	cd $upperdir
     fi
 }
 
 alias viml="python ~/.tmux/scripts/omnivim.py --lit"
 alias vim="python ~/.tmux/scripts/omnivim.py"
-# export OMNIVIM_EDITOR=nvim
 export OMNIVIM_EDITOR=/usr/bin/nvim
 export NVIM_SOCKET_PATH='/home/andrew/'
 
