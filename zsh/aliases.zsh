@@ -10,8 +10,7 @@ function help () {
 	help $* | less
 }
 alias cls='clear'
-alias quit='exit'
-alias :q='exit'
+alias quit='exit' alias :q='exit'
 alias :qa='exit'
 
 # Directory movement & management
@@ -85,6 +84,8 @@ alias svs='svn status'
 alias svu='svn update'
 alias svrm='svn delete'
 alias svrmk='svn delete --keep-local'
+
+alias lpp='lpass show -c --password'
 
 # geeknote
 if hash geeknote 2>/dev/null; then
