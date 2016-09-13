@@ -7,7 +7,7 @@ Plug 'kana/vim-textobj-user'
 " Functionality
 " Plug 'benekastah/neomake'
 Plug 'bkad/CamelCaseMotion'
-Plug 'christoomey/vim-tmux-navigator' | Plug 'benmills/vimux'
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'

@@ -194,17 +194,6 @@ nnoremap <Leader>d :Bd<CR>
 
 " reload vimrc on save
 autocmd! BufWritePost ~/.vimrc,$MYVIMRC,~/.vim/plugins.vim source $MYVIMRC
-"autocmd! BufWritePost ~/.nvimrc source %
-
-" do similar if saving .tmux.conf
-autocmd! BufWritePost ~/.tmux.conf :call VimuxRunCommand("tmux source-file ~/.tmux.conf")
-
-" and similar for .zshrc
-autocmd! BufWritePost ~/.zshrc,*.zsh-theme,$DOTFILES/zsh/*.zsh :call VimuxRunCommand("source ~/.zshrc")
-
-" and bashrc, bash aliases
-autocmd! BufWritePost ~/.bashrc :call VimuxRunCommand("source ~/.bashrc")
-autocmd! BufWritePost ~/.bash_aliases :call VimuxRunCommand("source ~/.bash_aliases")
 
 " syntax highlighting for snippet files
 autocmd! FileType snippet set syntax=snippets
