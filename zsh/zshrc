@@ -4,7 +4,7 @@ export TERM="xterm-256color"
 
 # environment variables
 export DOTFILES=$HOME/.dotfiles
-export ZSH=$DOTFILES/zsh
+export ZSH=$HOME/.zsh
 
 export ANTIGEN=$HOME/software/antigen
 export EDITOR=nvim
@@ -16,7 +16,7 @@ export MANPAGER="env MAN_PN=1 vimx -M +MANPAGER -"
 unset SSH_ASKPASS
 
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-monokai.sh"
+BASE16_SHELL="$HOME/.config/base16-shell/base16-monokai.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 # eval "`dircolors ~/.mydircolors`"

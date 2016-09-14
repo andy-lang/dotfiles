@@ -4,6 +4,8 @@ PACK_CMD='dnf'
 SOURCE_DIR='~'
 INSTALL_STUFF=false
 
+declare -a install_programs=('vim' 'neovim' 'tmux' 'latexmk')
+
 function help() {
 	printf "Installation script for dotfiles.\n"
 	printf "Calls package manager to install necessary packages (if specified), downloads & installs the necessary GitHub libraries, and symlinks the relevant stuff.\n"
@@ -40,3 +42,45 @@ while getopts "d:hi:" opt; do
 			;;
 	esac
 done
+
+if [ "$INSTALL_STUFF" == true ]; then
+	for cmd in "${install_programs[@]}"; do
+		sudo "$PACK_CMD" install "$cmd"
+	done
+fi
+
+# SYMLINKING
+# bash
+ln -s bash/bashrc "$SOURCE_DIR"/.bashrc
+ln -s bash/bash-aliases "$SOURCE_DIR"/.bash_aliases
+
+# gdb
+ln -s gdb/gdbinit "$SOURCE_DIR"/.gdbinit
+
+# git
+ln -s git/gitconfig "$SOURCE_DIR"/.gitconfig
+ln -s git/gitignore "$SOURCE_DIR"/.gitignore
+
+# latexmk
+ln -s latexmk/latexmkrc "$SOURCE_DIR"/.latexmkrc
+
+# tmux
+ln -s tmux/tmux.conf "$SOURCE_DIR"/.tmux.conf
+ln -s tmux/tmux "$SOURCE_DIR"/.tmux
+
+# vim
+ln -s vim/vimrc "$SOURCE_DIR"/.vimrc
+ln -s vim/vim "$SOURCE_DIR"/.vim
+# neovim
+ln -s vim/vim "$SOURCE_DIR"/.config/nvim
+ln -s vim/vimrc "$SOURCE_DIR"/.config/nvim/init.vim
+
+# zsh
+ln -s zsh/zshrc "$SOURCE_DIR"/.zshrc
+ln -s zsh/zsh "$SOURCE_DIR"/.zsh
+
+# install:
+	# fzf
+	# media player status
+	# omnivim
+	# antigen
