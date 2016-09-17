@@ -79,8 +79,28 @@ ln -s vim/vimrc "$SOURCE_DIR"/.config/nvim/init.vim
 ln -s zsh/zshrc "$SOURCE_DIR"/.zshrc
 ln -s zsh/zsh "$SOURCE_DIR"/.zsh
 
-# install:
-	# fzf
+# GIT CLONES, installations, etc
+# vim-plug
+curl -fLo "$SOURCE_DIR"/.vim/autoload/plug.vim --create-dirs \
+	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git "$SOURCE_DIR"/.fzf
+"$SOURCE_DIR"/.fzf/install
+
+# hub
+mkdir "$SOURCE_DIR"/software
+git clone https://github.com/github.hub.git "$SOURCE_DIR"/software/hub
+cd "$SOURCE_DIR"/software/hub
+./script/build -o "$SOURCE_DIR"/bin/hub
+cd -
+
+# antigen
+git clone https://github.com/zsh-users/antigen.git "$SOURCE_DIR"/software/antigen
+
+# call vim-plug
+vim +PlugInstall
+
+# TODO do these with submodules
 	# media player status
 	# omnivim
-	# antigen
