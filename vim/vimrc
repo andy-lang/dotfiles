@@ -207,7 +207,7 @@ autocmd! FileType python :iabbrev <buffer> true True| :iabbrev <buffer> false Fa
 " Ruby - capitalise = capitalize
 autocmd! FileType ruby :iabbrev <buffer> capitalise capitalize
 " Markdown - syntax highlighting
-autocmd! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+autocmd! BufNewFile,BufRead *.md setlocal filetype=markdown
 " zsh - highlight theme files
 autocmd! BufRead,BufNewFile *.zsh-theme set filetype=zsh
 
@@ -250,6 +250,7 @@ map <silent> <Leader>ge <Plug>CamelCaseMotion_ge
 
 """ vim-commentary
 autocmd! FileType c,cpp setlocal commentstring=\/\/\ %s
+autocmd! FileType markdown setlocal commentstring=<!--\ %s\ -->
 autocmd! FileType cmake setlocal commentstring=#\ %s
 autocmd! FileType octave setlocal commentstring=%\ %s
 
@@ -261,6 +262,7 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 """ DelimitMate
 let delimitMate_expand_cr=1
 au! FileType python let b:delimitMate_nesting_quotes = ['"']
+autocmd! FileType markdown let b:delimitMate_nesting_quotes = ['`']
 
 """ vim-signify
 let g:signify_vcs_list = ['svn', 'git']
