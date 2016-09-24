@@ -91,6 +91,9 @@ git clone --depth 1 https://github.com/junegunn/fzf.git "$SOURCE_DIR"/.fzf
 # hub
 mkdir "$SOURCE_DIR"/software
 git clone https://github.com/github.hub.git "$SOURCE_DIR"/software/hub
+if [ ! -d "$SOURCE_DIR"/software ]; then
+	mkdir "$SOURCE_DIR"/software
+fi
 cd "$SOURCE_DIR"/software/hub
 ./script/build -o "$SOURCE_DIR"/bin/hub
 cd -
