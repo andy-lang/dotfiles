@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 PACK_CMD='dnf'
-SOURCE_DIR='~'
+SOURCE_DIR="$HOME"
 INSTALL_STUFF=false
 
 declare -a install_programs=('vim' 'neovim' 'tmux' 'latexmk')
