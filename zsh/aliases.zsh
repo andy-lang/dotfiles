@@ -10,8 +10,7 @@ function help () {
 	help $* | less
 }
 alias cls='clear'
-alias quit='exit' alias :q='exit'
-alias :qa='exit'
+alias quit='exit'
 
 # Directory movement & management
 function brow() {
@@ -22,13 +21,10 @@ function brow() {
 	fi
 }
 
-function size() {
-	du -k $*
-}
 alias ll='ls -alF'
 alias la='ls -A'
-alias mkdir='mkdir -p'
 alias cclip='echo -n | xclip -selection clipboard'
+alias upd="$HOME/.zsh/scripts/run-update.sh"
 
 # Programming
 function sv() {
