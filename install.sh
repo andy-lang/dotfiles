@@ -11,7 +11,7 @@ function help() {
 	printf "Calls package manager to install necessary packages (if specified), downloads & installs the necessary GitHub libraries, and symlinks the relevant stuff.\n"
 	printf "Valid arguments:\n"
 	printf "\t-d [ARG]\tSource directory where files shall be symlinked. Defaults to your home directory if not given.\n"
-	printf "\t-h\tPrint this help text.\n"
+	printf "\t-h\t\tPrint this help text.\n"
 	printf "\t-i [ARG]\tInstall relevant using a package manager. The argument gives the package manager to use.\n"
 }
 
