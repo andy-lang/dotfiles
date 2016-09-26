@@ -15,6 +15,9 @@ export MANPAGER="env MAN_PN=1 vimx -M +MANPAGER -"
 
 unset SSH_ASKPASS
 
+# turn off EOF to close zsh because it's fUCKING ANNOYING AS SHITE
+set -o ignoreeof
+
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-monokai.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
