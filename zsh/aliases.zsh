@@ -1,10 +1,5 @@
 setopt completealiases
 
-# Currently using bash aliases to preserve legacy on uni servers
-#if [ -f ~/.bash_aliases ]; then
-	#. ~/.bash_aliases
-#fi
-
 # Basic terminal commands
 function help () {
 	help $* | less
@@ -67,6 +62,8 @@ alias svu='svn update'
 alias svrm='svn delete'
 alias svrmk='svn delete --keep-local'
 
+# Lastpass
+alias llog='lpass login'
 alias lpp='lpass show -c --password'
 
 # geeknote
