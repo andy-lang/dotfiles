@@ -23,6 +23,7 @@ Plug 'chriskempson/base16-vim'
 
 " Syntax-specific
 Plug 'bps/vim-textobj-python', { 'for': 'python' }
+Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'gabrielelana/vim-markdown', { 'for': 'markdown' }
 Plug 'jvirtanen/vim-octave', { 'for': ['matlab', 'octave'] }
 Plug 'keith/tmux.vim', { 'for': ['tmux', 'conf'] }
