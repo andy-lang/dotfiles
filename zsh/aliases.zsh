@@ -64,6 +64,8 @@ alias svu='svn update'
 alias svrm='svn delete'
 alias svrmk='svn delete --keep-local'
 
+# Lastpass
+alias llog='lpass login'
 alias lpp='lpass show -c --password'
 
 # geeknote

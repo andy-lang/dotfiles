@@ -233,15 +233,6 @@ autocmd filetype rust setlocal makeprg=cargo\ build
 " Plugin-specific settings
 """"""""""""""""""""
 
-" let g:tmuxline_preset = {
-" 	\'a':       '#I|#P',
-" 	\'win':     '#I #W',
-" 	\'cwin':    '#I #W',
-" 	\'x':       '#(python3 ~/.tmux/scripts/MediaPlayerStatus/MediaPlayerStatus.py)',
-" 	\'y':       '%R',
-" 	\'z':       '#(echo $USER)',
-" 	\'options': {'status-justify' : 'left'}}
-
 " camelcasemotion
 map <silent> <Leader>w <Plug>CamelCaseMotion_w
 map <silent> <Leader>b <Plug>CamelCaseMotion_b
