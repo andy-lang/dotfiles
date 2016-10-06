@@ -5,9 +5,9 @@ Plug 'junegunn/vim-plug'
 Plug 'kana/vim-textobj-user'
 
 " Functionality
-" Plug 'benekastah/neomake'
 Plug 'bkad/CamelCaseMotion'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'dbmrq/vim-ditto', { 'for': ['tex', 'txt', 'markdown' ]}
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'

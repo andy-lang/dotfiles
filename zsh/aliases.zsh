@@ -34,6 +34,8 @@ function sv() {
 }
 
 alias gdb='gdb -q'
+alias pdb='python -m pdb'
+alias pdb3='python3 -m pdb'
 
 alias viml="python ~/.tmux/scripts/omnivim.py --lit"
 alias vim="python ~/.tmux/scripts/omnivim.py"

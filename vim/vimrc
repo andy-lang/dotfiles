@@ -261,6 +261,9 @@ let g:signify_vcs_list = ['svn', 'git']
 map <silent> <Leader>f :FZF -m<CR>
 map <silent> <Leader>hf :FZF -m ~<CR>
 
+""" vim-ditto
+autocmd! FileType markdown,tex,text DittoOn
+
 """"""""""""""""""""
 " Functions
 """"""""""""""""""""
