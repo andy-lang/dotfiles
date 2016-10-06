@@ -4,4 +4,4 @@
 
 sudo dnf update -y
 
-nvim -c "PlugUpgrade" -c "PlugInstall" -c "PlugUpdate" -c "qa"
+nvim +PlugUpgrade +PlugInstall +PlugUpdate +qa
