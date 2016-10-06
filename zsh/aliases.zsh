@@ -1,10 +1,5 @@
 setopt completealiases
 
-# Currently using bash aliases to preserve legacy on uni servers
-#if [ -f ~/.bash_aliases ]; then
-	#. ~/.bash_aliases
-#fi
-
 # Basic terminal commands
 function help () {
 	help $* | less
@@ -39,6 +34,8 @@ function sv() {
 }
 
 alias gdb='gdb -q'
+alias pdb='python -m pdb'
+alias pdb3='python3 -m pdb'
 
 alias viml="python ~/.tmux/scripts/omnivim.py --lit"
 alias vim="python ~/.tmux/scripts/omnivim.py"
