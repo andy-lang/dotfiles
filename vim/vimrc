@@ -46,6 +46,9 @@ set shortmess+=A
 " 4 spaces per indent
 set tabstop=4
 set shiftwidth=4
+set expandtab
+set softtabstop=4
+set shiftround
 
 " visual, bash-like autocomplete
 set wildmenu
