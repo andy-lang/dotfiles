@@ -24,6 +24,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'bps/vim-textobj-python', { 'for': 'python' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'gabrielelana/vim-markdown', { 'for': 'markdown' }
+Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'jvirtanen/vim-octave', { 'for': ['matlab', 'octave'] }
 Plug 'keith/tmux.vim', { 'for': ['tmux', 'conf'] }
 Plug 'othree/html5.vim', { 'for': 'html' }

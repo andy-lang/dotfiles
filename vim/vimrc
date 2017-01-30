@@ -215,6 +215,11 @@ autocmd! BufRead,BufNewFile *.zsh-theme set filetype=zsh
 let fortran_free_source=1
 let fortran_do_enddo=1
 
+" Haskell
+let hs_highlight_boolean = 1
+let hs_highlight_types = 1
+let hs_highlight_more_types = 1
+
 " Java
 let java_highlight_java_lang_ids=1
 
@@ -260,6 +265,9 @@ let g:signify_vcs_list = ['svn', 'git']
 """ FZF
 map <silent> <Leader>f :FZF -m<CR>
 map <silent> <Leader>hf :FZF -m ~<CR>
+
+""" haskell-vim
+let g:haskell_indent_disable=1
 
 """"""""""""""""""""
 " Functions
