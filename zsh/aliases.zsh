@@ -22,17 +22,6 @@ alias cclip='echo -n | xclip -selection clipboard'
 alias upd="$HOME/.zsh/scripts/run-update.sh"
 
 # Programming
-function sv() {
-    upperdir="/home/andrew/uni/svn/2016"
-    if [ $# != 0 ]; then
-        if [ -d $upperdir/$1 ]; then
-            cd $upperdir/$1
-        fi
-    elif [ $# = 0 ]; then
-	cd $upperdir
-    fi
-}
-
 alias gdb='gdb -q'
 alias pdb='python -m pdb'
 alias pdb3='python3 -m pdb'
