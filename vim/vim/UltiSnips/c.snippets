@@ -6,7 +6,7 @@ $0
 endsnippet
 
 snippet for
-for (int ${2:i} = ${3:0}; $2 < ${1:count}; ++$2) {
+for (${4:int} ${2:i} = ${3:0}; $2 < ${1:count}; ++$2) {
 	${0:/* code */}
 }
 endsnippet
@@ -18,7 +18,7 @@ if (${1}) {
 endsnippet
 
 snippet inc
-#include "${1:`expand('%:r')`}.hpp"
+#include "${1:`expand('%:r')`}.${2:hpp}"
 endsnippet
 
 snippet "I(n|N)c" "" r
