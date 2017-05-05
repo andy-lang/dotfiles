@@ -1,0 +1,87 @@
+filetype plugin indent on
+
+set shell=/bin/sh
+
+" C-like indentation
+set autoindent
+set smartindent
+set cindent
+
+" highlight matching search patterns, start searching before pressing enter
+set hlsearch
+set incsearch
+
+" case insensitive searching, unless an upper case char was specified
+set ignorecase
+set smartcase
+
+" add line numbers
+set number
+
+"always a certain number of lines above/below current cursor position
+set scrolloff=1
+
+" 4 spaces per indent
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set softtabstop=4
+set shiftround
+
+" syntax highlighting, colourschemes
+syntax enable
+set t_Co=256
+set background=dark
+colorscheme desert
+
+""""""""""""""""""""
+" Functionality
+""""""""""""""""""""
+set spell spelllang=en_au
+
+" automatically reloads files that have been detected as being changed
+set autoread
+" automatically write on :make, :next, etc
+set autowrite
+
+" backspace skips over indents, EOL, appends, etc
+set backspace=2
+
+let mapleader=","
+
+" Esc to turn off search highlighting
+" nnoremap <Esc> :noh<CR>
+
+" gr for previous tab
+map gr gT
+" gb for bottom of file
+map gb G
+" gs to swap two adjacent characters
+" map gs xph
+" 0 jumps to first non-blank character, instead of hard BOL
+map 0 ^
+" j and k for soft line movement
+nmap j gj
+nmap k gk
+vmap j gj
+vmap k gk
+
+" Y works similarly to C, D, etc
+nnoremap Y y$
+
+" W and Q work as w and q do.
+" Who do? Q do
+command! Q :q
+command! W :w
+
+" turn off fucking ex mode
+nnoremap Q <nop>
+" similar for q:
+nnoremap q: <nop>
+nnoremap q? <nop>
+nnoremap q/ <nop>
+
+" buffer delete does not delete window
+command! Bd bp|bd #
+nnoremap <Leader>d :Bd<CR>
+

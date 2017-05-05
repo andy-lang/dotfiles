@@ -1,5 +1,6 @@
 " Read vim plugins from file
 source ~/.vim/plugins.vim
+source ~/.vim/.vimrc-basic
 
 filetype plugin indent on
 
@@ -16,49 +17,19 @@ abbr juint junit
 abbr hierarcy hierarchy
 abbr pbulic public
 
-" C-like indentation
-set autoindent
-set smartindent
-set cindent
-
 " options to hide sections of the GUI. Mostly for eclim shenanigans
 set guioptions-=m
 set guioptions-=T
 set guioptions-=r
 
-" highlight matching search patterns, start searching before pressing enter
-set hlsearch
-set incsearch
-
-" case insensitive searching, unless an upper case char was specified
-set ignorecase
-set smartcase
-
-" add line numbers
-set number
-
-"always a certain number of lines above/below current cursor position
-set scrolloff=1
-
 " ignore warnings if swapfile exists
 set shortmess+=A
-
-" 4 spaces per indent
-set tabstop=4
-set shiftwidth=4
-set expandtab
-set softtabstop=4
-set shiftround
 
 " visual, bash-like autocomplete
 set wildmenu
 set wildmode=longest,full
 
-" wrap long lines
-set wrap linebreak
-
 " syntax highlighting
-syntax enable
 let base16colorspace=256
 " set t_Co=256
 try
@@ -106,21 +77,8 @@ set statusline +=%L\
 set statusline +=%#TabLineSel#
 set statusline +=%-.30{BasenamePwd()}
 
-""""""""""""""""""""
-" Functionality
-""""""""""""""""""""
-set spell spelllang=en_au
-
-" automatically reloads files that have been detected as being changed
-set autoread
-" automatically write on :make, :next, etc
-set autowrite
-
-" backspace skips over indents, EOL, appends, etc
-set backspace=2
-
 " if no register specified, copy to system clipboard
-set clipboard+=unnamedplus
+set clipboard+=unnamed
 
 " open make errors in new split/buffer if not open
 set switchbuf=useopen,usetab,split
@@ -134,25 +92,6 @@ set undodir=${HOME}/.vim/undo
 """"""""""""""""""""
 " Keybindings & commands
 """"""""""""""""""""
-let mapleader=","
-
-" Esc to turn off search highlighting
-" nnoremap <Esc> :noh<CR>
-
-" gr for previous tab
-map gr gT
-" gb for bottom of file
-map gb G
-" gs to swap two adjacent characters
-" map gs xph
-" 0 jumps to first non-blank character, instead of hard BOL
-map 0 ^
-" j and k for soft line movement
-nmap j gj
-nmap k gk
-vmap j gj
-vmap k gk
-
 if !exists(':TmuxNavigateRight')
 	" tmux navigation will provide the pane navigation, so only map these if tmux isn't in use
 	nnoremap <C-H> <C-w>h
@@ -166,30 +105,11 @@ nnoremap <Leader>m :Make <CR>
 nnoremap <Leader>cm :Make clean<CR>
 " autocmd BufWritePost * Neomake
 
-" Y works similarly to C, D, etc
-nnoremap Y y$
-
 " shortcuts to edit rc files
 nnoremap <Leader>ev :e $MYVIMRC<CR>
 nnoremap <Leader>ez :e ~/.zshrc<CR>
 " " ,es to edit UltiSnips file
 nnoremap <Leader>es :call GetSnipFile()<CR>
-
-" W and Q work as w and q do.
-" Who do? Q do
-command! Q :q
-command! W :w
-
-" turn off fucking ex mode
-nnoremap Q <nop>
-" similar for q:
-nnoremap q: <nop>
-nnoremap q? <nop>
-nnoremap q/ <nop>
-
-" buffer delete does not delete window
-command! Bd bp|bd #
-nnoremap <Leader>d :Bd<CR>
 
 """"""""""""""""""""
 " Autocommands
@@ -231,7 +151,7 @@ let g:tex_flavor='latex'
 let g:tex_nospell=0
 
 " Rust
-autocmd filetype rust setlocal makeprg=cargo\ build
+" autocmd filetype rust setlocal makeprg=cargo\ build
 
 " spellcheck for txt files
 " autocmd! FileType help setlocal nospell
